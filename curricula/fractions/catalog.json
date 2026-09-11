@@ -1,0 +1,66 @@
+{
+  "version": "2026.09.1",
+  "concepts": [
+    {"id":"numerator-denominator","title":"Numerator and denominator","prerequisites":[]},
+    {"id":"fraction-quantity","title":"Fraction as a quantity","prerequisites":["numerator-denominator"]},
+    {"id":"representation","title":"Representing fractions","prerequisites":["numerator-denominator"]},
+    {"id":"equivalence","title":"Equivalent fractions","prerequisites":["fraction-quantity","representation"]},
+    {"id":"simplification","title":"Simplifying fractions","prerequisites":["equivalence"]},
+    {"id":"multiples","title":"Multiples","prerequisites":[]},
+    {"id":"common-denominator","title":"Common denominators","prerequisites":["equivalence","multiples"]},
+    {"id":"comparison","title":"Comparing fractions","prerequisites":["common-denominator"]},
+    {"id":"add-same-denominator","title":"Adding fractions with the same denominator","prerequisites":["numerator-denominator"]},
+    {"id":"add-different-denominator","title":"Adding fractions with unlike denominators","prerequisites":["common-denominator","add-same-denominator"]},
+    {"id":"subtraction","title":"Subtracting fractions","prerequisites":["common-denominator"]},
+    {"id":"context","title":"Fractions in context","prerequisites":["add-different-denominator","subtraction"]}
+  ],
+  "exercises": [
+    {"id":"frac-parts-check-v1","concept_id":"numerator-denominator","kind":"multiple_choice","prompt":"In 3/8, which number is the denominator?","options":[{"id":"a","text":"3"},{"id":"b","text":"8"},{"id":"c","text":"11"}],"answer":"b","explanation":"The denominator is the number below the fraction bar.","hint":"Look below the fraction bar.","estimated_minutes":2},
+    {"id":"frac-parts-focus-v1","concept_id":"numerator-denominator","kind":"numeric","prompt":"A fraction has numerator 5 and denominator 9. Enter the fraction.","answer":"5/9","explanation":"Place the numerator above the denominator.","hint":"Write numerator/denominator.","estimated_minutes":3},
+    {"id":"frac-parts-explain-v1","concept_id":"numerator-denominator","kind":"short","prompt":"Explain what the numerator and denominator tell us in 5/9.","explanation":"A teacher reviews whether both roles are described.","hint":"Describe the selected parts and the equal parts in the whole.","estimated_minutes":4},
+
+    {"id":"quantity-check-v1","concept_id":"fraction-quantity","kind":"multiple_choice","prompt":"Which amount is greater than one whole?","options":[{"id":"a","text":"3/5"},{"id":"b","text":"5/5"},{"id":"c","text":"7/5"}],"answer":"c","explanation":"A fraction is greater than one when its numerator exceeds its denominator.","hint":"Compare each numerator with its denominator.","estimated_minutes":2},
+    {"id":"quantity-focus-v1","concept_id":"fraction-quantity","kind":"numeric","prompt":"Enter the fraction for seven quarter-units.","answer":"7/4","explanation":"Seven pieces of size one quarter make 7/4.","hint":"Count quarter-units in the numerator.","estimated_minutes":3},
+    {"id":"quantity-explain-v1","concept_id":"fraction-quantity","kind":"short","prompt":"Explain why 7/4 is greater than one without converting it to a decimal.","explanation":"A teacher reviews the comparison with 4/4.","hint":"Compare it with one whole written in fourths.","estimated_minutes":4},
+
+    {"id":"representation-check-v1","concept_id":"representation","kind":"multiple_choice","prompt":"A bar is split into 6 equal parts and 4 are shaded. Which fraction is shown?","options":[{"id":"a","text":"4/6"},{"id":"b","text":"6/4"},{"id":"c","text":"2/6"}],"answer":"a","explanation":"Four of six equal parts are shaded.","hint":"Count shaded parts, then all equal parts.","estimated_minutes":2},
+    {"id":"representation-focus-v1","concept_id":"representation","kind":"numeric","prompt":"Eight equal parts are shown and three are selected. Enter the fraction selected.","answer":"3/8","explanation":"The selected count is the numerator and total equal parts the denominator.","hint":"Selected/total.","estimated_minutes":3},
+    {"id":"representation-explain-v1","concept_id":"representation","kind":"short","prompt":"Describe how you would draw 3/8 as a bar model.","explanation":"A teacher checks equal partitioning and the selected count.","hint":"Say how many equal parts and how many to shade.","estimated_minutes":4},
+
+    {"id":"equivalence-check-v1","concept_id":"equivalence","kind":"multiple_choice","prompt":"Which fraction is equivalent to 2/3?","options":[{"id":"a","text":"3/4"},{"id":"b","text":"4/6"},{"id":"c","text":"4/5"}],"answer":"b","explanation":"Multiplying numerator and denominator of 2/3 by 2 gives 4/6.","hint":"Multiply top and bottom by the same number.","estimated_minutes":2},
+    {"id":"equivalence-focus-v1","concept_id":"equivalence","kind":"numeric","prompt":"Complete 3/5 = ?/20. Enter the missing numerator.","answer":"12","explanation":"The denominator was multiplied by 4, so multiply the numerator by 4.","hint":"Use the same multiplier on top and bottom.","estimated_minutes":3},
+    {"id":"equivalence-explain-v1","concept_id":"equivalence","kind":"short","prompt":"Explain why multiplying a numerator and denominator by the same nonzero number keeps the value unchanged.","explanation":"A teacher reviews the multiplicative identity argument.","hint":"Think of multiplying by a form of 1.","estimated_minutes":4},
+
+    {"id":"simplification-check-v1","concept_id":"simplification","kind":"multiple_choice","prompt":"Which is 12/18 in simplest form?","options":[{"id":"a","text":"6/9"},{"id":"b","text":"2/3"},{"id":"c","text":"3/4"}],"answer":"b","explanation":"Divide numerator and denominator by their greatest common factor, 6.","hint":"Find the largest factor shared by 12 and 18.","estimated_minutes":2},
+    {"id":"simplification-focus-v1","concept_id":"simplification","kind":"numeric","prompt":"Simplify 15/25.","answer":"3/5","explanation":"Divide both terms by 5.","hint":"Find a common factor of 15 and 25.","estimated_minutes":3},
+    {"id":"simplification-explain-v1","concept_id":"simplification","kind":"short","prompt":"Explain how you know 3/5 is fully simplified.","explanation":"A teacher checks that no factor greater than one is shared.","hint":"Discuss common factors of 3 and 5.","estimated_minutes":4},
+
+    {"id":"multiples-check-v1","concept_id":"multiples","kind":"multiple_choice","prompt":"What is the least common multiple of 4 and 6?","options":[{"id":"a","text":"10"},{"id":"b","text":"12"},{"id":"c","text":"24"}],"answer":"b","explanation":"12 is the first positive number in both lists of multiples.","hint":"List the first few multiples of each number.","estimated_minutes":2},
+    {"id":"multiples-focus-v1","concept_id":"multiples","kind":"numeric","prompt":"Enter the least common multiple of 8 and 12.","answer":"24","explanation":"24 is the smallest positive multiple shared by 8 and 12.","hint":"Compare 8, 16, 24 with 12, 24.","estimated_minutes":3},
+    {"id":"multiples-explain-v1","concept_id":"multiples","kind":"short","prompt":"Explain why 24, rather than 48, is the least common multiple of 8 and 12.","explanation":"A teacher checks the meaning of least and common.","hint":"Show that 24 is shared and smaller.","estimated_minutes":4},
+
+    {"id":"common-denominator-check-v1","concept_id":"common-denominator","kind":"multiple_choice","prompt":"Which is a useful common denominator for 1/4 and 1/6?","options":[{"id":"a","text":"10"},{"id":"b","text":"12"},{"id":"c","text":"24/10"}],"answer":"b","explanation":"12 is divisible by both 4 and 6.","hint":"Use a common multiple of 4 and 6.","estimated_minutes":2},
+    {"id":"common-denominator-focus-v1","concept_id":"common-denominator","kind":"numeric","prompt":"Rewrite 2/3 with denominator 12.","answer":"8/12","explanation":"Multiply numerator and denominator by 4.","hint":"What multiplies 3 to make 12?","estimated_minutes":3},
+    {"id":"common-denominator-explain-v1","concept_id":"common-denominator","kind":"short","prompt":"Explain why a common denominator is needed before adding thirds and fourths.","explanation":"A teacher checks that the response refers to equal-sized parts.","hint":"Compare the size of one third with one fourth.","estimated_minutes":4},
+
+    {"id":"comparison-check-v1","concept_id":"comparison","kind":"multiple_choice","prompt":"Which fraction is larger: 5/8 or 2/3?","options":[{"id":"a","text":"5/8"},{"id":"b","text":"2/3"},{"id":"c","text":"They are equal"}],"answer":"b","explanation":"15/24 is less than 16/24.","hint":"Use denominator 24.","estimated_minutes":2},
+    {"id":"comparison-focus-v1","concept_id":"comparison","kind":"numeric","prompt":"Enter the larger fraction: 3/4 or 7/10.","answer":"3/4","explanation":"3/4 = 15/20 and 7/10 = 14/20.","hint":"Use denominator 20.","estimated_minutes":3},
+    {"id":"comparison-explain-v1","concept_id":"comparison","kind":"short","prompt":"Explain how you compared 3/4 and 7/10 without relying on decimal approximations.","explanation":"A teacher checks a valid exact comparison.","hint":"Use a common denominator or cross-products.","estimated_minutes":4},
+
+    {"id":"addition-like-check-v1","concept_id":"add-same-denominator","kind":"multiple_choice","prompt":"What is 2/7 + 3/7?","options":[{"id":"a","text":"5/14"},{"id":"b","text":"5/7"},{"id":"c","text":"6/7"}],"answer":"b","explanation":"Equal-sized sevenths can be counted directly.","hint":"Keep the size of the parts unchanged.","estimated_minutes":2},
+    {"id":"addition-like-focus-v1","concept_id":"add-same-denominator","kind":"numeric","prompt":"Calculate 5/12 + 4/12.","answer":"3/4","explanation":"9/12 simplifies to 3/4.","hint":"Add the numerators, then simplify.","estimated_minutes":3},
+    {"id":"addition-like-explain-v1","concept_id":"add-same-denominator","kind":"short","prompt":"Explain why the denominator stays 7 in 2/7 + 3/7.","explanation":"A teacher checks that sevenths remain the unit being counted.","hint":"Name the size of each part.","estimated_minutes":4},
+
+    {"id":"addition-unlike-check-v1","concept_id":"add-different-denominator","kind":"multiple_choice","prompt":"What is 1/2 + 1/3?","options":[{"id":"a","text":"2/5"},{"id":"b","text":"2/6"},{"id":"c","text":"5/6"}],"answer":"c","explanation":"Convert to 3/6 + 2/6.","hint":"Use sixths.","estimated_minutes":2},
+    {"id":"addition-unlike-focus-v1","concept_id":"add-different-denominator","kind":"numeric","prompt":"Calculate 3/4 + 2/5.","answer":"23/20","explanation":"15/20 + 8/20 = 23/20.","hint":"Use denominator 20.","estimated_minutes":4},
+    {"id":"addition-unlike-explain-v1","concept_id":"add-different-denominator","kind":"short","prompt":"A learner says 2/3 + 1/4 = 3/7. Explain the error and give the correct method.","explanation":"A teacher checks that unlike units are converted before counting.","hint":"Thirds and fourths are different-sized pieces.","estimated_minutes":5},
+
+    {"id":"subtraction-check-v1","concept_id":"subtraction","kind":"multiple_choice","prompt":"What is 5/6 - 1/3?","options":[{"id":"a","text":"4/3"},{"id":"b","text":"1/2"},{"id":"c","text":"2/6"}],"answer":"b","explanation":"1/3 = 2/6, so 5/6 - 2/6 = 3/6 = 1/2.","hint":"Rewrite one third in sixths.","estimated_minutes":2},
+    {"id":"subtraction-focus-v1","concept_id":"subtraction","kind":"numeric","prompt":"Calculate 7/8 - 1/6.","answer":"17/24","explanation":"21/24 - 4/24 = 17/24.","hint":"Use denominator 24.","estimated_minutes":4},
+    {"id":"subtraction-explain-v1","concept_id":"subtraction","kind":"short","prompt":"Explain how to check whether 7/8 - 1/6 = 17/24 is reasonable.","explanation":"A teacher reviews a valid estimate or inverse check.","hint":"Compare the result with 7/8 and with 1/2.","estimated_minutes":5},
+
+    {"id":"word-problems-check-v1","concept_id":"context","kind":"multiple_choice","prompt":"Mina walks 1/3 km, then 1/4 km. How far does she walk?","options":[{"id":"a","text":"2/7 km"},{"id":"b","text":"7/12 km"},{"id":"c","text":"1/12 km"}],"answer":"b","explanation":"4/12 + 3/12 = 7/12 km.","hint":"Both distances describe parts of one kilometre.","estimated_minutes":2},
+    {"id":"word-problems-focus-v1","concept_id":"context","kind":"numeric","prompt":"A jug holds 3/4 litre. You pour out 1/3 litre. How many litres remain?","answer":"5/12","explanation":"9/12 - 4/12 = 5/12 litre.","hint":"This situation uses subtraction.","estimated_minutes":4},
+    {"id":"word-problems-explain-v1","concept_id":"context","kind":"short","prompt":"Write and solve a fraction equation for sharing 1 1/2 pizzas equally between 3 people.","explanation":"A teacher checks the model and conclusion of 1/2 pizza each.","hint":"Convert the mixed number, then divide by 3.","estimated_minutes":5}
+  ]
+}

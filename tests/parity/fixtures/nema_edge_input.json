@@ -1,0 +1,85 @@
+{
+  "now": "2026-09-10T12:00:00Z",
+  "receipts": [
+    {
+      "receiptId": "pending-unknown-issuer",
+      "status": "pending",
+      "payload": {
+        "receiptId": "pending-unknown-issuer",
+        "issuedAt": "2026-09-09T12:00:00Z",
+        "conditions": {"grader": "deterministic"},
+        "claims": [{"concept": "edge:ignored", "ability": "apply", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "unknown-status",
+      "status": "unchecked",
+      "payload": {
+        "receiptId": "unknown-status",
+        "issuedAt": "2026-09-09T12:00:00Z",
+        "conditions": {"grader": "deterministic"},
+        "claims": [{"concept": "edge:ignored", "ability": "apply", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "helped-explanation",
+      "status": "verified",
+      "payload": {
+        "receiptId": "helped-explanation",
+        "issuedAt": "2026-09-01T12:00:00Z",
+        "conditions": {"grader": "provider-rubric", "hintsUsed": 1},
+        "claims": [{"concept": "edge:helped", "ability": "explain", "result": "partial"}]
+      }
+    },
+    {
+      "receiptId": "repeat-one",
+      "status": "verified",
+      "payload": {
+        "receiptId": "repeat-one",
+        "issuedAt": "2026-09-08T12:00:00Z",
+        "conditions": {"grader": "deterministic", "hintsUsed": 0},
+        "claims": [{"concept": "edge:repetition", "ability": "apply", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "repeat-two",
+      "status": "verified",
+      "payload": {
+        "receiptId": "repeat-two",
+        "issuedAt": "2026-09-09T12:00:00Z",
+        "conditions": {"grader": "deterministic", "hintsUsed": 0},
+        "claims": [{"concept": "edge:repetition", "ability": "apply", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "future-is-clamped",
+      "status": "agent",
+      "payload": {
+        "receiptId": "future-is-clamped",
+        "issuedAt": "2026-09-12T12:00:00Z",
+        "conditions": {"grader": "agent-assessed"},
+        "claims": [{"concept": "edge:future", "ability": "retrieve", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "pass-before-failure",
+      "status": "verified",
+      "payload": {
+        "receiptId": "pass-before-failure",
+        "issuedAt": "2026-09-05T12:00:00Z",
+        "conditions": {"grader": "deterministic"},
+        "claims": [{"concept": "edge:failure", "ability": "apply", "result": "passed"}]
+      }
+    },
+    {
+      "receiptId": "failure-after-pass",
+      "status": "verified",
+      "payload": {
+        "receiptId": "failure-after-pass",
+        "issuedAt": "2026-09-09T12:00:00Z",
+        "conditions": {"grader": "deterministic"},
+        "claims": [{"concept": "edge:failure", "ability": "apply", "result": "failed"}]
+      }
+    }
+  ]
+}

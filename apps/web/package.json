@@ -1,0 +1,35 @@
+{
+  "name": "@tiza/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "types:api": "openapi-typescript ../../docs/openapi.json -o src/api/generated.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@tanstack/react-query": "^5.66.8",
+    "katex": "^0.16.21",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "openapi-typescript": "^7.10.1",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  },
+  "packageManager": "pnpm@11.5.3"
+}

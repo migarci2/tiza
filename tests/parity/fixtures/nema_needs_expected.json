@@ -1,0 +1,12 @@
+{
+  "encompassed":{"middle":{"fraction":0.8,"level":1},"base":{"fraction":0.6400000000000001,"level":2}},
+  "implicit":{
+    "base":{"apply":{"band":"durable","score":2.308,"confidence":"high","graderWeight":1,"passes":2,"gradedPasses":1,"gradedScore":0.9,"lastSuccess":"2026-09-05T12:00:00.000Z","lastGradedPass":"2026-08-01T12:00:00.000Z","lastFailure":null,"stabilityDays":6,"nextReview":"2026-09-11T12:00:00.000Z","reviewDue":false,"evidenceRefs":["b1"],"implicit":{"score":1.408,"passes":1,"from":["goal","middle"]}}},
+    "middle":{"apply":{"band":"durable","score":1.76,"confidence":"high","graderWeight":0.8,"passes":2,"gradedPasses":1,"gradedScore":0.4,"lastSuccess":"2026-09-05T12:00:00.000Z","lastGradedPass":"2026-08-15T12:00:00.000Z","lastFailure":"2026-09-02T12:00:00.000Z","stabilityDays":6,"nextReview":"2026-09-11T12:00:00.000Z","reviewDue":false,"evidenceRefs":["m1"],"implicit":{"score":1.36,"passes":1,"from":["goal"]}}},
+    "goal":{"apply":{"band":"durable","score":1.7,"confidence":"high","graderWeight":1,"passes":2,"gradedPasses":2,"gradedScore":1.7,"lastSuccess":"2026-09-05T12:00:00.000Z","lastGradedPass":"2026-09-05T12:00:00.000Z","lastFailure":null,"stabilityDays":6,"nextReview":"2026-09-11T12:00:00.000Z","reviewDue":false,"evidenceRefs":["g1"]}}
+  },
+  "needs":[
+    {"needId":"need_018793j","concept":"middle","conceptTitle":"Middle","ability":"explain","kind":"repair_misconception","reason":["recorded_misconception","m1","prerequisite_of_an_active_goal"],"note":null,"urgency":0.8,"minutes":4,"confusableWith":null,"exerciseHint":"confront the misconception with a counterexample, then ask for the corrected rule","rubric":["uses middle"],"constraints":{"maxHints":1,"doNotRevealAnswerBeforeSubmission":true},"misconceptions":[{"id":"m1","text":"adds unlike units"}],"goalRelevance":1.2,"priority":0.24},
+    {"needId":"need_13gi9p1","concept":"goal","conceptTitle":"Goal","ability":"transfer","kind":"transfer","reason":["application_is_durable","no_transfer_evidence","active_goal_depends_on_this_concept"],"note":null,"urgency":0.35,"minutes":5,"confusableWith":null,"exerciseHint":"the same idea in a context the learner has not seen before","rubric":["solves goal"],"constraints":{"maxHints":1,"doNotRevealAnswerBeforeSubmission":true},"misconceptions":[],"goalRelevance":1.5,"priority":0.105}
+  ]
+}

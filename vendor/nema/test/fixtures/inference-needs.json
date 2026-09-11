@@ -1,0 +1,125 @@
+{
+  "now": "2026-09-01T12:00:00Z",
+  "budgetMinutes": 5,
+  "goals": [
+    {
+      "goalId": "goal_emulsions",
+      "title": "Hold an emulsion through service",
+      "concepts": [
+        "nema:emulsions"
+      ],
+      "createdAt": "2026-08-25T09:00:00Z"
+    }
+  ],
+  "misconceptions": [],
+  "receipts": [
+    {
+      "receiptId": "rcpt_emulsion_lab",
+      "status": "verified",
+      "receivedAt": "2026-08-31T10:02:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_emulsion_lab",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "fix-the-broken-sauce",
+          "version": "1.0.0",
+          "title": "Fix the broken sauce",
+          "contentHash": "sha256:fixture-fix-the-broken-sauce"
+        },
+        "claims": [
+          {
+            "concept": "nema:emulsions",
+            "ability": "apply",
+            "evidenceType": "application",
+            "result": "passed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 2,
+          "hintsUsed": 1,
+          "durationSeconds": 641,
+          "grader": "deterministic",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-31T10:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_seasoning_essay_1",
+      "status": "verified",
+      "receivedAt": "2026-08-22T10:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_seasoning_essay_1",
+        "issuer": "https://linecook.example",
+        "keyId": "linecook-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "seasoning-recall",
+          "version": "1.0.0",
+          "title": "Explain seasoning in layers",
+          "contentHash": "sha256:fixture-seasoning-recall"
+        },
+        "claims": [
+          {
+            "concept": "nema:seasoning",
+            "ability": "explain",
+            "evidenceType": "explanation",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 400,
+          "grader": "provider-rubric",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-22T10:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_seasoning_essay_2",
+      "status": "verified",
+      "receivedAt": "2026-08-29T10:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_seasoning_essay_2",
+        "issuer": "https://linecook.example",
+        "keyId": "linecook-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "flat-not-undersalted",
+          "version": "1.0.0",
+          "title": "When salt is not what it needs",
+          "contentHash": "sha256:fixture-flat-not-undersalted"
+        },
+        "claims": [
+          {
+            "concept": "nema:seasoning",
+            "ability": "explain",
+            "evidenceType": "explanation",
+            "result": "passed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 380,
+          "grader": "provider-rubric",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-29T10:00:00Z"
+      }
+    }
+  ]
+}

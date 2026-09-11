@@ -1,0 +1,16 @@
+{
+  "now": "2026-09-10T12:00:00.000Z",
+  "concepts": [
+    {"id":"base","title":"Base","prereqs":[],"minutes":{"retrieve":3,"apply":4},"rubric":{"apply":["uses base"]}},
+    {"id":"middle","title":"Middle","prereqs":["base"],"encompasses":{"base":0.8},"minutes":{"apply":5},"rubric":{"apply":["uses middle"]}},
+    {"id":"goal","title":"Goal","prereqs":["middle"],"encompasses":{"middle":0.8},"minutes":{"apply":6,"transfer":5},"rubric":{"apply":["solves goal"]}}
+  ],
+  "goals": [{"concepts":["goal"]}],
+  "misconceptions": [{"id":"m1","concept":"middle","text":"adds unlike units"}],
+  "budgetMinutes": 12,
+  "state": {
+    "base": {"apply":{"band":"usable","score":0.9,"confidence":"medium","graderWeight":1,"passes":1,"gradedPasses":1,"gradedScore":0.9,"lastSuccess":"2026-08-01T12:00:00.000Z","lastGradedPass":"2026-08-01T12:00:00.000Z","lastFailure":null,"stabilityDays":3,"nextReview":"2026-08-04T12:00:00.000Z","reviewDue":true,"evidenceRefs":["b1"]}},
+    "middle": {"apply":{"band":"fragile","score":0.4,"confidence":"low","graderWeight":0.8,"passes":1,"gradedPasses":1,"gradedScore":0.4,"lastSuccess":"2026-08-15T12:00:00.000Z","lastGradedPass":"2026-08-15T12:00:00.000Z","lastFailure":"2026-09-02T12:00:00.000Z","stabilityDays":3,"nextReview":"2026-08-18T12:00:00.000Z","reviewDue":true,"evidenceRefs":["m1"]}},
+    "goal": {"apply":{"band":"durable","score":1.7,"confidence":"high","graderWeight":1,"passes":2,"gradedPasses":2,"gradedScore":1.7,"lastSuccess":"2026-09-05T12:00:00.000Z","lastGradedPass":"2026-09-05T12:00:00.000Z","lastFailure":null,"stabilityDays":6,"nextReview":"2026-09-11T12:00:00.000Z","reviewDue":false,"evidenceRefs":["g1"]}}
+  }
+}

@@ -1,0 +1,2064 @@
+[
+  {
+    "id": "nema:knife-skills",
+    "title": "Knife skills",
+    "summary": "Grip, guiding hand and a small set of cuts held to a consistent size, so every piece on the board cooks at the same rate.",
+    "prereqs": [],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "a_sharp_knife_is_more_dangerous",
+        "text": "A sharp knife is more dangerous than a dull one."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the pinch grip and the clawed guiding hand and says what each one controls",
+        "explains why a dull blade slips off the skin of an onion where a sharp one bites",
+        "states why uniform size matters more than the shape of the cut"
+      ],
+      "apply": [
+        "cuts a brunoise, a julienne and a batonnet within about a millimetre of the standard size",
+        "keeps the tip on the board and cuts with a forward slicing stroke rather than chopping down",
+        "hones the edge on a steel between tasks and stops to sharpen when honing stops working"
+      ],
+      "discriminate": [
+        "separates honing, which realigns the edge, from sharpening, which removes steel",
+        "separates a dice from a mince by the finished size and by what the cut is for",
+        "separates slicing across the grain from slicing with it and says what each does to texture"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "blade-work",
+      "security": "knife-handling"
+    }
+  },
+  {
+    "id": "nema:heat-control",
+    "title": "Heat control",
+    "summary": "Matching the energy under the pan to what the food needs: a rate of heat transfer you steer by sound, colour and smell, not a number on a dial.",
+    "prereqs": [],
+    "confusableWith": [
+      "nema:temperature-control"
+    ],
+    "misconceptions": [
+      {
+        "id": "hotter_is_always_faster",
+        "text": "Turning the heat up always cooks the food faster."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "distinguishes conduction, convection and radiation and gives one pan example of each",
+        "explains why a heavy pan holds a steadier surface temperature than a thin one",
+        "explains what happens to the pan surface the moment cold food lands in it"
+      ],
+      "apply": [
+        "preheats a heavy pan to roughly 190 to 200 C for a sear and lets it recover between batches",
+        "holds a simmer at 85 to 95 C without letting it break into a rolling boil",
+        "adjusts the flame in response to the sound in the pan rather than to a fixed setting"
+      ],
+      "discriminate": [
+        "separates the heat going into the pan from the temperature inside the food",
+        "separates shimmering oil, a first wisp of smoke and a scorching pan as three different states",
+        "separates a sear, which needs high dry heat, from a sweat, which needs low covered heat"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 8,
+      "discriminate": 5
+    },
+    "aliases": {
+      "harness": "pan-heat",
+      "security": "burner-control"
+    }
+  },
+  {
+    "id": "nema:mise-en-place",
+    "title": "Mise en place",
+    "summary": "Everything measured, cut and placed within reach before the first pan goes on, so that cooking is execution rather than searching.",
+    "prereqs": [],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "prep_is_wasted_time",
+        "text": "Prep is dead time you can save by starting the pan earlier."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "lists what a station holds: prepped components, tools, waste bin, towels and a wiped rail",
+        "explains why the layout of the station follows the order of the cooking",
+        "explains how prep moves decisions out of service and into the quiet part of the day"
+      ],
+      "apply": [
+        "writes a prep list ordered by longest lead time first and works it from the top",
+        "sets a station so every component of the dish is reachable without stepping away",
+        "resets and wipes the station between courses instead of only at the end of service"
+      ],
+      "discriminate": [
+        "separates mise en place from simply prepping ingredients in advance",
+        "separates a station reset from a deep clean",
+        "separates a hold-up caused by missing prep from one caused by oven or burner space"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "station-setup",
+      "security": "mise"
+    }
+  },
+  {
+    "id": "nema:ratios",
+    "title": "Cooking ratios",
+    "summary": "The fixed proportions by weight underneath a recipe: 1:1 roux, 3:1 vinaigrette, a 5 percent brine, 3:2:1 shortcrust. They scale where a cup measure does not.",
+    "prereqs": [],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "volume_measures_are_close_enough",
+        "text": "Measuring flour by the cup is as reliable as weighing it."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states at least three working ratios by weight and what each one produces",
+        "explains why a ratio by weight survives scaling where a volume measure drifts",
+        "says which ingredient in a ratio is the reference and which one moves"
+      ],
+      "apply": [
+        "scales a 3:1 vinaigrette from 60 g to 900 g without rebuilding the recipe",
+        "weighs a 1:1 roux and reads a finished sauce back to about 100 g of roux per litre",
+        "brines at 5 percent salt by weight of water and sets the time by the thickness of the cut"
+      ],
+      "discriminate": [
+        "separates a ratio from a recipe by what stays fixed when the yield changes",
+        "separates baker's percentage, where flour is 100 percent, from a percentage of the total weight",
+        "separates a ratio that holds by weight from one that only works at one scale by volume"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "sauce-ratios",
+      "security": "recipe-ratios"
+    }
+  },
+  {
+    "id": "nema:seasoning",
+    "title": "Seasoning",
+    "summary": "Salt used in layers through the cooking, judged by weight, around 1 percent of the food for most savoury dishes, and confirmed by tasting at every stage.",
+    "prereqs": [
+      "nema:ratios"
+    ],
+    "confusableWith": [
+      "nema:acid-balance"
+    ],
+    "misconceptions": [
+      {
+        "id": "salt_only_at_the_end",
+        "text": "Salt belongs at the end, so the dish does not get too salty."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains what salt does to perceived sweetness and bitterness, not only to saltiness",
+        "explains why salt added early has time to diffuse into the food",
+        "gives a working target by weight, about 1 percent for most savoury food"
+      ],
+      "apply": [
+        "seasons in layers and tastes at each stage instead of once at the pass",
+        "weighs salt for a brine or a forcemeat rather than measuring by pinch",
+        "brings a flat dish back by changing one thing at a time and naming which one it needed"
+      ],
+      "discriminate": [
+        "separates a dish that is under salted from one that is flat and needs acid",
+        "separates seasoning by weight from seasoning by taste and says when each is used",
+        "separates fine salt from coarse salt by weight for the same spoon"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "seasoning-layers",
+      "security": "seasoning"
+    }
+  },
+  {
+    "id": "nema:maillard-reaction",
+    "title": "Maillard reaction",
+    "summary": "The browning between amino acids and reducing sugars that runs usefully on a dry surface above about 140 C and builds the crust, the fond and most of the aroma.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:caramelization"
+    ],
+    "misconceptions": [
+      {
+        "id": "searing_seals_in_juices",
+        "text": "Searing meat seals in the juices."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states what the reaction needs: amino acids, reducing sugars and a dry surface above about 140 C",
+        "explains why a wet surface stalls near 100 C until the water has gone",
+        "says what browning actually adds, which is colour and aroma rather than sealed in moisture"
+      ],
+      "apply": [
+        "dries and salts the surface, then sears in a pan held near 200 C without crowding it",
+        "leaves the protein alone until it releases from the pan instead of moving it early",
+        "keeps the fond in the pan and builds the sauce on it"
+      ],
+      "discriminate": [
+        "separates Maillard browning, which needs protein, from caramelization of sugar alone",
+        "separates a crust built by dry heat from a colour built by a sugar glaze",
+        "gives one case where a seared piece of meat loses more juice than an unseared one"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 8,
+      "discriminate": 3
+    },
+    "aliases": {
+      "harness": "browning-and-fond",
+      "security": "searing"
+    }
+  },
+  {
+    "id": "nema:caramelization",
+    "title": "Caramelization",
+    "summary": "The thermal breakdown of sugar on its own, starting near 160 to 170 C for sucrose, which builds colour and then bitterness with no protein involved.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:maillard-reaction"
+    ],
+    "misconceptions": [
+      {
+        "id": "onions_caramelize_in_ten_minutes",
+        "text": "Onions caramelize in ten minutes over high heat."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "gives an approximate onset for sucrose, about 160 to 170 C, and what happens past deep amber",
+        "explains why the last twenty seconds of a caramel change it more than the first two minutes",
+        "explains how a wet caramel and a dry caramel behave differently in the pan"
+      ],
+      "apply": [
+        "takes a dry caramel to a deep amber and stops it with cream or butter off the heat",
+        "cooks onions slowly with a little salt for roughly 40 minutes, deglazing as fond builds",
+        "reads colour and smell to stop the pan a moment before it turns bitter"
+      ],
+      "discriminate": [
+        "separates caramelization from Maillard browning by what is reacting",
+        "separates genuinely caramelized onions from onions merely browned in ten minutes",
+        "separates a seized caramel from a crystallized one and gives the fix for each"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "sugar-browning",
+      "security": "caramelizing"
+    }
+  },
+  {
+    "id": "nema:blanching",
+    "title": "Blanching",
+    "summary": "A short plunge into heavily salted boiling water followed by an ice bath, to set colour, loosen skins or part cook a vegetable for a fast pickup.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:poaching"
+    ],
+    "misconceptions": [
+      {
+        "id": "blanching_water_needs_little_salt",
+        "text": "Blanching water only needs a small pinch of salt."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states the purposes: fix the colour, stop enzyme activity, part cook for service",
+        "explains why the water must be at a rolling boil and salted to about 1 percent",
+        "explains why the ice bath is part of the technique rather than an optional extra"
+      ],
+      "apply": [
+        "blanches green vegetables in water salted to about 10 g per litre and shocks them within seconds",
+        "works in batches small enough that the water comes back to the boil quickly",
+        "drains and dries the vegetables before storing so they do not sit in water"
+      ],
+      "discriminate": [
+        "separates blanching from poaching by temperature and by intent",
+        "separates shocking in ice water from simply draining and cooling on a tray",
+        "separates a vegetable blanched for a pickup from one cooked all the way through"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "blanch-and-shock",
+      "security": "blanching"
+    }
+  },
+  {
+    "id": "nema:poaching",
+    "title": "Poaching",
+    "summary": "Cooking gently in liquid held below a simmer, roughly 60 to 80 C, so delicate proteins set without tightening, curdling or breaking apart.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:blanching"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_poach_should_bubble",
+        "text": "Poaching liquid should hold a gentle bubble."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "gives the working range, about 60 to 80 C, and says what a bubble at the surface means",
+        "explains why an egg white sets near 62 C and the yolk near 65 C",
+        "says what the poaching liquid contributes: seasoning, acid and aromatics"
+      ],
+      "apply": [
+        "holds the pot at 70 to 75 C and corrects the flame before the surface breaks",
+        "poaches fish to an internal 50 to 55 C and lets it rest in the warm liquid",
+        "seasons the poaching liquid so the finished piece is seasoned through, not only on the outside"
+      ],
+      "discriminate": [
+        "separates poaching from simmering and boiling by temperature and by surface movement",
+        "separates poaching from blanching by intent and by how the food is finished",
+        "separates a protein that is just set from one that is overcooked and grainy"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "gentle-poach",
+      "security": "poaching"
+    }
+  },
+  {
+    "id": "nema:roasting",
+    "title": "Roasting",
+    "summary": "Cooking in dry oven heat, where the surface browns while the core climbs slowly, managed with oven temperature, a probe, resting and carryover.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:braising"
+    ],
+    "misconceptions": [
+      {
+        "id": "resting_is_optional",
+        "text": "Resting a roast only lets it go cold."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains carryover cooking and why a roast comes out below its target temperature",
+        "explains why a rack and a dry surface matter more than frequent basting",
+        "explains what resting does to the juices and to the internal temperature"
+      ],
+      "apply": [
+        "pulls a chicken at 71 C in the thigh, or a beef rib at 52 C for medium rare, and rests it",
+        "uses two oven stages, hot for colour and moderate to finish, or the reverse",
+        "probes at the thickest point away from bone and confirms with a second reading"
+      ],
+      "discriminate": [
+        "separates roasting from braising by the cooking medium and the texture aimed at",
+        "separates oven temperature from the internal temperature of the food",
+        "separates a roast that needs more time from one that only needs more colour"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "oven-roasting",
+      "security": "roasting"
+    }
+  },
+  {
+    "id": "nema:braising",
+    "title": "Braising",
+    "summary": "Browning first, then cooking partly submerged at 85 to 95 C until collagen becomes gelatin, usually two to four hours for a working cut.",
+    "prereqs": [
+      "nema:maillard-reaction",
+      "nema:reduction"
+    ],
+    "encompasses": {
+      "nema:maillard-reaction": 0.7,
+      "nema:reduction": 0.7
+    },
+    "confusableWith": [
+      "nema:roasting"
+    ],
+    "misconceptions": [
+      {
+        "id": "tough_cuts_need_a_hard_boil",
+        "text": "A braise cooks faster at a hard boil."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains collagen turning to gelatin above about 70 C given enough time",
+        "explains why the liquid comes part way up the meat rather than covering it",
+        "explains why a hard boil tightens the muscle fibres and dries the meat out"
+      ],
+      "apply": [
+        "browns the cut hard, deglazes, then holds the oven at 150 to 160 C for a bare simmer",
+        "tests doneness with a probe that slides out without resistance rather than by the clock",
+        "cools the meat in its liquid and lifts the set fat off the next day"
+      ],
+      "discriminate": [
+        "separates braising from stewing by the size of the pieces and the depth of the liquid",
+        "separates braising from roasting by the transfer medium and the finished texture",
+        "separates meat that is still tough because it is underdone from meat dried out by too much heat"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 9,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "braise-and-glaze",
+      "security": "braising"
+    }
+  },
+  {
+    "id": "nema:reduction",
+    "title": "Reduction",
+    "summary": "Boiling water out of a liquid to concentrate flavour, gelatin and body, which concentrates salt and acid at the same rate.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:emulsions"
+    ],
+    "misconceptions": [
+      {
+        "id": "reduce_to_thicken_anything",
+        "text": "Any thin sauce can be fixed by reducing it further."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains that a reduction concentrates salt and acid along with the flavour",
+        "explains what gelatin from a stock does to body as the liquid falls",
+        "explains why a wide pan reduces faster than a tall narrow one"
+      ],
+      "apply": [
+        "reduces wine and stock by about half and reads the body on the back of a spoon",
+        "seasons after the reduction rather than before it",
+        "keeps a lively simmer in a wide pan and stops while the sauce still moves freely"
+      ],
+      "discriminate": [
+        "separates thickening by reduction from thickening by starch or by emulsion",
+        "separates a sauce that is thin from one that is simply under seasoned",
+        "separates a correct reduction from one that has gone sticky and oversalted"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "reduction",
+      "security": "reducing"
+    }
+  },
+  {
+    "id": "nema:emulsions",
+    "title": "Emulsions",
+    "summary": "Fat held as droplets in water, or the reverse, kept apart by an emulsifier such as mustard, egg yolk lecithin or the proteins in butter.",
+    "prereqs": [
+      "nema:ratios",
+      "nema:heat-control"
+    ],
+    "encompasses": {
+      "nema:ratios": 0.6
+    },
+    "confusableWith": [
+      "nema:reduction"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_sauce_can_be_boiled_once_it_holds",
+        "text": "Once an emulsion holds, it is stable and can be boiled."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the three parts: dispersed fat, a continuous water phase and an emulsifier",
+        "explains why droplet size and steady agitation decide how stable the sauce is",
+        "gives the window where butter and yolk sauces break, above roughly 85 C for a hollandaise"
+      ],
+      "apply": [
+        "mounts a pan sauce with cold butter off the heat, a cube at a time, and keeps it glossy",
+        "builds a vinaigrette at 3 parts oil to 1 part acid with mustard and holds it through service",
+        "rescues a broken sauce by restarting with a spoonful of intact base and whisking the split sauce back in"
+      ],
+      "discriminate": [
+        "separates a sauce held by emulsion from one thickened by reduction or by starch",
+        "separates a broken sauce from a merely thin one and gives the fix for each",
+        "separates a temporary emulsion from one stabilised by an emulsifier"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "pan-sauce-emulsion",
+      "security": "sauce-stability"
+    }
+  },
+  {
+    "id": "nema:stocks",
+    "title": "Stocks",
+    "summary": "Water drawn through bones, mirepoix and aromatics below a simmer, so gelatin and flavour come out without emulsifying the fat into the liquid.",
+    "prereqs": [
+      "nema:knife-skills",
+      "nema:heat-control"
+    ],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "boiling_makes_a_stronger_stock",
+        "text": "A hard boil pulls more flavour out of the bones."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains why a stock is never boiled: it emulsifies the fat and clouds the pot",
+        "gives working times, roughly four hours for veal or beef and forty five minutes for fish",
+        "states the standard mirepoix, two parts onion to one carrot and one celery by weight"
+      ],
+      "apply": [
+        "holds the pot at 82 to 90 C and skims the scum through the first thirty minutes",
+        "strains through a chinois without pressing, then chills it fast in a shallow tray",
+        "judges the finished stock by the set on a chilled spoonful, not by tasting it hot"
+      ],
+      "discriminate": [
+        "separates a white stock from a brown stock by how the bones were treated",
+        "separates stock from broth by what goes in the pot and how the result is used",
+        "separates cloudiness caused by boiling from cloudiness caused by unskimmed scum"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "stock-making",
+      "security": "stocks-and-bases"
+    }
+  },
+  {
+    "id": "nema:roux",
+    "title": "Roux",
+    "summary": "Equal weights of flour and fat cooked together so the starch hydrates cleanly, taken from white through blond to brown as thickening power falls away.",
+    "prereqs": [
+      "nema:ratios",
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:thickeners"
+    ],
+    "misconceptions": [
+      {
+        "id": "darker_roux_thickens_more",
+        "text": "A darker roux thickens more than a pale one."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states the 1:1 ratio by weight and explains why it is weighed rather than scooped",
+        "explains what cooking out the flour removes and how long it takes",
+        "explains why a brown roux thickens less than a white one"
+      ],
+      "apply": [
+        "cooks a blond roux for about five minutes, then adds liquid in stages to a smooth base",
+        "uses roughly 100 g of roux per litre for a medium sauce and adjusts on the spoon",
+        "avoids lumps by matching temperatures and whisking steadily as the liquid goes in"
+      ],
+      "discriminate": [
+        "separates roux from a slurry or a beurre manie by when it is added and how it cooks out",
+        "separates a pasty sauce from an under thickened one",
+        "separates white, blond and brown roux by cooking time and by use"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "roux",
+      "security": "roux-thickening"
+    }
+  },
+  {
+    "id": "nema:thickeners",
+    "title": "Thickeners",
+    "summary": "The working set beyond roux: cornstarch slurry, beurre manie, gelatin, purees and reduction, each with its own gloss, clarity and tolerance for heat.",
+    "prereqs": [
+      "nema:roux",
+      "nema:ratios"
+    ],
+    "encompasses": {
+      "nema:roux": 0.7
+    },
+    "confusableWith": [
+      "nema:roux"
+    ],
+    "misconceptions": [
+      {
+        "id": "cornstarch_and_flour_are_interchangeable",
+        "text": "Cornstarch and flour thicken the same way at the same weight."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states that cornstarch thickens at roughly twice the power of flour by weight",
+        "explains why cornstarch gives a clear gloss where flour gives an opaque sauce",
+        "explains why a starch sauce that has thinned cannot be fixed by boiling it longer"
+      ],
+      "apply": [
+        "stirs a cold slurry into a simmering sauce and cooks it out for a minute",
+        "finishes a sauce at the pass with beurre manie when it is a touch thin",
+        "chooses the thickener by what service needs: clarity, hold time and reheating"
+      ],
+      "discriminate": [
+        "separates a starch thickened sauce from an emulsion by how each one fails",
+        "separates roux from a slurry by when each is introduced",
+        "separates a sauce thinned by enzyme activity from one that was never thickened enough"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "liaison-and-thickeners",
+      "security": "thickening-agents"
+    }
+  },
+  {
+    "id": "nema:deglazing",
+    "title": "Deglazing",
+    "summary": "Dissolving the browned fond off the bottom of the pan with wine, stock or vinegar, so the crust that formed under the protein becomes the base of the sauce.",
+    "prereqs": [
+      "nema:maillard-reaction",
+      "nema:heat-control"
+    ],
+    "encompasses": {
+      "nema:maillard-reaction": 0.7
+    },
+    "confusableWith": [
+      "nema:reduction"
+    ],
+    "misconceptions": [
+      {
+        "id": "burnt_fond_still_makes_sauce",
+        "text": "Black bits in the pan are just extra flavour."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains what fond is and why it sticks to the pan",
+        "explains why the liquid goes in while the pan is hot and how that lifts the fond",
+        "explains why burnt fond makes the sauce bitter and cannot be rescued"
+      ],
+      "apply": [
+        "pours off excess fat, then deglazes off the flame and scrapes with a wooden spoon",
+        "cooks the alcohol out of the wine before the stock goes in",
+        "reads the pan first and starts again when the fond is black rather than brown"
+      ],
+      "discriminate": [
+        "separates deglazing from simply adding liquid to a pan",
+        "separates brown fond worth lifting from burnt fond that has to be discarded",
+        "separates the deglaze from the reduction that follows it"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "deglazing",
+      "security": "pan-deglaze"
+    }
+  },
+  {
+    "id": "nema:pan-sauces",
+    "title": "Pan sauces",
+    "summary": "A sauce built in the pan the protein just left: fond, deglaze, reduce, mount with cold butter, season and send, inside a few minutes.",
+    "prereqs": [
+      "nema:deglazing",
+      "nema:reduction",
+      "nema:emulsions"
+    ],
+    "encompasses": {
+      "nema:emulsions": 0.8,
+      "nema:deglazing": 0.7,
+      "nema:reduction": 0.6
+    },
+    "confusableWith": [
+      "nema:mother-sauces"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_pan_sauce_needs_cream_to_hold",
+        "text": "A pan sauce needs cream to stop it splitting."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the sequence: fond, deglaze, reduce, mount, season",
+        "explains why the butter goes in cold and off the heat",
+        "explains why a pan sauce is made to order rather than held on the stove"
+      ],
+      "apply": [
+        "reduces the deglazed liquid by about half before anything is mounted into it",
+        "mounts roughly 30 to 60 g of cold butter per portion, swirling rather than whisking hard",
+        "corrects with salt and acid and tastes again before the sauce leaves the pan"
+      ],
+      "discriminate": [
+        "separates a pan sauce from a mother sauce by where the body comes from",
+        "separates a sauce that has split from one that is simply too thin",
+        "separates a sauce that needs more reduction from one that needs more butter"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "pan-sauce",
+      "security": "sauce-pickup"
+    }
+  },
+  {
+    "id": "nema:mother-sauces",
+    "title": "Mother sauces",
+    "summary": "The classical bases, bechamel, veloute, espagnole, tomate and hollandaise, and the small sauces built on top of each one.",
+    "prereqs": [
+      "nema:roux",
+      "nema:stocks",
+      "nema:thickeners"
+    ],
+    "encompasses": {
+      "nema:roux": 0.8,
+      "nema:stocks": 0.7,
+      "nema:thickeners": 0.7
+    },
+    "confusableWith": [
+      "nema:pan-sauces"
+    ],
+    "misconceptions": [
+      {
+        "id": "every_sauce_starts_from_a_mother_sauce",
+        "text": "Every sauce in a restaurant is a derivative of a mother sauce."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the five bases and the thickener behind each one",
+        "explains what a small sauce adds to the mother it comes from",
+        "explains why hollandaise sits apart from the roux based sauces"
+      ],
+      "apply": [
+        "builds a veloute from a blond roux and a light stock and cooks it out for twenty minutes",
+        "derives a small sauce, a supreme for example, by finishing a veloute with cream",
+        "holds a bechamel under a cartouche or a film of butter so it does not skin"
+      ],
+      "discriminate": [
+        "separates a mother sauce from a pan sauce by how the body is built",
+        "separates a veloute from a bechamel by the liquid each one starts with",
+        "separates a derivative sauce from a new sauce"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "grand-sauces",
+      "security": "mother-sauces"
+    }
+  },
+  {
+    "id": "nema:acid-balance",
+    "title": "Acid balance",
+    "summary": "Vinegar, citrus, wine and fermented ingredients used to cut fat and lift a dish, in small increments, where more salt would not help.",
+    "prereqs": [
+      "nema:seasoning"
+    ],
+    "encompasses": {
+      "nema:seasoning": 0.7
+    },
+    "confusableWith": [
+      "nema:seasoning"
+    ],
+    "misconceptions": [
+      {
+        "id": "acid_only_means_sour",
+        "text": "Adding acid just makes the dish taste sour."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains what acid does to perceived richness and sweetness",
+        "names three acids and what each brings besides sourness",
+        "explains why acid goes in at the end and in small increments"
+      ],
+      "apply": [
+        "lifts a flat, fatty sauce with a few drops of vinegar and tastes again before adding more",
+        "balances a dressing by tasting it on the ingredient it will dress, not off the spoon",
+        "pulls back a reduction that has gone sharp with fat, sweetness or more stock"
+      ],
+      "discriminate": [
+        "separates a dish that needs salt from one that needs acid",
+        "separates brightness from sourness in a finished sauce",
+        "separates acid used for balance from acid used to cure or to denature"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "acid-balance",
+      "security": "acidity"
+    }
+  },
+  {
+    "id": "nema:tasting-and-adjusting",
+    "title": "Tasting and adjusting",
+    "summary": "The loop that closes every dish: taste, name what is missing, change one thing, taste again, and write down what the fix was.",
+    "prereqs": [
+      "nema:seasoning",
+      "nema:acid-balance"
+    ],
+    "encompasses": {
+      "nema:seasoning": 0.8,
+      "nema:acid-balance": 0.7
+    },
+    "confusableWith": [
+      "nema:seasoning"
+    ],
+    "misconceptions": [
+      {
+        "id": "taste_once_at_the_end",
+        "text": "Tasting once before the plate goes out is enough."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the axes and the order they are checked in: salt, acid, fat, sweetness, texture, temperature",
+        "explains why only one change at a time teaches you anything",
+        "explains palate fatigue and how to reset between tastes"
+      ],
+      "apply": [
+        "tastes from a clean spoon, names the missing axis, makes one change and tastes again",
+        "tastes the dish as it will be eaten, with its garnish and at serving temperature",
+        "records the correction so the next service starts closer to right"
+      ],
+      "discriminate": [
+        "separates a dish that is flat from one that is under salted",
+        "separates a fault in a component from a fault in the assembly",
+        "separates a matter of preference from an actual fault when two cooks disagree"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "tasting-and-correcting",
+      "security": "taste-and-adjust"
+    }
+  },
+  {
+    "id": "nema:plating",
+    "title": "Plating",
+    "summary": "Composing the plate for the guest and for the pass: hot food on hot plates, clean rims, and a layout that survives the walk to the table.",
+    "prereqs": [
+      "nema:knife-skills",
+      "nema:mise-en-place"
+    ],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "plating_is_decoration",
+        "text": "Plating is decoration you add at the end if there is time."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains why plate temperature matters as much as the arrangement",
+        "explains how the placement of the sauce changes the first bite",
+        "explains why everything on the plate has to be edible and deliberate"
+      ],
+      "apply": [
+        "plates the same dish twice to the same footprint and the same weight",
+        "wipes the rim and checks the plate under the pass light before it goes",
+        "plates in an order that keeps nothing waiting: sauce, protein, garnish"
+      ],
+      "discriminate": [
+        "separates a plate that reads clean from one that is merely empty",
+        "separates a garnish that adds flavour from one that only adds height",
+        "separates a plating problem from a cooking problem when a dish comes back"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "sauce-plating",
+      "security": "plating"
+    }
+  },
+  {
+    "id": "nema:menu-planning",
+    "title": "Menu planning",
+    "summary": "Designing a menu the kitchen can actually execute: shared prep, station load at peak, contribution margin and what is in season.",
+    "prereqs": [
+      "nema:cost-control",
+      "nema:plating",
+      "nema:tasting-and-adjusting"
+    ],
+    "confusableWith": [
+      "nema:cost-control"
+    ],
+    "misconceptions": [
+      {
+        "id": "more_dishes_means_more_covers",
+        "text": "A longer menu sells more covers."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains cross utilisation of prep across dishes",
+        "explains why the menu is limited by station load at peak rather than by the recipe list",
+        "explains contribution margin per dish against food cost percentage"
+      ],
+      "apply": [
+        "maps every dish to its station and finds the bottleneck at peak covers",
+        "prices a dish from a costed recipe with a target margin and a waste allowance",
+        "cuts or reworks a dish that shares no prep with anything else on the menu"
+      ],
+      "discriminate": [
+        "separates a menu problem from an execution problem when tickets back up",
+        "separates food cost percentage from contribution margin per plate",
+        "separates seasonality from novelty as a reason to change a dish"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 5,
+      "apply": 8,
+      "discriminate": 5
+    },
+    "aliases": {
+      "harness": "menu-design",
+      "security": "menu-planning"
+    }
+  },
+  {
+    "id": "nema:cost-control",
+    "title": "Cost control",
+    "summary": "Yield, trim, portioning and costed recipes: knowing what a plate costs before it is sold, and where the money leaves the building.",
+    "prereqs": [
+      "nema:mise-en-place",
+      "nema:knife-skills"
+    ],
+    "confusableWith": [
+      "nema:menu-planning"
+    ],
+    "misconceptions": [
+      {
+        "id": "cheaper_ingredients_lower_food_cost",
+        "text": "Food cost is fixed by buying cheaper ingredients."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "defines yield percentage and shows where trim loss lands in a costed recipe",
+        "explains portion control as the link between the recipe and the plate cost",
+        "explains why waste, staff food and comps belong in the number"
+      ],
+      "apply": [
+        "costs a dish from purchase price through yield to plated cost",
+        "portions by weight at the station rather than by eye",
+        "tracks waste for a week and names the two largest sources"
+      ],
+      "discriminate": [
+        "separates a yield problem from a purchasing problem",
+        "separates food cost percentage from gross margin per plate",
+        "separates waste that is trim from waste that is spoilage"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "recipe-costing",
+      "security": "food-cost"
+    }
+  },
+  {
+    "id": "nema:food-safety",
+    "title": "Food safety",
+    "summary": "Keeping food out of the 5 to 63 C danger zone, cooking to a verified core temperature, and keeping raw product away from anything ready to eat.",
+    "prereqs": [
+      "nema:mise-en-place"
+    ],
+    "confusableWith": [
+      "nema:cross-contamination"
+    ],
+    "misconceptions": [
+      {
+        "id": "rinsing_chicken_makes_it_safer",
+        "text": "Rinsing raw chicken washes the bacteria off."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states the danger zone, 5 to 63 C, and what the time limits inside it are",
+        "gives a verified cook temperature such as 75 C for poultry, or 70 C held for two minutes",
+        "explains why rinsing raw poultry spreads bacteria around the sink instead of removing it"
+      ],
+      "apply": [
+        "probes the thickest part of the product and records the reading in the log",
+        "cools cooked food from 60 to 21 C within two hours and to 5 C within four more",
+        "labels and dates everything that leaves its original packaging"
+      ],
+      "discriminate": [
+        "separates a time and temperature failure from a cross contamination failure",
+        "separates food that is safe to serve from food that merely looks and smells fine",
+        "separates cleaning from sanitising and says what each step removes"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "kitchen-hygiene",
+      "security": "food-safety"
+    }
+  },
+  {
+    "id": "nema:cross-contamination",
+    "title": "Cross contamination",
+    "summary": "Pathogens moving from raw product to ready to eat food along hands, boards, cloths, probes and shared utensils.",
+    "prereqs": [
+      "nema:food-safety"
+    ],
+    "confusableWith": [
+      "nema:allergen-handling",
+      "nema:food-safety"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_wipe_is_enough_between_tasks",
+        "text": "Wiping the board with a cloth between tasks is enough."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the usual routes: hands, boards, cloths, probes and shared utensils",
+        "explains why colour coded boards only work if the whole station keeps to them",
+        "explains the difference between cleaning a surface and sanitising it"
+      ],
+      "apply": [
+        "stores raw protein below ready to eat food in the fridge, never above it",
+        "changes gloves and washes hands between raw and cooked handling",
+        "sanitises the probe between products instead of wiping it on a cloth"
+      ],
+      "discriminate": [
+        "separates a cross contamination incident from an allergen transfer",
+        "separates a cleaned surface from a sanitised one",
+        "separates a batch that has to be discarded from one that can still be cooked through"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "cross-contact",
+      "security": "cross-contamination"
+    }
+  },
+  {
+    "id": "nema:allergen-handling",
+    "title": "Allergen handling",
+    "summary": "Treating a declared allergen as a separate workflow: a dedicated station, clean tools, a checked ingredient deck and a spoken handover on every ticket.",
+    "prereqs": [
+      "nema:food-safety"
+    ],
+    "confusableWith": [
+      "nema:cross-contamination"
+    ],
+    "misconceptions": [
+      {
+        "id": "picking_the_allergen_out_is_enough",
+        "text": "You can pick the nuts off the plate and send it."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains why an allergen is dose sensitive in a way a pathogen count is not",
+        "explains why removing the visible allergen does not make the plate safe",
+        "says where the ingredient deck lives and who is responsible for keeping it current"
+      ],
+      "apply": [
+        "plates an allergen ticket at a dedicated station with clean tools and a fresh pan",
+        "reads the ingredient deck for the sauce instead of trusting memory",
+        "calls the allergen ticket out loud and hears it confirmed back at the pass"
+      ],
+      "discriminate": [
+        "separates an allergen incident from a general hygiene failure",
+        "separates a trace risk from a declared ingredient on the plate",
+        "separates a dish that can be adapted from one that has to be refused"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 5,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "allergen-service",
+      "security": "allergen-handling"
+    }
+  },
+  {
+    "id": "nema:cold-chain",
+    "title": "Cold chain",
+    "summary": "Unbroken refrigeration from the delivery door to the plate, chilled at or below 5 C and frozen at minus 18 C, logged rather than assumed.",
+    "prereqs": [
+      "nema:food-safety",
+      "nema:temperature-control"
+    ],
+    "confusableWith": [
+      "nema:temperature-control"
+    ],
+    "misconceptions": [
+      {
+        "id": "refreezing_is_fine_if_it_still_feels_cold",
+        "text": "Food that still feels cold can go back in the freezer."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "gives the working targets: 5 C or below chilled, minus 18 C frozen",
+        "explains why a delivery is probed at the door rather than after it is put away",
+        "explains why thawing on the bench is a break in the cold chain"
+      ],
+      "apply": [
+        "probes a delivery and rejects chilled goods that arrive above 8 C",
+        "thaws under refrigeration on a tray, below anything ready to eat",
+        "logs the walk in temperature at set times and escalates a drift within the shift"
+      ],
+      "discriminate": [
+        "separates a cold chain break from a cooking temperature failure",
+        "separates the air temperature in the walk in from the core temperature of the product",
+        "separates stock that has to be discarded from stock that can be cooked immediately"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "cold-storage",
+      "security": "cold-chain"
+    }
+  },
+  {
+    "id": "nema:temperature-control",
+    "title": "Temperature control",
+    "summary": "Measuring and holding the temperature of the food itself: calibrated probes, hot holding above 63 C and cooking to a verified core.",
+    "prereqs": [
+      "nema:heat-control"
+    ],
+    "confusableWith": [
+      "nema:cold-chain"
+    ],
+    "misconceptions": [
+      {
+        "id": "the_probe_reads_instantly",
+        "text": "The probe reads the true temperature the moment it touches the food."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains probe calibration in iced water at 0 C and in boiling water at 100 C",
+        "states hot holding above 63 C and explains why that is a holding number, not a target",
+        "explains why the core reading is taken at the thickest point, away from bone"
+      ],
+      "apply": [
+        "calibrates the probe at the start of the shift and records the check",
+        "holds sauces above 63 C or works in small batches remade every hour",
+        "re-probes after resting so carryover is part of the reading"
+      ],
+      "discriminate": [
+        "separates the temperature of the food from the temperature of the equipment",
+        "separates hot holding from cooking and from reheating",
+        "separates a probe that has drifted from a product that is genuinely cold"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "probe-and-hold",
+      "security": "temperature-control"
+    }
+  },
+  {
+    "id": "nema:service-timing",
+    "title": "Service timing",
+    "summary": "Sequencing tickets so every component of every plate on a table lands at the pass hot and at the same moment.",
+    "prereqs": [
+      "nema:mise-en-place",
+      "nema:kitchen-communication"
+    ],
+    "confusableWith": [
+      "nema:kitchen-communication"
+    ],
+    "misconceptions": [
+      {
+        "id": "start_everything_at_once",
+        "text": "Start every dish on the ticket at the same time."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains firing backwards from the component with the longest cook time",
+        "explains what a fire, a pickup and a hold each mean at the pass",
+        "explains why a table is timed as a whole rather than plate by plate"
+      ],
+      "apply": [
+        "fires a table of four with different cook times so the plates land together",
+        "calls a hold on the station that has run ahead of the others",
+        "rebuilds the order of the board when a table adds a course mid service"
+      ],
+      "discriminate": [
+        "separates a timing failure from a capacity failure",
+        "separates a dish that is late from one that was fired late",
+        "separates holding a plate from remaking it"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "sauce-pickup-timing",
+      "security": "service-timing"
+    }
+  },
+  {
+    "id": "nema:kitchen-communication",
+    "title": "Kitchen communication",
+    "summary": "The spoken protocol of a working line: calls and callbacks, corners and hot pans, and saying the problem out loud while it is still small.",
+    "prereqs": [
+      "nema:mise-en-place"
+    ],
+    "confusableWith": [
+      "nema:service-timing"
+    ],
+    "misconceptions": [
+      {
+        "id": "silence_means_it_is_under_control",
+        "text": "A quiet line is a line in control."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains why every call gets a callback",
+        "names the standard calls, behind, corner, hot, sharp, and what each one prevents",
+        "explains why a problem called early costs less than one found at the pass"
+      ],
+      "apply": [
+        "repeats the ticket back to the expediter word for word",
+        "calls a shortfall the moment it is known rather than at pickup",
+        "hands the station over with a spoken list of what is down and what is prepped"
+      ],
+      "discriminate": [
+        "separates a communication failure from a timing failure",
+        "separates a call that carries information from one that only adds noise",
+        "separates escalating to the chef from quietly working around the problem"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "pass-calls",
+      "security": "line-communication"
+    }
+  },
+  {
+    "id": "nema:fermentation",
+    "title": "Fermentation",
+    "summary": "Controlled microbial transformation steered by salt, temperature and time, from a 2 percent vegetable brine to a levain.",
+    "prereqs": [
+      "nema:temperature-control",
+      "nema:food-safety"
+    ],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "fermentation_is_spoilage",
+        "text": "Fermented food is just controlled spoilage and is never really safe."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "explains why a 2 percent brine selects for lactic acid bacteria",
+        "explains how temperature changes both the speed and the flavour of a ferment",
+        "explains what a pH below 4.6 means for safety"
+      ],
+      "apply": [
+        "brines vegetables at 2 percent by weight and keeps everything under the surface",
+        "tracks a ferment by taste, smell and pH rather than by the number of days",
+        "moves the jar to the fridge to hold the flavour once it is where it should be"
+      ],
+      "discriminate": [
+        "separates a healthy ferment from spoilage by smell, colour and pH",
+        "separates kahm yeast from mould",
+        "separates a lactic ferment from an alcoholic one"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "ferments",
+      "security": "fermentation"
+    }
+  },
+  {
+    "id": "nema:bread-basics",
+    "title": "Bread basics",
+    "summary": "Flour, water, salt and leavening read as baker's percentages, developed by time or by mixing, and baked with steam for the first minutes.",
+    "prereqs": [
+      "nema:ratios",
+      "nema:fermentation"
+    ],
+    "encompasses": {
+      "nema:fermentation": 0.7
+    },
+    "confusableWith": [
+      "nema:pastry-basics"
+    ],
+    "misconceptions": [
+      {
+        "id": "more_kneading_is_always_better",
+        "text": "Bread dough always needs long kneading."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "reads a formula in baker's percentages with the flour at 100 percent",
+        "explains hydration and what a 65 percent dough feels like next to an 80 percent one",
+        "explains what steam in the first minutes does to oven spring and to the crust"
+      ],
+      "apply": [
+        "mixes a 70 percent hydration dough and develops it with folds instead of long kneading",
+        "proofs to the dough rather than to the clock and checks it with the poke test",
+        "bakes with steam for the first fifteen minutes, then dry to set the crust"
+      ],
+      "discriminate": [
+        "separates under proofed dough from over proofed dough by crumb and by spring",
+        "separates a hydration problem from a development problem",
+        "separates commercial yeast from a levain in timing and in flavour"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 5,
+      "apply": 9,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "bread-and-doughs",
+      "security": "bread-basics"
+    }
+  },
+  {
+    "id": "nema:pastry-basics",
+    "title": "Pastry basics",
+    "summary": "The pastry disciplines that reward weighing and cold hands: 3:2:1 shortcrust, laminated dough, and custards that set at a temperature.",
+    "prereqs": [
+      "nema:ratios",
+      "nema:temperature-control"
+    ],
+    "confusableWith": [
+      "nema:bread-basics"
+    ],
+    "misconceptions": [
+      {
+        "id": "pastry_can_be_improvised_like_savoury",
+        "text": "You can adjust pastry by feel the way you adjust a sauce."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states the 3:2:1 shortcrust ratio by weight, flour to fat to water",
+        "explains why cold fat gives a flaky texture where warm fat gives a sandy one",
+        "explains why a creme anglaise sets in a narrow window around 82 to 84 C"
+      ],
+      "apply": [
+        "makes a shortcrust with cold butter and rests it before rolling and again before baking",
+        "cooks a creme anglaise to 82 to 84 C and strains it straight into a cold bowl",
+        "blind bakes with weight until the base is set and coloured before the filling goes in"
+      ],
+      "discriminate": [
+        "separates a tough crust from a sandy one and names the cause of each",
+        "separates a custard that curdled from one that never set",
+        "separates a chemical leavener from a mechanical one"
+      ]
+    },
+    "minutes": {
+      "retrieve": 5,
+      "explain": 5,
+      "apply": 8,
+      "discriminate": 4
+    },
+    "aliases": {
+      "harness": "pastry-fundamentals",
+      "security": "pastry-basics"
+    }
+  },
+  {
+    "id": "nema:block-ciphers",
+    "title": "Block ciphers",
+    "summary": "A keyed, reversible permutation on one fixed size block, such as AES on 128 bits, which says nothing about longer messages and authenticates nothing.",
+    "prereqs": [],
+    "confusableWith": [
+      "nema:counter-mode",
+      "nema:authenticated-encryption"
+    ],
+    "misconceptions": [
+      {
+        "id": "decrypting_cleanly_proves_the_key_was_used",
+        "text": "If a ciphertext decrypts without error, it must have been encrypted with my key."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states that the cipher maps one fixed size block to another under a key and back again",
+        "says that the map is bijective, so every block is a valid ciphertext for some plaintext",
+        "separates the primitive from a mode of operation, which is what handles longer messages"
+      ],
+      "apply": [
+        "encrypts and decrypts a single block with a chosen key and predicts the output length",
+        "picks a mode of operation rather than calling the raw primitive on a long message",
+        "refuses to treat a successful decryption as proof of origin"
+      ],
+      "discriminate": [
+        "separates the block cipher from the mode that uses it",
+        "separates confidentiality from integrity and names which one the primitive gives",
+        "gives one case where a tampered ciphertext still decrypts to something"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "aesgcm": "aes"
+    }
+  },
+  {
+    "id": "nema:counter-mode",
+    "title": "Counter mode",
+    "summary": "Turning a block cipher into a stream cipher by encrypting a counter block per position and XORing the result with the plaintext, so the keystream, not the cipher, does the encrypting.",
+    "prereqs": [
+      "nema:block-ciphers"
+    ],
+    "encompasses": {
+      "nema:block-ciphers": 0.7
+    },
+    "confusableWith": [
+      "nema:block-ciphers"
+    ],
+    "misconceptions": [
+      {
+        "id": "the_plaintext_goes_through_the_block_cipher",
+        "text": "In counter mode the plaintext blocks are the input to the block cipher."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "describes the counter block, its increment, and the keystream it produces",
+        "states that encryption is the XOR of plaintext and keystream, and that XOR is its own inverse",
+        "explains why the counter block must differ per message, which is what the nonce is for"
+      ],
+      "apply": [
+        "derives the plaintext of a second message from a known plaintext and ciphertext pair under a repeated keystream",
+        "computes a keystream block from the counter and the key",
+        "chooses a fresh nonce per message under one key"
+      ],
+      "discriminate": [
+        "separates the keystream from the ciphertext and from the block cipher output",
+        "separates a repeated key, which is fine, from a repeated keystream, which is not",
+        "gives one case where counter mode keeps a message secret and still lets it be altered"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 5,
+      "apply": 7,
+      "discriminate": 4
+    },
+    "aliases": {
+      "aesgcm": "ctr-keystream"
+    }
+  },
+  {
+    "id": "nema:galois-field-arithmetic",
+    "title": "Galois field arithmetic",
+    "summary": "Addition and multiplication in a finite field such as GF(2^128), where addition is XOR and multiplication is polynomial multiplication reduced by a fixed irreducible polynomial.",
+    "prereqs": [],
+    "confusableWith": [],
+    "misconceptions": [
+      {
+        "id": "field_multiplication_is_integer_multiplication",
+        "text": "Multiplying two field elements is the same as multiplying the two 128-bit integers."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states that the field has a finite number of elements and that addition is the XOR of the two elements",
+        "describes multiplication as polynomial multiplication followed by reduction modulo a fixed polynomial",
+        "says why a 128-bit block can be read as an element of GF(2^128)"
+      ],
+      "apply": [
+        "adds two 128-bit elements by XOR and predicts the result",
+        "multiplies two small elements and reduces the product by the field polynomial",
+        "reads a polynomial equation over the field as an ordinary equation in one unknown"
+      ],
+      "discriminate": [
+        "separates field addition from integer addition with carries",
+        "separates the reduction polynomial from the elements being multiplied",
+        "gives one case where the field result differs from the integer result"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 6,
+      "apply": 9,
+      "discriminate": 4
+    },
+    "aliases": {
+      "aesgcm": "gf2-128"
+    }
+  },
+  {
+    "id": "nema:message-authentication",
+    "title": "Message authentication",
+    "summary": "A short tag computed with a secret key over a message, so a recipient can tell that the message came from a key holder and was not altered on the way.",
+    "prereqs": [
+      "nema:block-ciphers"
+    ],
+    "confusableWith": [
+      "nema:authenticated-encryption"
+    ],
+    "misconceptions": [
+      {
+        "id": "encryption_implies_integrity",
+        "text": "If a message is encrypted, nobody can change it without me noticing."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states what a tag proves: origin among the key holders, and that the bytes are unaltered",
+        "says that the tag is keyed, so an attacker without the key cannot recompute it",
+        "explains why a hash with no key is not a message authentication tag"
+      ],
+      "apply": [
+        "verifies a tag before using the message it covers",
+        "authenticates the associated data as well as the ciphertext when the format carries both",
+        "rejects a message whose tag does not check, rather than reading it first"
+      ],
+      "discriminate": [
+        "separates authentication, which detects change, from encryption, which hides content",
+        "separates an unkeyed hash from a keyed tag",
+        "gives one case where a ciphertext is secret and still forgeable"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 5,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "aesgcm": "ghash"
+    }
+  },
+  {
+    "id": "nema:authenticated-encryption",
+    "title": "Authenticated encryption",
+    "summary": "One construction that both hides a message and authenticates it, usually with associated data left in the clear, so a recipient gets secrecy and integrity from a single key.",
+    "prereqs": [
+      "nema:counter-mode",
+      "nema:message-authentication"
+    ],
+    "encompasses": {
+      "nema:counter-mode": 0.8,
+      "nema:message-authentication": 0.8
+    },
+    "confusableWith": [
+      "nema:message-authentication",
+      "nema:block-ciphers"
+    ],
+    "misconceptions": [
+      {
+        "id": "aead_is_just_encryption_plus_a_hash",
+        "text": "Authenticated encryption is encryption with a hash of the plaintext appended."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names the two guarantees, secrecy and integrity, and says which part of the construction gives each",
+        "explains what associated data is and why it is authenticated but not encrypted",
+        "states that the tag is checked before the plaintext is used"
+      ],
+      "apply": [
+        "encrypts with a fresh nonce and transmits nonce, ciphertext and tag together",
+        "puts routing or header data in the associated data instead of leaving it unauthenticated",
+        "treats a failed tag check as a hard error"
+      ],
+      "discriminate": [
+        "separates authenticated encryption from a bare mode of operation with no tag",
+        "separates the tag from the ciphertext and says what each one protects",
+        "gives one case where a scheme keeps a message secret and still accepts a forgery"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 5,
+      "apply": 7,
+      "discriminate": 5
+    },
+    "aliases": {
+      "aesgcm": "aes-gcm"
+    }
+  },
+  {
+    "id": "nema:nonce-misuse",
+    "title": "Nonce misuse",
+    "summary": "What a repeated nonce costs. Under one key a reused nonce repeats the keystream and, in a polynomial tag scheme, exposes the hash key, so both secrecy and forgery resistance are lost.",
+    "prereqs": [
+      "nema:authenticated-encryption",
+      "nema:galois-field-arithmetic"
+    ],
+    "encompasses": {
+      "nema:authenticated-encryption": 0.8
+    },
+    "confusableWith": [
+      "nema:counter-mode"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_nonce_only_needs_to_be_secret",
+        "text": "A nonce is safe as long as an attacker cannot guess it."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "states that a nonce must be unique under a key, and that secrecy and randomness are not what makes it safe",
+        "explains why a repeated keystream lets one known plaintext reveal another message",
+        "explains why the per nonce value cancels between two tags and leaves an equation in the hash key"
+      ],
+      "apply": [
+        "recovers a second plaintext from a known pair encrypted under the same key and nonce",
+        "builds the polynomial from two tags and their blocks and solves it for the hash key",
+        "chooses a nonce strategy, counter or random with a size argument, that cannot repeat under one key"
+      ],
+      "discriminate": [
+        "separates a repeated nonce from a repeated key",
+        "separates the loss of secrecy from the loss of forgery resistance and says how each one happens",
+        "gives one case where a nonce is unpredictable and still unsafe because it repeats"
+      ]
+    },
+    "minutes": {
+      "retrieve": 4,
+      "explain": 6,
+      "apply": 10,
+      "discriminate": 5
+    },
+    "aliases": {
+      "aesgcm": "nonce-reuse"
+    }
+  },
+  {
+    "id": "nema:cpu-architecture",
+    "title": "CPU and RAM",
+    "summary": "The division of labour a computer is built on: RAM holds the machine code and the data, and the CPU fetches instructions from it and executes them, keeping a little state in registers.",
+    "prereqs": [],
+    "confusableWith": [
+      "nema:instruction-sets",
+      "nema:fetch-execute-cycle"
+    ],
+    "misconceptions": [
+      {
+        "id": "the_cpu_runs_code_straight_from_disk",
+        "text": "The processor reads a program off the disk and runs it from there."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "says that machine code has to be in RAM before the CPU can run it",
+        "names registers as the small, very fast storage the CPU keeps its own state in",
+        "separates an opcode and its operands from the assembly text a human reads"
+      ],
+      "apply": [
+        "points at where a running program and the kernel both live at once",
+        "reads a short assembly listing and says which bytes are the opcode",
+        "names the register that holds the address of the next instruction"
+      ],
+      "discriminate": [
+        "separates RAM from a disk and says which one the CPU can fetch from",
+        "separates a register from a memory address",
+        "separates machine code from the assembly written to stand for it"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 4,
+      "apply": 5,
+      "discriminate": 4
+    },
+    "aliases": {
+      "cpu": "cpu-architecture"
+    }
+  },
+  {
+    "id": "nema:fetch-execute-cycle",
+    "title": "Fetch-execute cycle",
+    "summary": "The loop the processor never leaves: read the instruction the pointer names, execute it, move the pointer, repeat, with no notion of programs or of an operating system.",
+    "prereqs": [
+      "nema:cpu-architecture"
+    ],
+    "encompasses": {
+      "nema:cpu-architecture": 0.7
+    },
+    "confusableWith": [
+      "nema:cpu-architecture"
+    ],
+    "misconceptions": [
+      {
+        "id": "the_cpu_keeps_track_of_processes",
+        "text": "The processor knows which processes are running and switches between them itself."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "describes fetch, execute and the move of the instruction pointer as one repeating loop",
+        "says that a jump is nothing but a write to the instruction pointer",
+        "states that a process is an operating system abstraction the CPU never sees"
+      ],
+      "apply": [
+        "traces a short sequence of instructions and says where the pointer is after each",
+        "explains a conditional branch as a choice of what to put in the pointer",
+        "says what has to happen for the processor to start running a program that was just loaded"
+      ],
+      "discriminate": [
+        "separates what the CPU tracks from what the kernel tracks",
+        "separates sequential execution from the illusion of several programs at once",
+        "separates a jump instruction from a call into the operating system"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 4,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "cpu": "fetch-execute"
+    }
+  },
+  {
+    "id": "nema:privilege-rings",
+    "title": "Privilege rings",
+    "summary": "The mode a processor runs in, kernel or user, which decides what instructions and what memory the running code is allowed to touch, held in a register the code cannot raise on its own.",
+    "prereqs": [
+      "nema:fetch-execute-cycle"
+    ],
+    "confusableWith": [
+      "nema:system-calls"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_program_can_raise_its_own_privilege",
+        "text": "A program that needs more access can switch itself into kernel mode."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "names kernel mode and user mode and what each one may do",
+        "says that the mode is held in a processor register, on x86-64 the low bits of cs",
+        "states that the processor starts in kernel mode and the kernel drops to user mode to run a program"
+      ],
+      "apply": [
+        "reads a privilege level out of a given cs value",
+        "says which ring the kernel, a driver and an application run in",
+        "names one instruction a user mode program is not allowed to execute"
+      ],
+      "discriminate": [
+        "separates the mode the processor is in from the request a program makes to cross it",
+        "separates the four architectural rings from the two that are actually used",
+        "separates a privilege level from a memory permission"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 4,
+      "apply": 5,
+      "discriminate": 4
+    },
+    "aliases": {
+      "cpu": "rings"
+    }
+  },
+  {
+    "id": "nema:interrupts",
+    "title": "Interrupts",
+    "summary": "A numbered entry into code the kernel registered in advance: the processor looks the number up in a vector table, switches mode and jumps there, and returns to where it was when the handler is done.",
+    "prereqs": [
+      "nema:fetch-execute-cycle"
+    ],
+    "confusableWith": [
+      "nema:system-calls"
+    ],
+    "misconceptions": [
+      {
+        "id": "an_interrupt_jumps_wherever_the_caller_says",
+        "text": "The code that raises an interrupt chooses the address the processor jumps to."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "describes the interrupt vector table as a map from interrupt numbers to handler pointers",
+        "says the table is registered with the CPU at boot and can only be written from kernel mode",
+        "names the pair of instructions that enter a handler and return from it"
+      ],
+      "apply": [
+        "follows one interrupt from the instruction that raises it to the handler and back",
+        "says what the processor does with the instruction pointer on the way in and on the way out",
+        "names where the caller has to put data the handler will need"
+      ],
+      "discriminate": [
+        "separates a software interrupt raised by an instruction from a hardware one raised by a device",
+        "separates the interrupt mechanism from the system call built on top of it",
+        "separates an interrupt from an ordinary jump or call"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 5,
+      "apply": 6,
+      "discriminate": 4
+    },
+    "aliases": {
+      "cpu": "interrupt"
+    }
+  },
+  {
+    "id": "nema:system-calls",
+    "title": "System calls",
+    "summary": "The standard way a user mode program asks the kernel to act for it: arguments go in registers, an instruction hands control to code the kernel chose, and the kernel returns to user mode with an answer.",
+    "prereqs": [
+      "nema:privilege-rings",
+      "nema:interrupts"
+    ],
+    "encompasses": {
+      "nema:privilege-rings": 0.8,
+      "nema:interrupts": 0.7
+    },
+    "confusableWith": [
+      "nema:privilege-rings",
+      "nema:interrupts"
+    ],
+    "misconceptions": [
+      {
+        "id": "programs_call_the_kernel_like_a_function",
+        "text": "A system call is an ordinary function call into kernel code: the program jumps into the kernel the way it jumps into a library function."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "says that a system call is a controlled transition from user space into kernel code, not a jump the program chooses",
+        "names the mechanism underneath, a software interrupt or a dedicated instruction, and how arguments are passed",
+        "explains that libc and ntdll wrap that mechanism, and that calling the wrapper is still an ordinary function call"
+      ],
+      "apply": [
+        "traces one call such as open or exit from the library function down to the mode switch and back",
+        "names where the call number and the arguments are placed before control is handed over",
+        "says why the same C program works on two machines whose syscall mechanisms differ"
+      ],
+      "discriminate": [
+        "separates a library call, which stays in user mode, from the system call inside it",
+        "separates the request a program makes from the privilege level it runs at",
+        "separates the syscall interface from the interrupt mechanism that carries it"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 5,
+      "apply": 7,
+      "discriminate": 5
+    },
+    "aliases": {
+      "cpu": "syscall"
+    }
+  },
+  {
+    "id": "nema:instruction-sets",
+    "title": "Instruction sets",
+    "summary": "What a processor architecture offers as instructions, and the CISC and RISC habits behind that choice: many specialised instructions on one side, a small uniform set on the other.",
+    "prereqs": [
+      "nema:cpu-architecture"
+    ],
+    "confusableWith": [
+      "nema:cpu-architecture"
+    ],
+    "misconceptions": [
+      {
+        "id": "a_dedicated_instruction_changes_what_happens",
+        "text": "A dedicated system call instruction does something different from an interrupt, not the same thing faster."
+      }
+    ],
+    "rubric": {
+      "explain": [
+        "says what an instruction set is and that machine code is written against one architecture",
+        "contrasts the CISC habit of adding specialised instructions with the RISC habit of keeping few",
+        "gives the system call instructions as an example of a common operation given its own opcode"
+      ],
+      "apply": [
+        "names which instruction a 64-bit program on x86-64 would use for a system call and why",
+        "says what an AArch64 program uses instead",
+        "explains why a binary built for one architecture does not run on another"
+      ],
+      "discriminate": [
+        "separates the instruction set from the microarchitecture that implements it",
+        "separates a faster path to the kernel from a different privilege outcome",
+        "separates assembly, which is text, from the encoding an architecture defines"
+      ]
+    },
+    "minutes": {
+      "retrieve": 3,
+      "explain": 4,
+      "apply": 5,
+      "discriminate": 4
+    },
+    "aliases": {
+      "cpu": "cisc-risc"
+    }
+  }
+]

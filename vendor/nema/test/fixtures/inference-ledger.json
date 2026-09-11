@@ -1,0 +1,437 @@
+{
+  "now": "2026-09-01T12:00:00Z",
+  "receipts": [
+    {
+      "receiptId": "rcpt_emulsion_lab",
+      "status": "verified",
+      "receivedAt": "2026-08-31T10:02:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_emulsion_lab",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "fix-the-broken-sauce",
+          "version": "1.0.0",
+          "title": "Fix the broken sauce",
+          "contentHash": "sha256:fixture-fix-the-broken-sauce"
+        },
+        "claims": [
+          {
+            "concept": "nema:emulsions",
+            "ability": "apply",
+            "evidenceType": "application",
+            "result": "passed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 2,
+          "hintsUsed": 1,
+          "durationSeconds": 641,
+          "grader": "deterministic",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-31T10:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_mise_read_1",
+      "status": "verified",
+      "receivedAt": "2026-08-27T08:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_mise_read_1",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "station-primer",
+          "version": "1.0.0",
+          "title": "What a set station buys you",
+          "contentHash": "sha256:fixture-station-primer"
+        },
+        "claims": [
+          {
+            "concept": "nema:mise-en-place",
+            "ability": "recognize",
+            "evidenceType": "recognition",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 300,
+          "grader": "exposure",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-27T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_mise_read_2",
+      "status": "verified",
+      "receivedAt": "2026-08-28T08:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_mise_read_2",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "prep-list-order",
+          "version": "1.0.0",
+          "title": "Ordering a prep list",
+          "contentHash": "sha256:fixture-prep-list-order"
+        },
+        "claims": [
+          {
+            "concept": "nema:mise-en-place",
+            "ability": "recognize",
+            "evidenceType": "recognition",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 280,
+          "grader": "exposure",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-28T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_mise_read_3",
+      "status": "verified",
+      "receivedAt": "2026-08-29T08:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_mise_read_3",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "station-layout",
+          "version": "1.0.0",
+          "title": "A layout that follows the fire",
+          "contentHash": "sha256:fixture-station-layout"
+        },
+        "claims": [
+          {
+            "concept": "nema:mise-en-place",
+            "ability": "recognize",
+            "evidenceType": "recognition",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 310,
+          "grader": "exposure",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-29T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_mise_read_4",
+      "status": "verified",
+      "receivedAt": "2026-08-30T08:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_mise_read_4",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "lists-are-not-enough",
+          "version": "1.0.0",
+          "title": "A prep list is not a station",
+          "contentHash": "sha256:fixture-lists-are-not-enough"
+        },
+        "claims": [
+          {
+            "concept": "nema:mise-en-place",
+            "ability": "recognize",
+            "evidenceType": "recognition",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 295,
+          "grader": "exposure",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-30T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_mise_read_5",
+      "status": "verified",
+      "receivedAt": "2026-08-31T08:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_mise_read_5",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "station-reset",
+          "version": "1.0.0",
+          "title": "Resetting between courses",
+          "contentHash": "sha256:fixture-station-reset"
+        },
+        "claims": [
+          {
+            "concept": "nema:mise-en-place",
+            "ability": "recognize",
+            "evidenceType": "recognition",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 330,
+          "grader": "exposure",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-31T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_knife_primer",
+      "status": "verified",
+      "receivedAt": "2026-08-10T09:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_knife_primer",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "knife-cuts-primer",
+          "version": "1.0.0",
+          "title": "Cuts that hold their size",
+          "contentHash": "sha256:fixture-knife-cuts-primer"
+        },
+        "claims": [
+          {
+            "concept": "nema:knife-skills",
+            "ability": "apply",
+            "evidenceType": "application",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 420,
+          "grader": "provider-rubric",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-10T09:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_knife_drill",
+      "status": "verified",
+      "receivedAt": "2026-08-20T09:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_knife_drill",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "knife-cuts-drill",
+          "version": "1.0.0",
+          "title": "Brunoise against the clock",
+          "contentHash": "sha256:fixture-knife-cuts-drill"
+        },
+        "claims": [
+          {
+            "concept": "nema:knife-skills",
+            "ability": "apply",
+            "evidenceType": "application",
+            "result": "passed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 360,
+          "grader": "provider-rubric",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-20T09:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_knife_retest",
+      "status": "verified",
+      "receivedAt": "2026-08-28T09:05:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_knife_retest",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "knife-cuts-diagnostic",
+          "version": "1.0.0",
+          "title": "Julienne to size, measured",
+          "contentHash": "sha256:fixture-knife-cuts-diagnostic"
+        },
+        "claims": [
+          {
+            "concept": "nema:knife-skills",
+            "ability": "apply",
+            "evidenceType": "application",
+            "result": "failed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 2,
+          "hintsUsed": 0,
+          "durationSeconds": 210,
+          "grader": "deterministic",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-28T09:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_agent_stocks",
+      "status": "agent",
+      "receivedAt": "2026-08-30T18:01:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_agent_stocks",
+        "issuer": "urn:nema:agent",
+        "keyId": "agent",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "need_stocks_explain",
+          "version": "1.0.0",
+          "title": "Agent assessed recall",
+          "contentHash": "sha256:fixture-agent-assessment"
+        },
+        "claims": [
+          {
+            "concept": "nema:stocks",
+            "ability": "explain",
+            "evidenceType": "explanation",
+            "result": "passed",
+            "difficulty": "intermediate"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 180,
+          "grader": "agent-assessed",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-30T18:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_self_plating",
+      "status": "verified",
+      "receivedAt": "2026-08-29T08:01:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_self_plating",
+        "issuer": "https://saucier.example",
+        "keyId": "saucier-2026-09",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "plating-checkin",
+          "version": "1.0.0",
+          "title": "Self report: plating",
+          "contentHash": "sha256:fixture-plating-checkin"
+        },
+        "claims": [
+          {
+            "concept": "nema:plating",
+            "ability": "explain",
+            "evidenceType": "explanation",
+            "result": "passed",
+            "difficulty": "introductory"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 90,
+          "grader": "self-report",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-29T08:00:00Z"
+      }
+    },
+    {
+      "receiptId": "rcpt_unknown_issuer",
+      "status": "pending",
+      "receivedAt": "2026-08-31T20:00:00Z",
+      "payload": {
+        "type": "evidence-receipt",
+        "protocol": "nema/0.1",
+        "receiptId": "rcpt_unknown_issuer",
+        "issuer": "https://not-trusted.example",
+        "keyId": "stranger-2026-01",
+        "subject": "lk_fixture",
+        "activity": {
+          "id": "pass-calls-masterclass",
+          "version": "1.0.0",
+          "title": "Pass calls masterclass",
+          "contentHash": "sha256:fixture-memory-design"
+        },
+        "claims": [
+          {
+            "concept": "nema:kitchen-communication",
+            "ability": "transfer",
+            "evidenceType": "transfer",
+            "result": "passed",
+            "difficulty": "advanced"
+          }
+        ],
+        "conditions": {
+          "attempts": 1,
+          "hintsUsed": 0,
+          "durationSeconds": 900,
+          "grader": "deterministic",
+          "graderVersion": "1"
+        },
+        "issuedAt": "2026-08-31T19:00:00Z"
+      }
+    }
+  ]
+}

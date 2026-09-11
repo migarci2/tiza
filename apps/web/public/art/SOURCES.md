@@ -1,0 +1,9 @@
+# Original Tiza illustrations
+
+- `tiza-goal.png`: generated with the built-in image generator on 11 September 2026. Yuvo's `yuvo-idea-minimal.webp` was supplied as a style reference. New content: adult tutor, oversized blue pencil and a three-quarter yellow / one-quarter blue fraction diagram. Palette: paper #fffdf8, navy #252b38, blue #0866e6, yellow #ffda45, coral and mint. The generated scene guided the landing's code implementation.
+- `tiza-practice.png`: generated with GPT Image through the built-in imagegen tool on 11 September 2026, using `tiza-goal.png` as the style reference. Minimal adult learner seated on a mint stool with a large fraction notebook, plain blue shirt and navy trousers. Revised to match the first illustration: smooth hair, dot eyes and simple rounded hands. Replaces the earlier hand-authored SVG.
+- `tiza-return.png`: generated with GPT Image through the built-in imagegen tool on 11 September 2026, using `tiza-goal.png` and `tiza-practice.png` as references. The tutor and adult learner sit on mint stools and review one large open fraction workbook. Revised with smooth silhouettes, dot eyes, rounded hands and a single backing circle. Replaces the earlier hand-authored SVG.
+
+Prompt direction for both replacements: original editorial cut-paper illustration, large rounded shapes and minimal facial detail; warm ivory #fffdf8, blue #0866e6, yellow #ffda45, navy #252b38, coral #ff927b and mint #73c6a8; wide 3:2 composition with complete figures and generous margins; mitten-shaped hands without individual fingers, smooth hair silhouettes, plain clothes and dot eyes; no lettering, logos or watermark. Reference images establish the characters and visual family, not a scene to copy.
+
+Yuvo was read as a local visual reference. Its application and brand assets were not modified or imported into Tiza. The remaining compact figures belong to the Tiza illustrations above.

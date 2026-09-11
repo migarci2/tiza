@@ -1,0 +1,36 @@
+[project]
+name = "tiza"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "alembic>=1.16,<2",
+  "celery[redis]>=5.5,<6",
+  "cryptography>=45,<47",
+  "fastapi>=0.116,<1",
+  "httpx>=0.28,<1",
+  "pydantic-settings>=2.10,<3",
+  "pyjwt[crypto]>=2.10,<3",
+  "pypdf>=6,<7",
+  "psycopg[binary]>=3.2,<4",
+  "python-multipart>=0.0.20,<1",
+  "sqlalchemy>=2.0.43,<3",
+  "strands-agents>=1.7,<2",
+  "uvicorn[standard]>=0.35,<1",
+]
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["apps/backend"]
+
+[dependency-groups]
+dev = ["hypothesis>=6.138,<7", "pytest>=8.4,<9"]
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/backend"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

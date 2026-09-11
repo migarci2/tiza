@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.hypothesis/
+node_modules/
+dist/
+data/
+*.pem
+*.key
+test-results/
+playwright-report/
+.DS_Store
+*.tsbuildinfo
+*.egg-info/

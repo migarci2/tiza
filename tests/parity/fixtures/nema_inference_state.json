@@ -1,0 +1,307 @@
+{
+  "source_commit": "6f630aff03f20e74b55406bc13b2b36433dc491b",
+  "now": "2026-09-01T12:00:00Z",
+  "state": {
+    "nema:emulsions": {
+      "recognize": {
+        "band": "usable",
+        "score": 0.9821,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.9821,
+        "lastSuccess": "2026-08-31T10:00:00.000Z",
+        "lastGradedPass": "2026-08-31T10:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-03T10:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_emulsion_lab"
+        ]
+      },
+      "retrieve": {
+        "band": "usable",
+        "score": 0.9821,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.9821,
+        "lastSuccess": "2026-08-31T10:00:00.000Z",
+        "lastGradedPass": "2026-08-31T10:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-03T10:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_emulsion_lab"
+        ]
+      },
+      "explain": {
+        "band": "usable",
+        "score": 0.9821,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.9821,
+        "lastSuccess": "2026-08-31T10:00:00.000Z",
+        "lastGradedPass": "2026-08-31T10:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-03T10:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_emulsion_lab"
+        ]
+      },
+      "apply": {
+        "band": "usable",
+        "score": 0.9821,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.9821,
+        "lastSuccess": "2026-08-31T10:00:00.000Z",
+        "lastGradedPass": "2026-08-31T10:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-03T10:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_emulsion_lab"
+        ]
+      }
+    },
+    "nema:knife-skills": {
+      "recognize": {
+        "band": "fragile",
+        "score": 0.7401,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.2069,
+        "lastSuccess": "2026-08-20T09:00:00.000Z",
+        "lastGradedPass": "2026-08-20T09:00:00.000Z",
+        "lastFailure": "2026-08-28T09:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-08-23T09:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_knife_primer",
+          "rcpt_knife_drill",
+          "rcpt_knife_retest"
+        ]
+      },
+      "retrieve": {
+        "band": "fragile",
+        "score": 0.7401,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.2069,
+        "lastSuccess": "2026-08-20T09:00:00.000Z",
+        "lastGradedPass": "2026-08-20T09:00:00.000Z",
+        "lastFailure": "2026-08-28T09:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-08-23T09:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_knife_primer",
+          "rcpt_knife_drill",
+          "rcpt_knife_retest"
+        ]
+      },
+      "explain": {
+        "band": "fragile",
+        "score": 0.7401,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.2069,
+        "lastSuccess": "2026-08-20T09:00:00.000Z",
+        "lastGradedPass": "2026-08-20T09:00:00.000Z",
+        "lastFailure": "2026-08-28T09:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-08-23T09:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_knife_primer",
+          "rcpt_knife_drill",
+          "rcpt_knife_retest"
+        ]
+      },
+      "apply": {
+        "band": "fragile",
+        "score": 0.7401,
+        "confidence": "medium",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.2069,
+        "lastSuccess": "2026-08-20T09:00:00.000Z",
+        "lastGradedPass": "2026-08-20T09:00:00.000Z",
+        "lastFailure": "2026-08-28T09:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-08-23T09:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_knife_primer",
+          "rcpt_knife_drill",
+          "rcpt_knife_retest"
+        ]
+      }
+    },
+    "nema:mise-en-place": {
+      "recognize": {
+        "band": "uncertain",
+        "score": 0.4744,
+        "confidence": "low",
+        "graderWeight": 0.1,
+        "passes": 0,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": null,
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": null,
+        "nextReview": null,
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_mise_read_1",
+          "rcpt_mise_read_2",
+          "rcpt_mise_read_3",
+          "rcpt_mise_read_4",
+          "rcpt_mise_read_5"
+        ]
+      }
+    },
+    "nema:plating": {
+      "recognize": {
+        "band": "uncertain",
+        "score": 0.2846,
+        "confidence": "low",
+        "graderWeight": 0.3,
+        "passes": 1,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": "2026-08-29T08:00:00.000Z",
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-01T08:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_self_plating"
+        ]
+      },
+      "retrieve": {
+        "band": "uncertain",
+        "score": 0.2846,
+        "confidence": "low",
+        "graderWeight": 0.3,
+        "passes": 1,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": "2026-08-29T08:00:00.000Z",
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-01T08:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_self_plating"
+        ]
+      },
+      "explain": {
+        "band": "uncertain",
+        "score": 0.2846,
+        "confidence": "low",
+        "graderWeight": 0.3,
+        "passes": 1,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": "2026-08-29T08:00:00.000Z",
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-01T08:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "rcpt_self_plating"
+        ]
+      }
+    },
+    "nema:stocks": {
+      "recognize": {
+        "band": "fragile",
+        "score": 0.5828,
+        "confidence": "low",
+        "graderWeight": 0.6,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.5828,
+        "lastSuccess": "2026-08-30T18:00:00.000Z",
+        "lastGradedPass": "2026-08-30T18:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-02T18:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_agent_stocks"
+        ]
+      },
+      "retrieve": {
+        "band": "fragile",
+        "score": 0.5828,
+        "confidence": "low",
+        "graderWeight": 0.6,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.5828,
+        "lastSuccess": "2026-08-30T18:00:00.000Z",
+        "lastGradedPass": "2026-08-30T18:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-02T18:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_agent_stocks"
+        ]
+      },
+      "explain": {
+        "band": "fragile",
+        "score": 0.5828,
+        "confidence": "low",
+        "graderWeight": 0.6,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.5828,
+        "lastSuccess": "2026-08-30T18:00:00.000Z",
+        "lastGradedPass": "2026-08-30T18:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-02T18:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "rcpt_agent_stocks"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "concepts": 5,
+    "durable": 0,
+    "usable": 1,
+    "fragile": 2,
+    "uncertain": 2,
+    "unknown": 0,
+    "reviewsDue": 2
+  }
+}

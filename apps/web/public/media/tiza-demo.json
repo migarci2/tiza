@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-09-11T08:00:46.630Z",
+  "synthetic": true,
+  "cursor_visible": true,
+  "cursor_style": "macos",
+  "agent_trace_illustrated": true,
+  "illustrated_tools": [
+    "read_cycle_context",
+    "select_validated_exercises",
+    "save_assignment_draft",
+    "request_teacher_review"
+  ],
+  "mode": "deterministic_demo",
+  "model_invoked": false,
+  "model": null,
+  "tools": [],
+  "operations": [
+    "evidence_and_policy_evaluated",
+    "validated_bank_selected",
+    "drafts_saved_for_review"
+  ],
+  "cycle_id": "f4390d12-9177-4747-9d1c-d9ea5abe1b08",
+  "note": "Real synthetic app flow with an illustrated agent tool sequence injected only in the recording browser. No model invocation or simulated trace is persisted."
+}

@@ -1,0 +1,275 @@
+{
+  "source_commit": "6f630aff03f20e74b55406bc13b2b36433dc491b",
+  "generator": "vendor/nema/shared/inference.js deriveState + summarize",
+  "state": {
+    "edge:failure": {
+      "recognize": {
+        "band": "fragile",
+        "score": 0.4283,
+        "confidence": "low",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.92,
+        "lastSuccess": "2026-09-05T12:00:00.000Z",
+        "lastGradedPass": "2026-09-05T12:00:00.000Z",
+        "lastFailure": "2026-09-09T12:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-09-08T12:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "pass-before-failure",
+          "failure-after-pass"
+        ]
+      },
+      "retrieve": {
+        "band": "fragile",
+        "score": 0.4283,
+        "confidence": "low",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.92,
+        "lastSuccess": "2026-09-05T12:00:00.000Z",
+        "lastGradedPass": "2026-09-05T12:00:00.000Z",
+        "lastFailure": "2026-09-09T12:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-09-08T12:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "pass-before-failure",
+          "failure-after-pass"
+        ]
+      },
+      "explain": {
+        "band": "fragile",
+        "score": 0.4283,
+        "confidence": "low",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.92,
+        "lastSuccess": "2026-09-05T12:00:00.000Z",
+        "lastGradedPass": "2026-09-05T12:00:00.000Z",
+        "lastFailure": "2026-09-09T12:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-09-08T12:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "pass-before-failure",
+          "failure-after-pass"
+        ]
+      },
+      "apply": {
+        "band": "fragile",
+        "score": 0.4283,
+        "confidence": "low",
+        "graderWeight": 1,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.92,
+        "lastSuccess": "2026-09-05T12:00:00.000Z",
+        "lastGradedPass": "2026-09-05T12:00:00.000Z",
+        "lastFailure": "2026-09-09T12:00:00.000Z",
+        "stabilityDays": 3,
+        "nextReview": "2026-09-08T12:00:00.000Z",
+        "reviewDue": true,
+        "evidenceRefs": [
+          "pass-before-failure",
+          "failure-after-pass"
+        ]
+      }
+    },
+    "edge:future": {
+      "recognize": {
+        "band": "fragile",
+        "score": 0.6,
+        "confidence": "medium",
+        "graderWeight": 0.6,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.6,
+        "lastSuccess": "2026-09-12T12:00:00.000Z",
+        "lastGradedPass": "2026-09-12T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "future-is-clamped"
+        ]
+      },
+      "retrieve": {
+        "band": "fragile",
+        "score": 0.6,
+        "confidence": "medium",
+        "graderWeight": 0.6,
+        "passes": 1,
+        "gradedPasses": 1,
+        "gradedScore": 0.6,
+        "lastSuccess": "2026-09-12T12:00:00.000Z",
+        "lastGradedPass": "2026-09-12T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 3,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "future-is-clamped"
+        ]
+      }
+    },
+    "edge:helped": {
+      "recognize": {
+        "band": "uncertain",
+        "score": 0.3443,
+        "confidence": "low",
+        "graderWeight": 0.8,
+        "passes": 0,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": null,
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": null,
+        "nextReview": null,
+        "reviewDue": false,
+        "evidenceRefs": [
+          "helped-explanation"
+        ]
+      },
+      "retrieve": {
+        "band": "uncertain",
+        "score": 0.3443,
+        "confidence": "low",
+        "graderWeight": 0.8,
+        "passes": 0,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": null,
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": null,
+        "nextReview": null,
+        "reviewDue": false,
+        "evidenceRefs": [
+          "helped-explanation"
+        ]
+      },
+      "explain": {
+        "band": "uncertain",
+        "score": 0.3443,
+        "confidence": "low",
+        "graderWeight": 0.8,
+        "passes": 0,
+        "gradedPasses": 0,
+        "gradedScore": 0,
+        "lastSuccess": null,
+        "lastGradedPass": null,
+        "lastFailure": null,
+        "stabilityDays": null,
+        "nextReview": null,
+        "reviewDue": false,
+        "evidenceRefs": [
+          "helped-explanation"
+        ]
+      }
+    },
+    "edge:repetition": {
+      "recognize": {
+        "band": "durable",
+        "score": 1.9507,
+        "confidence": "high",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.9507,
+        "lastSuccess": "2026-09-09T12:00:00.000Z",
+        "lastGradedPass": "2026-09-09T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 6,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "repeat-one",
+          "repeat-two"
+        ]
+      },
+      "retrieve": {
+        "band": "durable",
+        "score": 1.9507,
+        "confidence": "high",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.9507,
+        "lastSuccess": "2026-09-09T12:00:00.000Z",
+        "lastGradedPass": "2026-09-09T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 6,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "repeat-one",
+          "repeat-two"
+        ]
+      },
+      "explain": {
+        "band": "durable",
+        "score": 1.9507,
+        "confidence": "high",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.9507,
+        "lastSuccess": "2026-09-09T12:00:00.000Z",
+        "lastGradedPass": "2026-09-09T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 6,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "repeat-one",
+          "repeat-two"
+        ]
+      },
+      "apply": {
+        "band": "durable",
+        "score": 1.9507,
+        "confidence": "high",
+        "graderWeight": 1,
+        "passes": 2,
+        "gradedPasses": 2,
+        "gradedScore": 1.9507,
+        "lastSuccess": "2026-09-09T12:00:00.000Z",
+        "lastGradedPass": "2026-09-09T12:00:00.000Z",
+        "lastFailure": null,
+        "stabilityDays": 6,
+        "nextReview": "2026-09-15T12:00:00.000Z",
+        "reviewDue": false,
+        "evidenceRefs": [
+          "repeat-one",
+          "repeat-two"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "concepts": 4,
+    "durable": 1,
+    "usable": 0,
+    "fragile": 2,
+    "uncertain": 1,
+    "unknown": 0,
+    "reviewsDue": 1
+  },
+  "emptyState": {},
+  "emptySummary": {
+    "concepts": 0,
+    "durable": 0,
+    "usable": 0,
+    "fragile": 0,
+    "uncertain": 0,
+    "unknown": 0,
+    "reviewsDue": 0
+  }
+}
