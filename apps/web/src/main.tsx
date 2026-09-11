@@ -962,7 +962,7 @@ function CreateCycle({
                 />
               </label>
               <label>
-                Practice budget
+                Practice budget (minutes)
                 <input
                   type="number"
                   min="5"

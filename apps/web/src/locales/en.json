@@ -26,7 +26,7 @@
   "cycle.setup": "Create a practice cycle",
   "cycle.objective": "What should learners be able to do next?",
   "cycle.deadline": "Closes at",
-  "cycle.budget": "Practice budget",
+  "cycle.budget": "Practice budget (minutes)",
   "cycle.material": "Lesson material",
   "cycle.confirm": "Confirm and prepare practice",
   "cycle.concepts": "Check the concepts before planning",
