@@ -1081,6 +1081,7 @@ function ReviewPage({
   });
   const [approval, setApproval] = useState<string | null>(null);
   const [closesAt, setClosesAt] = useState("");
+  const [budget, setBudget] = useState<number | null>(null);
   const change = useMutation({
       mutationFn: (
         items: Array<{
@@ -1115,14 +1116,23 @@ function ReviewPage({
     });
   const deadline = useMutation({
     mutationFn: () =>
-      api.updateCycleDeadline(
-        cycleId,
-        draft.data!.cycle.version,
-        new Date(closesAt).toISOString(),
-      ),
+      api.updateCycle(cycleId, draft.data!.cycle.version, {
+        closes_at: new Date(closesAt).toISOString(),
+      }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["draft", cycleId] });
       setApproval(null);
+    },
+  });
+  const practiceBudget = useMutation({
+    mutationFn: () =>
+      api.updateCycle(cycleId, draft.data!.cycle.version, {
+        budget_minutes: budget ?? draft.data!.cycle.budget_minutes,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["draft", cycleId] });
+      setApproval(null);
+      setBudget(null);
     },
   });
   if (
@@ -1185,7 +1195,7 @@ function ReviewPage({
         </section>
         <aside className="panel approval-panel">
           <h2>Review this version</h2>
-          <p>
+          <p className="approval-intro">
             Approval is tied to these learners and this exact version. Editing a
             path invalidates it.
           </p>
@@ -1193,49 +1203,80 @@ function ReviewPage({
             <b>{data.assignments.filter((a) => !a.excluded).length}</b>
             <span>learners included</span>
           </div>
-          <label className="deadline-edit">
-            Change closing time
-            <input
-              type="datetime-local"
-              value={closesAt}
-              onChange={(event) => setClosesAt(event.target.value)}
-            />
-          </label>
-          <button
-            className="text-action"
-            disabled={!closesAt || deadline.isPending}
-            onClick={() => deadline.mutate()}
-          >
-            Save deadline
-          </button>
+          <div className="review-settings">
+            <div className="review-setting">
+              <label className="deadline-edit">
+                Change closing time
+                <input
+                  type="datetime-local"
+                  value={closesAt}
+                  onChange={(event) => setClosesAt(event.target.value)}
+                />
+              </label>
+              <button
+                className="button secondary deadline-save"
+                disabled={!closesAt || deadline.isPending}
+                onClick={() => deadline.mutate()}
+              >
+                Save
+              </button>
+            </div>
+            <div className="review-setting">
+              <label className="deadline-edit">
+                Practice budget (minutes)
+                <input
+                  type="number"
+                  min="5"
+                  max="60"
+                  value={budget ?? data.cycle.budget_minutes}
+                  onChange={(event) => setBudget(Number(event.target.value))}
+                />
+              </label>
+              <button
+                className="button secondary deadline-save"
+                disabled={
+                  budget === null ||
+                  budget === data.cycle.budget_minutes ||
+                  practiceBudget.isPending
+                }
+                onClick={() => practiceBudget.mutate()}
+              >
+                Save
+              </button>
+            </div>
+          </div>
           {deadline.error && <ErrorText error={deadline.error} />}
+          {practiceBudget.error && <ErrorText error={practiceBudget.error} />}
           {approve.error && <ErrorText error={approve.error} />}{" "}
           {publish.error && <ErrorText error={publish.error} />}{" "}
-          {!approval ? (
-            <button
-              className="button primary full"
-              onClick={() => approve.mutate()}
-              disabled={
-                approve.isPending || !data.assignments.some((a) => !a.excluded)
-              }
-            >
-              {approve.isPending && <LoaderCircle className="spin" />}Approve
-              this version
-            </button>
-          ) : (
-            <button
-              className="button primary full"
-              onClick={() => publish.mutate()}
-              disabled={publish.isPending}
-            >
-              {publish.isPending && <LoaderCircle className="spin" />}Approve &
-              send
-            </button>
-          )}
-          <p className="tiny">
-            Delivery is reported after the provider accepts it. Publishing never
-            marks practice complete.
-          </p>
+          <div className="approval-footer">
+            {!approval ? (
+              <button
+                className="button primary full"
+                onClick={() => approve.mutate()}
+                disabled={
+                  approve.isPending ||
+                  !data.assignments.some((a) => !a.excluded)
+                }
+              >
+                {approve.isPending && <LoaderCircle className="spin" />}Approve
+                this version
+              </button>
+            ) : (
+              <button
+                className="button primary full"
+                onClick={() => publish.mutate()}
+                disabled={publish.isPending}
+              >
+                {publish.isPending && <LoaderCircle className="spin" />}Approve
+                & send
+              </button>
+            )}
+            <p className="tiny">
+              Delivery is reported after the provider accepts it. Publishing
+              never marks practice complete.
+            </p>
+          </div>
         </aside>
       </section>
     </>

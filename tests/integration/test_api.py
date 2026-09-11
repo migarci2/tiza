@@ -161,22 +161,31 @@ def test_cycle_permissions_versions_and_idempotent_evidence():
     )
     assert stale.status_code == 409
 
+    budget_change = client.patch(
+        f"/api/cycles/{cycle['id']}",
+        headers=headers,
+        json={"version": 2, "budget_minutes": 20},
+    )
+    assert budget_change.status_code == 200
+    assert budget_change.json()["budget_minutes"] == 20
+    changed = client.get(f"/api/cycles/{cycle['id']}/draft").json()
+
     active = [assignment for assignment in changed["assignments"] if not assignment["excluded"]]
     approval = client.post(
         f"/api/cycles/{cycle['id']}/approve",
         headers=headers,
-        json={"version": 2, "assignment_ids": [assignment["id"] for assignment in active]},
+        json={"version": 3, "assignment_ids": [assignment["id"] for assignment in active]},
     ).json()
     published = client.post(
         f"/api/cycles/{cycle['id']}/publish",
         headers=headers,
-        json={"approval_id": approval["id"], "version": 2},
+        json={"approval_id": approval["id"], "version": 3},
     )
     assert published.status_code == 200
     again = client.post(
         f"/api/cycles/{cycle['id']}/publish",
         headers=headers,
-        json={"approval_id": approval["id"], "version": 2},
+        json={"approval_id": approval["id"], "version": 3},
     ).json()
     assert len(again["deliveries"]) == 7
     with Session() as db:
@@ -187,7 +196,7 @@ def test_cycle_permissions_versions_and_idempotent_evidence():
     assert client.post(
         f"/api/cycles/{cycle['id']}/publish",
         headers=headers,
-        json={"approval_id": approval["id"], "version": 2},
+        json={"approval_id": approval["id"], "version": 3},
     ).status_code == 409
     with Session() as db:
         db.get(LearningCycle, cycle["id"]).closes_at = original_close

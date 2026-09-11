@@ -195,10 +195,14 @@ export const api = {
       `/assignments/${assignmentId}/items/${itemId}/hint`,
       { method: "POST", body: "{}" },
     ),
-  updateCycleDeadline: (cycleId: string, version: number, closesAt: string) =>
+  updateCycle: (
+    cycleId: string,
+    version: number,
+    changes: { closes_at?: string; budget_minutes?: number },
+  ) =>
     request<Cycle>(`/cycles/${cycleId}`, {
       method: "PATCH",
-      body: JSON.stringify({ version, closes_at: closesAt }),
+      body: JSON.stringify({ version, ...changes }),
     }),
   catalog: () =>
     request<

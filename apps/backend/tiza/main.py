@@ -814,7 +814,7 @@ def update_draft(
 
 
 @app.patch("/api/cycles/{cycle_id}")
-def update_cycle_deadline(
+def update_cycle(
     cycle_id: str,
     body: CycleUpdate,
     principal: Principal = Depends(require_teacher),
@@ -822,12 +822,21 @@ def update_cycle_deadline(
 ) -> dict:
     cycle = _teacher_cycle(db, principal, cycle_id)
     if cycle.state not in {"review_ready", "approved"} or body.version != cycle.version:
-        raise HTTPException(409, "The cycle changed; reload before updating its deadline")
-    if body.closes_at <= organization_now(db, cycle.organization_id):
+        raise HTTPException(409, "The cycle changed; reload before updating it")
+    if body.closes_at is None and body.budget_minutes is None:
+        raise HTTPException(422, "Provide a closing date or practice budget")
+    closes_at = body.closes_at or cycle.closes_at
+    budget_minutes = body.budget_minutes or cycle.budget_minutes
+    if _aware(closes_at) <= organization_now(db, cycle.organization_id):
         raise HTTPException(422, "The closing date must be in the future")
     current = list(db.scalars(select(Assignment).where(Assignment.cycle_id == cycle.id, Assignment.version == cycle.version)))
+    if any(not assignment.excluded and assignment.estimated_minutes > budget_minutes for assignment in current):
+        raise HTTPException(422, "The practice budget is shorter than an included assignment")
+    if closes_at == cycle.closes_at and budget_minutes == cycle.budget_minutes:
+        return cycle_json(cycle)
     cycle.version += 1
-    cycle.closes_at = body.closes_at
+    cycle.closes_at = closes_at
+    cycle.budget_minutes = budget_minutes
     cycle.state = "review_ready"
     for old in current:
         replacement = Assignment(

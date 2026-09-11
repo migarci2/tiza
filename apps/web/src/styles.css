@@ -788,33 +788,70 @@ details button:last-child {
 .approval-panel {
   position: sticky;
   top: 18px;
+  padding: 28px;
+}
+.approval-panel h2 {
+  margin-top: 0;
+}
+.approval-panel .approval-intro {
+  color: var(--muted);
+  line-height: 1.5;
 }
 .approval-total {
   display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--soft);
+}
+.review-settings {
+  display: grid;
+  gap: 14px;
+}
+.review-setting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
   align-items: end;
-  gap: 8px;
-  margin: 25px 0;
 }
 .deadline-edit {
   display: grid;
   gap: 6px;
-  margin: 14px 0 8px;
+  min-width: 0;
   font-size: 12px;
   font-weight: 700;
 }
 .deadline-edit input {
+  width: 100%;
+  min-width: 0;
   border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 9px;
+  border-radius: 9px;
+  min-height: 46px;
+  padding: 9px 12px;
   background: #fff;
 }
+.deadline-save {
+  min-height: 46px;
+  border-radius: 9px;
+}
 .approval-total b {
-  font-size: 43px;
-  line-height: 0.8;
+  font-size: 38px;
+  line-height: 1;
   color: var(--primary);
 }
 .approval-total span {
   font-size: 14px;
+}
+.approval-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.approval-footer .tiny {
+  margin: 11px 4px 0;
+  line-height: 1.45;
 }
 .brief-grid .full-span {
   grid-column: 1/-1;
@@ -1269,6 +1306,12 @@ details button:last-child {
   line-height: 1.6;
 }
 @media (max-width: 700px) {
+  .review-setting {
+    grid-template-columns: 1fr;
+  }
+  .deadline-save {
+    width: 100%;
+  }
   .draft-main {
     grid-template-columns: 32px 1fr 44px 18px;
   }

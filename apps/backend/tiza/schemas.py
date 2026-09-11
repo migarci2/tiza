@@ -59,7 +59,8 @@ class DraftUpdate(BaseModel):
 
 class CycleUpdate(BaseModel):
     version: int
-    closes_at: datetime
+    closes_at: datetime | None = None
+    budget_minutes: int | None = Field(default=None, ge=5, le=60)
 
 
 class ApproveRequest(BaseModel):
