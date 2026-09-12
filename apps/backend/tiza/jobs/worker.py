@@ -90,6 +90,9 @@ def run_job(job_id: str):
             if not job:
                 return
             job.last_error = type(exc).__name__
+            trace = getattr(exc, "trace", None)
+            if trace:
+                job.payload = {**job.payload, "agent": trace}
             job.state = "failed" if job.attempts >= 3 else "queued"
             job.available_at = utcnow() + timedelta(seconds=10 * job.attempts)
             if job.state == "failed" and job.kind == "prepare_cycle":

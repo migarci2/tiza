@@ -19,6 +19,12 @@ code request or account creation is required. Set `TIZA_DEMO_ACCESS_CODE` to cha
 the code. The server validates it before creating a cookie/CSRF session for the
 synthetic teacher. This access is disabled when `TIZA_DEMO_MODE=false`.
 
+The teacher confirms explicit objective matches separately from suggested prerequisites,
+and can choose any of the twelve fraction concepts. The original 36-exercise bank is
+preserved for history; controlled variants provide 60 active exercise versions. Two
+ambiguous fraction-format questions are retired from new plans and replaced by
+missing-numerator questions with computed answers.
+
 
 The API documentation is at http://localhost:8000/docs. Python and JavaScript dependency resolutions are in `uv.lock` and `apps/web/pnpm-lock.yaml`.
 
@@ -42,6 +48,16 @@ uv run alembic upgrade head
 ```
 
 Bedrock, Supabase and Resend live connectivity require your accounts and are not validated by the offline test suite. See [architecture](docs/architecture.md), [privacy and operations](docs/privacy.md), [reuse](docs/reuse.md), and the [demo guide](docs/judge-guide.md).
+
+Before opening a shared judging instance, set `TIZA_DEMO_RESET_ENABLED=false`, use
+HTTPS with secure cookies, and keep synthetic data in its own database. Default
+daily admission limits are 40 preparations and 30 materials per organization, plus
+10 Bedrock preparations across the instance. Each admitted Bedrock job reserves up
+to three attempts of twelve model calls; this is an admission bound, not a dollar
+spending guarantee. Configure AWS account budgets separately. Reservations use real
+UTC dates, survive demo resets and are stored in PostgreSQL/SQLite rather than Redis.
+The API still rejects files over 10 MiB; Caddy caps total request bodies at 11 MiB
+to allow multipart overhead.
 
 ## Checks
 

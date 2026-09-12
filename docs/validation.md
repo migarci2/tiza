@@ -1,5 +1,21 @@
 # Validation record
 
+## Current verification — 11 September 2026, Oracle follow-up
+
+- Python: **43 passed**, including the optional PostgreSQL test enabled against an isolated PostgreSQL 16 database. The only warning is an existing Starlette/AnyIO deprecation.
+- PostgreSQL: blank-database migrations reached `b61e23a047df`; HTTP workflow, uniqueness, row locking, RLS and private table grants passed with Supabase-style `anon`/`authenticated` roles present. SQLite in the running Compose demo reached the same migration.
+- Strands: the installed SDK, tool schemas, Agent loop, sequential executor, hooks and tool-result protocol run against a controlled offline `Model`. Tests cover empty/invalid selections, the twelve-call limit, successful handoff and rollback with retained failure traces. This does **not** verify Bedrock access or model quality.
+- Browser: the cycle regression and landing/access regression both passed against `http://localhost:8086`. The cycle test completes Maya's approved path, preserves a changed exercise's branch, checks hint provenance, verifies the answered question stays visible until Continue, reviews a short response through the teacher UI and observes 1/8 completed in the brief. Landing checks include mobile layout and code access.
+- Frontend: Vitest passed (one locale consistency test); TypeScript/Vite and Docker builds passed. Caddy validated the request body limit configuration.
+- New regressions cover explicit English/Spanish objectives, honest source references, manual concept selection, retired exercise version preservation, corrected fraction questions, atomic daily admission and quotas surviving reset.
+
+Live Bedrock, Supabase, Resend, public deployment and final Devpost submission remain unverified. The repository remains private by the owner's instruction. The updated submission draft is in `docs/hackathon/submission.md`. No educational efficacy or time savings have been measured.
+
+The refreshed landing recording completes a learner path before returning to the teacher brief. Exported MP4: 45.60 seconds, 994,818 bytes; GIF: 4,197,060 bytes. Its agent sequence remains capture-only illustration and its manifest remains `model_invoked=false`.
+
+## Historical checks before the Oracle follow-up
+
+
 Local validation on 10 September 2026 used synthetic identities only.
 
 Final results: `pytest` 23 passed, 1 skipped (the optional PostgreSQL test, separately executed successfully); PostgreSQL 1 passed; Vitest 1 passed; Playwright 2 passed; TypeScript/Vite and Docker builds passed. PostgreSQL migrations reached `d7c3b922a184`, with no pending Alembic operations. The running container demo uses http://localhost:8086 in this workspace (the default Compose port remains 8080).

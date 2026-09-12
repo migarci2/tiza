@@ -298,6 +298,7 @@ function Sidebar({
   onReset: () => void;
   resetting: boolean;
 }) {
+  const config = useQuery({ queryKey: ["config"], queryFn: api.config });
   const switchUser = (id: string) =>
     api.switchDemoUser(id).then((value) => {
       queryClient.setQueryData(["session"], value);
@@ -362,10 +363,10 @@ function Sidebar({
                 {user.display_name}
               </button>
             ))}
-            <button onClick={onReset} disabled={resetting}>
+            {config.data?.demo_reset_enabled && <button onClick={onReset} disabled={resetting}>
               <RefreshCw size={14} />
               Reset demo
-            </button>
+            </button>}
             {actor.demo && (
               <button
                 onClick={() => advanceClock.mutate()}
@@ -888,7 +889,12 @@ function CreateCycle({
     [file, setFile] = useState<File | null>(null),
     [cycle, setCycle] = useState<Cycle | null>(null),
     [candidates, setCandidates] = useState<
-      Array<{ id: string; title: string; reference: string }>
+      Array<{
+        id: string;
+        title: string;
+        reference: string;
+        role: "objective" | "prerequisite" | "available";
+      }>
     >([]),
     [selected, setSelected] = useState<string[]>([]);
   const create = useMutation({
@@ -900,7 +906,11 @@ function CreateCycle({
         api.addMaterial(id, file),
       onSuccess: (data) => {
         setCandidates(data.concept_candidates);
-        setSelected(data.concept_candidates.map((c) => c.id));
+        setSelected(
+          data.concept_candidates
+            .filter((candidate) => candidate.role === "objective")
+            .map((candidate) => candidate.id),
+        );
       },
     }),
     confirm = useMutation({
@@ -1019,8 +1029,9 @@ function CreateCycle({
           <section className="panel concepts-panel">
             <h2>Check the concepts before planning</h2>
             <p>
-              These came from your material. Tiza will not add a topic without
-              your confirmation.
+              {selected.length
+                ? t("cycle.objectiveMatch")
+                : t("cycle.noObjectiveMatch")}
             </p>
             {candidates.map((candidate) => (
               <label className="concept-option" key={candidate.id}>
@@ -1037,7 +1048,13 @@ function CreateCycle({
                 />
                 <span>
                   <b>{candidate.title}</b>
-                  <small>{candidate.reference}</small>
+                  <small>
+                    {candidate.role === "objective"
+                      ? t("cycle.objectiveConcept")
+                      : candidate.role === "prerequisite"
+                        ? t("cycle.prerequisiteConcept")
+                        : t("cycle.availableConcept")}
+                  </small>
                 </span>
               </label>
             ))}
@@ -1474,6 +1491,7 @@ function PracticePage({
   const [answer, setAnswer] = useState(""),
     [hint, setHint] = useState<string | null>(null),
     [result, setResult] = useState<{
+      itemId: string;
       feedback: string;
       correct?: boolean;
       review?: boolean;
@@ -1491,6 +1509,7 @@ function PracticePage({
       }) => api.submitAttempt(assignmentId, input),
       onSuccess: (value) => {
         setResult({
+          itemId: value.item_id,
           feedback: value.feedback,
           correct: value.result === "correct",
           review: value.result === "review_needed",
@@ -1505,17 +1524,18 @@ function PracticePage({
   if (assignment.isError || !assignment.data)
     return <PageError error={assignment.error} />;
   const data = assignment.data,
-    item = data.items.find((value) => !value.attempt);
+    item = data.items.find((value) => value.id === result?.itemId) ?? data.items.find((value) => !value.attempt);
   if (!item)
     return (
       <main className="practice-screen">
         <p className="eyebrow">Practice complete</p>
         <h1>
           {data.state === "review_needed"
-            ? "Your teacher will review one response."
+            ? "Your teacher will review your explanations."
             : "You’re all caught up."}
         </h1>
         <p>Your responses are saved for your teacher.</p>
+        {onBack && <button className="button secondary" onClick={onBack}>Return to teacher view</button>}
       </main>
     );
   const save = () =>

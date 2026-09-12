@@ -1,5 +1,7 @@
 # PostgreSQL validation
 
+On 11 September 2026, the Oracle follow-up migrated a new isolated PostgreSQL 16 database to `b61e23a047df`. The full suite with `TIZA_TEST_POSTGRES_URL` enabled passed (43 tests), including private-table checks for `usage_buckets` and the same HTTP flow. Supabase-style roles existed before migration. This is local PostgreSQL verification, not a Supabase account deployment.
+
 The optional test at `tests/postgres/test_postgres_flow.py` runs only when
 `TIZA_TEST_POSTGRES_URL` points to an isolated database whose Alembic migrations
 have already been applied. It uses the application HTTP routes for cycle

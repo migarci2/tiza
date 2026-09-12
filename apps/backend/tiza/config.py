@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./data/tiza.db"
     demo_mode: bool = True
     demo_access_code: str = Field(default="246810", min_length=6, max_length=64)
+    demo_reset_enabled: bool = True
+    preparations_per_day: int = Field(default=40, ge=1)
+    materials_per_day: int = Field(default=30, ge=1)
+    bedrock_preparations_per_day: int = Field(default=10, ge=1)
     agent_mode: Literal["deterministic_demo", "bedrock"] = "deterministic_demo"
     session_secure: bool = False
     session_ttl_hours: int = 24

@@ -7,6 +7,7 @@ from tiza.db import Base
 from tiza.models import Approval, Assignment, Delivery, Job, LearningCycle, OutboxEvent
 from tiza.services import seed_demo
 from tiza.jobs import worker
+from tiza.agent.runner import AgentRunError
 
 
 def test_replayed_outbox_and_preparation_do_not_duplicate_assignments(tmp_path, monkeypatch):
@@ -66,3 +67,33 @@ def test_delivery_outside_window_is_uncertain_and_reminder_rechecks_completion(t
         reminder_job=db.get(Job,"delivery-"+reminders[0].id)
         worker.deliver(db,reminder_job)
         assert reminders[0].state=="cancelled"
+
+
+def test_failed_agent_trace_survives_rollback_without_partial_drafts(tmp_path, monkeypatch):
+    engine = create_engine("sqlite:///" + str(tmp_path / "agent-failure.db"))
+    Base.metadata.create_all(engine)
+    sessions = sessionmaker(engine, expire_on_commit=False)
+    monkeypatch.setattr(worker, "SessionLocal", sessions)
+    with sessions() as db:
+        org, classroom, teacher, learners = seed_demo(db)
+        cycle = LearningCycle(organization_id=org.id, classroom_id=classroom.id, objective="Equivalent fractions",
+            concepts=["equivalence"], concept_confirmed=True, closes_at=worker.utcnow()+timedelta(days=2),
+            budget_minutes=12, state="preparing")
+        db.add(cycle); db.flush()
+        job = Job(organization_id=org.id, kind="prepare_cycle", state="queued",
+            payload={"cycle_id": cycle.id, "actor_id": teacher.id, "cycle_version": 1})
+        db.add(job); db.commit()
+        job_id, cycle_id, learner_id = job.id, cycle.id, learners[0].id
+
+    def fail_after_draft(db, job):
+        db.add(Assignment(cycle_id=cycle_id, learner_id=learner_id, version=1, reason="partial", estimated_minutes=1))
+        db.flush()
+        raise AgentRunError("bad tool call", {"mode": "bedrock", "model_invoked": True, "tools": [],
+            "tool_events": [{"name": "save_assignment_draft", "status": "failed", "error": "ValueError"}]})
+
+    monkeypatch.setattr("tiza.agent.runner.prepare_with_agent", fail_after_draft)
+    worker.run_job(job_id)
+    with sessions() as db:
+        job = db.get(Job, job_id)
+        assert job.payload["agent"]["tool_events"][0]["status"] == "failed"
+        assert db.scalar(select(func.count(Assignment.id)).where(Assignment.cycle_id == cycle_id)) == 0

@@ -30,7 +30,7 @@ def test_full_api_flow_on_postgresql() -> None:
         "learning_cycles", "materials", "exercise_versions", "assignments", "assignment_items",
         "approvals", "attempts", "assistance_events", "evidence_events", "deliveries", "jobs",
         "outbox_events", "audit_events", "web_sessions", "nema_readiness_requests", "nema_grants",
-        "idempotency_records",
+        "idempotency_records", "usage_buckets",
     }
     with sessions() as db:
         rls = set(db.execute(text(

@@ -1162,8 +1162,8 @@
     },
     "/api/cycles/{cycle_id}": {
       "patch": {
-        "summary": "Update Cycle Deadline",
-        "operationId": "update_cycle_deadline_api_cycles__cycle_id__patch",
+        "summary": "Update Cycle",
+        "operationId": "update_cycle_api_cycles__cycle_id__patch",
         "parameters": [
           {
             "name": "cycle_id",
@@ -1193,7 +1193,7 @@
                 "schema": {
                   "type": "object",
                   "additionalProperties": true,
-                  "title": "Response Update Cycle Deadline Api Cycles  Cycle Id  Patch"
+                  "title": "Response Update Cycle Api Cycles  Cycle Id  Patch"
                 }
               }
             }
@@ -1946,15 +1946,34 @@
             "title": "Version"
           },
           "closes_at": {
-            "type": "string",
-            "format": "date-time",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Closes At"
+          },
+          "budget_minutes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 60.0,
+                "minimum": 5.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Budget Minutes"
           }
         },
         "type": "object",
         "required": [
-          "version",
-          "closes_at"
+          "version"
         ],
         "title": "CycleUpdate"
       },

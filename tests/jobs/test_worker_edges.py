@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
-from types import ModuleType, SimpleNamespace
-import sys
+import json
+from types import SimpleNamespace
 
 from sqlalchemy import create_engine, func, select
 from sqlalchemy.orm import sessionmaker
+from strands.models.model import Model
 
 from tiza.agent import runner
 from tiza.db import Base
@@ -114,51 +115,62 @@ def test_delivery_revalidates_enrollment_and_reminders_are_single(tmp_path, monk
         assert db.scalar(select(func.count()).select_from(Delivery).where(Delivery.assignment_id == assignment.id, Delivery.channel == "reminder")) == 0
 
 
-def _fake_strands(monkeypatch, *, alter_items: bool = False) -> None:
-    strands = ModuleType("strands")
-    hooks = ModuleType("strands.hooks")
-    models = ModuleType("strands.models")
-    executors = ModuleType("strands.tools.executors")
+def _events(tool_calls=None):
+    yield {"messageStart": {"role": "assistant"}}
+    for index, (name, value) in enumerate(tool_calls or []):
+        yield {"contentBlockStart": {"contentBlockIndex": index, "start": {"toolUse": {"toolUseId": str(index), "name": name}}}}
+        yield {"contentBlockDelta": {"contentBlockIndex": index, "delta": {"toolUse": {"input": json.dumps(value)}}}}
+        yield {"contentBlockStop": {"contentBlockIndex": index}}
+    yield {"messageStop": {"stopReason": "tool_use" if tool_calls else "end_turn"}}
+    yield {"metadata": {"usage": {"inputTokens": 4, "outputTokens": 2, "totalTokens": 6}, "metrics": {"latencyMs": 1}}}
 
-    class HookProvider:
+
+class ControlledModel(Model):
+    """A real Strands Model boundary with deterministic, offline model output."""
+    def __init__(self, *, alter_items=False, repeat_reads=False, empty_selection=False):
+        self.step = 0
+        self.alter_items = alter_items
+        self.repeat_reads = repeat_reads
+        self.empty_selection = empty_selection
+
+    def get_config(self):
+        return {"model_id": "controlled"}
+
+    def update_config(self, **kwargs):
         pass
 
-    class BeforeModelCallEvent:
-        pass
+    async def structured_output(self, *args, **kwargs):
+        raise NotImplementedError
 
-    class Placeholder:
-        def __init__(self, *args, **kwargs):
-            pass
-
-    class Agent:
-        def __init__(self, *, tools, **kwargs):
-            self.tools = {function.__name__: function for function in tools}
-
-        def __call__(self, prompt):
-            rows = self.tools["select_validated_exercises"]()
-            for row in rows:
+    async def stream(self, messages, tool_specs=None, system_prompt=None, **kwargs):
+        self.step += 1
+        if self.repeat_reads:
+            for event in _events([("read_cycle_context", {})]):
+                yield event
+            return
+        if self.step == 1:
+            events = _events([("read_cycle_context", {}), ("select_validated_exercises", {})])
+        elif self.step == 2:
+            content = messages[-1]["content"][1]["toolResult"]["content"][0]
+            result = content.get("json") or json.loads(content["text"])
+            calls = []
+            for row in result:
                 ids = [item["id"] for item in row["items"]]
-                if alter_items:
-                    ids = ids[:-1]
-                self.tools["save_assignment_draft"](row["assignment_id"], ids, row["reason"])
-            self.tools["request_teacher_review"]()
-            return SimpleNamespace(metrics=SimpleNamespace(accumulated_usage={"inputTokens": 1}))
-
-    strands.Agent = Agent
-    strands.tool = lambda function: function
-    hooks.BeforeModelCallEvent = BeforeModelCallEvent
-    hooks.HookProvider = HookProvider
-    models.BedrockModel = Placeholder
-    executors.SequentialToolExecutor = Placeholder
-    monkeypatch.setitem(sys.modules, "strands", strands)
-    monkeypatch.setitem(sys.modules, "strands.hooks", hooks)
-    monkeypatch.setitem(sys.modules, "strands.models", models)
-    monkeypatch.setitem(sys.modules, "strands.tools.executors", executors)
+                calls.append(("save_assignment_draft", {"assignment_id": row["assignment_id"],
+                    "item_ids": ids[:-1] if self.alter_items else ids, "reason": row["reason"],
+                    "exercise_ids": [] if self.empty_selection else
+                        [item["candidates"][0]["exercise_id"] for item in row["items"]]}))
+            events = _events(calls)
+        elif self.step == 3:
+            events = _events([("request_teacher_review", {})])
+        else:
+            events = _events()
+        for event in events:
+            yield event
 
 
-def test_bedrock_agent_mock_can_only_save_the_policy_sequence(tmp_path, monkeypatch) -> None:
+def test_real_strands_agent_can_only_save_the_policy_sequence(tmp_path, monkeypatch) -> None:
     sessions = _database(tmp_path, "agent.db")
-    _fake_strands(monkeypatch)
     monkeypatch.setattr(runner, "get_settings", lambda: SimpleNamespace(agent_mode="bedrock", demo_mode=False))
     monkeypatch.setenv("TIZA_BEDROCK_MODEL_ID", "mock-model")
     with sessions() as db:
@@ -183,15 +195,16 @@ def test_bedrock_agent_mock_can_only_save_the_policy_sequence(tmp_path, monkeypa
         )
         db.add(job)
         db.flush()
-        runner.prepare_with_agent(db, job)
+        runner.prepare_with_agent(db, job, model=ControlledModel())
         assert job.payload["agent"]["model"] == "mock-model"
         assert job.payload["agent"]["tools"][-1] == "request_teacher_review"
+        assert job.payload["agent"]["tool_events"][-1]["status"] == "completed"
+        assert job.payload["agent"]["usage"]["totalTokens"] > 0
         assert db.scalar(select(func.count()).select_from(Assignment).where(Assignment.cycle_id == cycle.id)) == 8
 
 
 def test_agent_rejects_a_model_that_drops_a_preapproved_branch(tmp_path, monkeypatch) -> None:
     sessions = _database(tmp_path, "agent-reject.db")
-    _fake_strands(monkeypatch, alter_items=True)
     monkeypatch.setattr(runner, "get_settings", lambda: SimpleNamespace(agent_mode="bedrock", demo_mode=False))
     monkeypatch.setenv("TIZA_BEDROCK_MODEL_ID", "mock-model")
     with sessions() as db:
@@ -203,5 +216,32 @@ def test_agent_rejects_a_model_that_drops_a_preapproved_branch(tmp_path, monkeyp
         db.add(job)
         db.flush()
         import pytest
-        with pytest.raises(ValueError, match="policy-selected sequence"):
-            runner.prepare_with_agent(db, job)
+        with pytest.raises(runner.AgentRunError) as failure:
+            runner.prepare_with_agent(db, job, model=ControlledModel(alter_items=True))
+        assert any(event["status"] == "failed" for event in failure.value.trace["tool_events"])
+        assert "request_teacher_review" not in failure.value.trace["tools"]
+
+
+def test_agent_rejects_empty_selection_and_reports_only_allowed_model_calls(tmp_path, monkeypatch) -> None:
+    sessions = _database(tmp_path, "agent-limits.db")
+    monkeypatch.setattr(runner, "get_settings", lambda: SimpleNamespace(agent_mode="bedrock", demo_mode=False))
+    monkeypatch.setenv("TIZA_BEDROCK_MODEL_ID", "mock-model")
+    with sessions() as db:
+        organization, classroom, teacher, _ = seed_demo(db)
+        cycle = LearningCycle(organization_id=organization.id, classroom_id=classroom.id,
+            objective="Equivalent fractions", concepts=["equivalence"], concept_confirmed=True,
+            closes_at=datetime.now(timezone.utc) + timedelta(days=1), budget_minutes=10, state="preparing")
+        db.add(cycle); db.flush()
+        job = Job(organization_id=organization.id, kind="prepare_cycle",
+            payload={"cycle_id": cycle.id, "actor_id": teacher.id, "cycle_version": 1}, state="running")
+        db.add(job); db.commit()
+        import pytest
+        with pytest.raises(runner.AgentRunError) as empty:
+            runner.prepare_with_agent(db, job, model=ControlledModel(empty_selection=True))
+        assert any(event["status"] == "failed" for event in empty.value.trace["tool_events"])
+
+        db.rollback()
+        job = db.get(Job, job.id)
+        with pytest.raises(runner.AgentRunError, match="budget exceeded") as over_budget:
+            runner.prepare_with_agent(db, job, model=ControlledModel(repeat_reads=True))
+        assert over_budget.value.trace["model_calls"] == 12

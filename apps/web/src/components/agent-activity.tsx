@@ -1,5 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { Check, ChevronDown, LoaderCircle, NotebookPen } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  LoaderCircle,
+  NotebookPen,
+  CircleAlert,
+} from "lucide-react";
 import { api } from "../api/client";
 import en from "../locales/en.json";
 import { SdkCredit } from "./sdk-credit";
@@ -86,12 +92,14 @@ export function AgentActivity({ cycleId }: { cycleId: string }) {
           })}
         </ol>
       )}
-      {done && (
+      {(done || value.state === "failed") && (
         <>
-          <div className="agent-result">
-            <Check size={16} />
-            <span>{t("agent.boundary")}</span>
-          </div>
+          {done && (
+            <div className="agent-result">
+              <Check size={16} />
+              <span>{t("agent.boundary")}</span>
+            </div>
+          )}
           <details className="agent-trace">
             <summary>
               {preview ? t("agent.workflow") : t("agent.trace")}
@@ -99,7 +107,11 @@ export function AgentActivity({ cycleId }: { cycleId: string }) {
             </summary>
             {!preview && (
               <p className="agent-mode">
-                {live ? t("agent.live") : t("agent.local")}
+                {live
+                  ? t("agent.live")
+                  : value.mode === "bedrock"
+                    ? t("agent.noCall")
+                    : t("agent.local")}
               </p>
             )}
             {live || preview ? (
@@ -110,10 +122,18 @@ export function AgentActivity({ cycleId }: { cycleId: string }) {
                   </p>
                 )}
                 <ol>
-                  {value.tools.map((name, index) => (
+                  {(value.tool_events?.length
+                    ? value.tool_events
+                    : value.tools.map((name) => ({ name, status: "completed" }))
+                  ).map((event, index) => (
                     <li key={index}>
-                      <Check size={14} />
-                      <code>{name}</code>
+                      {event.status === "completed" ? (
+                        <Check size={14} />
+                      ) : (
+                        <CircleAlert size={14} />
+                      )}
+                      <code>{event.name}</code>
+                      <span>{event.status === "completed" ? t("agent.toolCompleted") : t("agent.toolFailed")}</span>
                     </li>
                   ))}
                 </ol>

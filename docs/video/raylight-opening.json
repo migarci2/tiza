@@ -1,0 +1,265 @@
+{
+  "projectId": "25cc7949-3102-46d8-979c-5e324a4a97ba",
+  "editUrl": "https://www.raylight.app/editor/25cc7949-3102-46d8-979c-5e324a4a97ba",
+  "name": "Tiza — Between classes · Opening",
+  "durationMs": 11400,
+  "fps": 30,
+  "shots": [
+    {
+      "id": "2b68a52d-c203-4575-b25c-75e8cb7c87f1",
+      "name": "01 — Intro",
+      "startMs": 0,
+      "durationMs": 3200,
+      "assetCount": 3,
+      "assets": [
+        {
+          "id": "f37f467a-99e3-4b2a-bc46-ac1d32cc19be",
+          "kind": "text",
+          "name": "Class dismissed."
+        },
+        {
+          "id": "1690d3d0-35cb-4658-828c-710d01680dd4",
+          "kind": "shape"
+        },
+        {
+          "id": "643f9723-4ce1-4a39-a1db-c2fd7bfe5a0f",
+          "kind": "shape"
+        }
+      ],
+      "cameraMoveCount": 1
+    },
+    {
+      "id": "b398cf83-5a12-45a4-8beb-056e10c17497",
+      "name": "02 — Simple",
+      "startMs": 3200,
+      "durationMs": 2600,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "dbf30476-0e3c-4715-85dd-af1f5fd31847",
+          "kind": "text",
+          "name": "Work continues."
+        }
+      ],
+      "cameraMoveCount": 1
+    },
+    {
+      "id": "df11010b-feb9-47b5-b0ca-dbbdfcbef941",
+      "name": "03 — Powerful",
+      "startMs": 5800,
+      "durationMs": 2600,
+      "assetCount": 9,
+      "assets": [
+        {
+          "id": "94f6213a-3bb7-42f2-ac9d-ef2835c50e66",
+          "kind": "text",
+          "name": "Eight learners."
+        },
+        {
+          "id": "067cf6d9-6f3e-4b83-a9ca-471b20dd91ed",
+          "kind": "shape"
+        },
+        {
+          "id": "08811e36-663b-4e6e-946c-51504cffda00",
+          "kind": "shape"
+        },
+        {
+          "id": "dd6376f8-0eab-4af6-8ce6-a5bdcd1d7fe9",
+          "kind": "shape"
+        },
+        {
+          "id": "5c80d984-8ba2-44be-9df3-32cf5b8aa57e",
+          "kind": "shape"
+        },
+        {
+          "id": "5478d834-52a2-4576-9fcb-204bfcaaf000",
+          "kind": "shape"
+        },
+        {
+          "id": "b322bd7c-50f9-477c-9ccf-8831eff1d62b",
+          "kind": "shape"
+        },
+        {
+          "id": "3c19d882-be93-421e-b003-1d152da96fdd",
+          "kind": "shape"
+        },
+        {
+          "id": "70e2cd51-cac3-4f6f-bd66-7a882ae6ba5f",
+          "kind": "shape"
+        }
+      ],
+      "cameraMoveCount": 1
+    },
+    {
+      "id": "7f6eaa95-f0b5-4b2c-8691-32df4293a78f",
+      "name": "04 — Close",
+      "startMs": 8400,
+      "durationMs": 3000,
+      "assetCount": 3,
+      "assets": [
+        {
+          "id": "1cba96e0-398f-4675-8c9c-0b9058b5813d",
+          "kind": "text",
+          "name": "Meet Tiza."
+        },
+        {
+          "id": "c68fa4f9-1d58-4843-851a-095e20498c77",
+          "kind": "text",
+          "name": "Practice between classes."
+        },
+        {
+          "id": "5c2a9b56-3e2c-40c5-945d-adc2521c8ed8",
+          "kind": "image"
+        }
+      ],
+      "cameraMoveCount": 1
+    },
+    {
+      "id": "eaac0604-c887-4dd2-b14c-673069d0aea6",
+      "name": "Shot 5",
+      "startMs": 0,
+      "durationMs": 11400,
+      "laneIndex": 1,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "0f900930-707b-4fad-b999-d9609b47134f",
+          "kind": "audio",
+          "name": "Electrodoodle — Kevin MacLeod · CC BY 4.0"
+        }
+      ],
+      "cameraMoveCount": 0
+    },
+    {
+      "id": "476948ab-d99a-4822-bf22-af3fb2e86344",
+      "name": "Shot 6",
+      "startMs": 250,
+      "durationMs": 750,
+      "laneIndex": 2,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "37b44c77-744c-4bcd-b861-1dd469bb4d64",
+          "kind": "audio",
+          "name": "Tiza typing"
+        }
+      ],
+      "cameraMoveCount": 0
+    },
+    {
+      "id": "930e01ea-7773-4724-af38-a10353b302c7",
+      "name": "Shot 7",
+      "startMs": 3035,
+      "durationMs": 575,
+      "laneIndex": 2,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "884ba1c0-21ae-44ee-80a1-87f0db74d30e",
+          "kind": "audio",
+          "name": "Tiza whoosh-short"
+        }
+      ],
+      "cameraMoveCount": 0
+    },
+    {
+      "id": "a0694ca2-6885-4ee1-accd-74406c933797",
+      "name": "Shot 8",
+      "startMs": 5635,
+      "durationMs": 575,
+      "laneIndex": 2,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "7b572cb4-582f-42cf-8f50-d9c8bd1dbe6d",
+          "kind": "audio",
+          "name": "Tiza whoosh-short"
+        }
+      ],
+      "cameraMoveCount": 0
+    },
+    {
+      "id": "8b15f026-2890-4974-865c-94cfad7394dc",
+      "name": "Shot 9",
+      "startMs": 8395,
+      "durationMs": 500,
+      "laneIndex": 2,
+      "assetCount": 1,
+      "assets": [
+        {
+          "id": "c0260fbf-81cf-4801-9395-b568c504c73d",
+          "kind": "audio",
+          "name": "Tiza click-soft"
+        }
+      ],
+      "cameraMoveCount": 0
+    }
+  ],
+  "styleDigest": {
+    "colors": [
+      {
+        "color": "#0866e6",
+        "roles": [
+          "background",
+          "fill",
+          "text"
+        ],
+        "usageCount": 5
+      },
+      {
+        "color": "#252b38",
+        "roles": [
+          "text"
+        ],
+        "usageCount": 3
+      },
+      {
+        "color": "#ffda45",
+        "roles": [
+          "fill"
+        ],
+        "usageCount": 3
+      },
+      {
+        "color": "#fffdf8",
+        "roles": [
+          "background",
+          "text"
+        ],
+        "usageCount": 2
+      },
+      {
+        "color": "#ff927b",
+        "roles": [
+          "fill"
+        ],
+        "usageCount": 2
+      },
+      {
+        "color": "#d6ede2",
+        "roles": [
+          "fill"
+        ],
+        "usageCount": 2
+      }
+    ],
+    "fonts": [
+      {
+        "family": "manrope",
+        "weights": [
+          500,
+          700
+        ],
+        "usageCount": 5
+      }
+    ]
+  },
+  "export": {
+    "format": "mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "badgeRetained": true
+  },
+  "status": "opening_exported_full_working_cut_in_progress"
+}

@@ -242,6 +242,26 @@ try {
     .filter({ hasText: "Your answer was saved." })
     .waitFor();
   await hold(2000);
+  for (let remaining = 12; remaining; remaining -= 1) {
+    if (await page.getByText("Practice complete", { exact: true }).isVisible()) break;
+    await click(page.getByRole("button", { name: "Continue", exact: true }));
+    if (await page.getByText("Practice complete", { exact: true }).isVisible()) break;
+    const options = page.locator(".options button");
+    if (await options.count()) {
+      await click(options.first());
+    } else {
+      const answer = page.getByLabel("Your answer", { exact: true });
+      await click(answer);
+      await answer.fill((await answer.getAttribute("placeholder")) === "Write a short explanation"
+        ? "I used equal-sized parts to compare the fractions."
+        : "0");
+    }
+    await click(page.getByRole("button", { name: "Save answer", exact: true }));
+    await expect(page.getByRole("status")).toHaveText("Your answer was saved.");
+    await hold(650);
+  }
+  await expect(page.getByText("Practice complete", { exact: true })).toBeVisible();
+  await hold(1000);
   await click(page.getByRole("button", { name: "Return to teacher view" }));
   await click(page.getByRole("button", { name: "Next lesson", exact: true }));
   await page.getByRole("heading", { name: "Plan your next lesson" }).waitFor();

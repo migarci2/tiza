@@ -62,6 +62,7 @@ export const api = {
       model: string | null;
       model_calls: number;
       tools: string[];
+      tool_events?: Array<{ name: string; status: string; error?: string; candidate_counts?: number[]; selected_exercise_ids?: string[] }>;
       active_tool?: string;
       operations: string[];
       draft_count: number;
@@ -74,7 +75,7 @@ export const api = {
       }),
     ),
   session: () => rememberSession(request<Session>("/session")),
-  config: () => request<{ demo_mode: boolean }>("/config"),
+  config: () => request<{ demo_mode: boolean; demo_reset_enabled: boolean }>("/config"),
   advanceDemoClock: () =>
     rememberSession(
       request<Session>("/demo/clock/advance", {
@@ -133,6 +134,7 @@ export const api = {
         id: string;
         title: string;
         reference: string;
+        role: "objective" | "prerequisite" | "available";
       }>;
     }>(`/cycles/${cycleId}/materials`, { method: "POST", body: data });
   },

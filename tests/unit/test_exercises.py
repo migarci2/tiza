@@ -16,6 +16,19 @@ def test_reviewed_fraction_catalog_has_its_closed_scope() -> None:
     assert {item["kind"] for item in catalog["exercises"]} == {"multiple_choice", "numeric", "short"}
 
 
+def test_catalog_adds_controlled_objective_variants_without_changing_base_bank() -> None:
+    exercises = all_exercises()
+    assert len(exercises) == 60
+    assert len({item["id"] for item in exercises}) == 60
+    for base in load_catalog()["exercises"]:
+        variants = [item for item in exercises if item["concept_id"] == base["concept_id"] and item["kind"] == base["kind"]]
+        assert {item["estimated_minutes"] for item in variants} == {base["estimated_minutes"]}
+    simplification = next(item for item in exercises if item["id"] == "simplification-focus-v2")
+    denominator = next(item for item in exercises if item["id"] == "common-denominator-focus-v2")
+    assert grade_answer(simplification, "15/25")["result"] == "incorrect"
+    assert grade_answer(denominator, "2/3")["result"] == "incorrect"
+
+
 @given(
     numerator=st.integers(min_value=-100, max_value=100),
     denominator=st.integers(min_value=1, max_value=100),

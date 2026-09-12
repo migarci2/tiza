@@ -1,34 +1,34 @@
 # Agents for Humans — Tiza alignment
 
-Checked 11 September 2026 against the [official overview](https://agentsforhumans.devpost.com/) and [rules](https://agentsforhumans.devpost.com/rules).
+Checked 11 September 2026 against the [official overview](https://agentsforhumans.devpost.com/) and [official rules](https://agentsforhumans.devpost.com/rules).
 
-**Track: Professional Agents.** Tiza delegates the tutor's repeated between-class work: individual practice plans, approved publication, objective grading and a lesson brief. Human judgement stays at the approval and review boundaries.
+**Track: Professional Agents.** Tiza takes on a tutor's between-class practice workflow: scoped planning, a teacher review boundary, publication, learner responses and a lesson brief. The teacher defines the goal, confirms concepts and approves the exact version before anything is published.
 
-## Required submission
+## Official submission facts
 
-The rules require a new Strands project, public MIT/Apache repository with runnable code and README, architecture diagram, English description, public YouTube/Vimeo demonstration of at most five minutes, AWS Builder ID and testing access. Prior work must be disclosed. AgentCore and a public AWS Builder post are optional. Deadline: 14 September 2026, 17:00 PDT (15 September, 02:00 Europe/Madrid). [Rules](https://agentsforhumans.devpost.com/rules)
+The rules list a submission deadline of **14 September 2026, 5:00 pm Pacific** (15 September, 02:00 in Europe/Madrid). A submission needs an English project description, an architecture diagram, an AWS Builder ID, a public YouTube or Vimeo video of at most five minutes that demonstrates and pitches the project, and access for judging/testing. The rules also require a new project built with Strands Agents, a public GitHub/GitLab/Bitbucket repository with source, assets, instructions, README and a visible MIT or Apache license. A live demo is optional but may help technical-implementation scoring. See the [rules](https://agentsforhumans.devpost.com/rules).
 
-## What is concrete now
+The repository remote is [github.com/migarci2/tiza](https://github.com/migarci2/tiza). It is intentionally private at the owner's request. That choice is preserved here; it does not meet the rules' public-repository requirement, so a submission should not claim that requirement is complete while the repository remains private.
 
-- Working teacher → approval → learner → evidence → next-class flow, with browser regression.
-- Strands runner with four scoped tools and a bounded Bedrock model call budget. The model can choose validated candidates and explain the selection. Domain services enforce every write and preserve approval boundaries.
-- Agent activity panel reads persisted job metadata; it never turns a local policy run into an alleged model invocation.
-- MIT license, third-party notices, setup instructions and architecture diagram are in the repository.
-- New Tiza workflow and frontend; nema port and Yuvo visual influence are disclosed. Original Tiza illustrations and Manrope notices are included.
-- Landing loop records synthetic browser interactions with an illustrative agent tool sequence, as requested. This visual-only sequence is identified in the accessible video description and media manifest and is not persisted as a real Strands run.
+## Evidence in this workspace
 
-## Still required before calling the entry complete
-
-| Item | Current evidence / remaining action |
+| Area | Current position |
 | --- | --- |
-| Real Strands/Bedrock execution | No AWS profile, credentials file or model ID is configured here. Configure an authorized account/model, run the full cycle and rerecord. Unit tests with mock models are not evidence of a live model call. |
-| Public repository | No Git remote exists. Publish the prepared repository with its MIT license and record its URL. |
-| AWS Builder ID | Participant-provided field; not available in the workspace. |
-| Submission video | The landing loop is a short product preview, not the final pitch. Use `pitch.md`, record the connected workflow, then publish the final ≤5-minute video. |
-| Testing access | Local code `246810` is only for synthetic local mode. Provide a working build or stable deployment and access instructions for judges. |
-| Live deployment | Docker works locally; EC2/Supabase/Bedrock account deployment has not been executed. Do not describe localhost as a public live demo. |
-| Eligibility and registration | Participant must complete their own registration and confirm eligibility; no submission was made. |
+| Product workflow | Local synthetic teacher → review → learner → evidence → lesson-brief workflow exists, with API, unit and browser checks. |
+| Agent boundary | The code has a Strands/Bedrock path with four scoped tools. Approval, publication, grading and evidence remain service-owned. |
+| Local agent run | `deterministic_demo` is a local policy run and records `model_invoked=false`. It is not evidence of a Bedrock invocation. |
+| Illustrative preview | The landing media records a real synthetic browser path. Its illustrated tool sequence is capture-only; the media manifest records `agent_trace_illustrated=true` and `model_invoked=false`. |
+| Connected providers | Bedrock, Supabase, Resend, AWS credentials and public deployment have not been verified from this workspace. Do not claim a live AWS run, provider delivery, measured learning outcomes, time savings or an exhaustive audit. |
+| Reuse | The nema-derived interoperability work and the visual assets have documented attribution in the repository. |
+
+## Before submitting
+
+1. Run and retain evidence from a connected Bedrock cycle using the instructions in [submission.md](submission.md). Confirm the persisted agent run says `mode: bedrock` and `model_invoked: true`.
+2. Record the working connected path, then publish the final English video to YouTube or Vimeo. The landing preview is not a substitute for that proof.
+3. Decide how to satisfy the public-source requirement without changing the owner's private-repository preference unintentionally. Add the actual public URL only after that decision.
+4. Add the participant's AWS Builder ID, testing URL or test-build access, and any required credentials to the Devpost form. Keep secrets out of the repository.
+5. Disclose pre-existing code or work incorporated into the project as required by the rules.
 
 ## Demonstration emphasis
 
-Show the repetitive work that was delegated, the exact human decision, the completed side effects, and the trace behind the result. The teacher is the beneficiary; the trace is evidence, not the main product. Do not claim measured time savings, learning gains or a confirmed misconception from one answer. Do not describe the deterministic local recording as autonomous AI.
+Show the delegated task, the teacher's approval, the resulting learner work and the supporting evidence. Describe synthetic records as synthetic. A response pattern is an observation for the next lesson, not a diagnosis.

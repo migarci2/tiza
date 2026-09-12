@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-09-11T08:00:46.630Z",
+  "recorded_at": "2026-09-11T11:57:39.377Z",
   "synthetic": true,
   "cursor_visible": true,
   "cursor_style": "macos",
@@ -19,6 +19,6 @@
     "validated_bank_selected",
     "drafts_saved_for_review"
   ],
-  "cycle_id": "f4390d12-9177-4747-9d1c-d9ea5abe1b08",
+  "cycle_id": "29c8f4bb-fb3b-4920-8ebe-427d429e42cc",
   "note": "Real synthetic app flow with an illustrated agent tool sequence injected only in the recording browser. No model invocation or simulated trace is persisted."
 }

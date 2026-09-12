@@ -13,3 +13,10 @@ playwright-report/
 .DS_Store
 *.tsbuildinfo
 *.egg-info/
+
+# Local video scratch files and superseded intermediate renders
+video/*/tmp-thumbs/
+video/tiza-working-cut/preview.mp4
+video/tiza-working-cut/tiza-working-cut.mp4
+video/tiza-working-cut/ledger.json
+video/*/.thumbnails/

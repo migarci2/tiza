@@ -108,12 +108,19 @@ def test_cycle_permissions_versions_and_idempotent_evidence():
         headers=headers,
         files={"file": ("lesson.md", b"Equivalent fractions and common denominators", "text/markdown")},
     )
-    assert material.status_code == 200 and material.json()["concept_candidates"]
-    assert client.post(
+    assert material.status_code == 200
+    candidates = {item["id"]: item for item in material.json()["concept_candidates"]}
+    assert candidates["add-different-denominator"]["role"] == "objective"
+    assert candidates["add-different-denominator"]["reference"] == "teacher-objective"
+    assert candidates["common-denominator"]["role"] == "prerequisite"
+    assert candidates["common-denominator"]["reference"] == "catalog"
+    confirmed = client.post(
         f"/api/cycles/{cycle['id']}/concepts",
         headers=headers,
         json={"concept_ids": ["equivalence", "common-denominator", "add-different-denominator"]},
-    ).status_code == 200
+    )
+    assert confirmed.status_code == 200
+    assert confirmed.json()["concepts"] == ["equivalence", "common-denominator", "add-different-denominator"]
     queued = client.post(f"/api/cycles/{cycle['id']}/prepare", headers=headers)
     assert queued.status_code == 202 and queued.json()["state"] == "queued"
     with Session() as db:

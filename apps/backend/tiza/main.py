@@ -13,7 +13,7 @@ from fastapi import Depends, FastAPI, File, Header, HTTPException, Request, Resp
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import StreamingResponse
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -23,6 +23,7 @@ from .integrations.nema.router import router as nema_router
 from .jobs.router import router as jobs_router
 from .jobs.clock import organization_now
 from .config import get_settings
+from .limits import reserve_daily
 from .db import Base, SessionLocal, engine, get_db
 from .models import (
     Approval,
@@ -262,7 +263,8 @@ def health() -> dict:
 @app.get("/api/config")
 def public_config() -> dict:
     settings = get_settings()
-    return {"demo_mode": settings.demo_mode, "agent_mode": settings.agent_mode}
+    return {"demo_mode": settings.demo_mode, "agent_mode": settings.agent_mode,
+            "demo_reset_enabled": settings.demo_mode and settings.demo_reset_enabled}
 
 
 @app.post("/api/demo/session", status_code=410)
@@ -323,10 +325,14 @@ def demo_reset(
     request: Request,
     principal: Principal = Depends(require_principal), db: Session = Depends(get_db)
 ) -> dict:
+    if not get_settings().demo_reset_enabled:
+        raise HTTPException(403, "Demo reset is disabled for this workspace")
     actor_membership = _role_for(db, principal.actor)
     organization = db.get(Organization, actor_membership.organization_id)
     if not organization.demo or actor_membership.role != "teacher":
         raise HTTPException(403, "Demo reset is only available to the synthetic teacher")
+    if db.scalar(select(Job.id).where(Job.organization_id == organization.id, Job.state == "running").limit(1)):
+        raise HTTPException(409, "Wait for the current work to finish before resetting")
     _, _, teacher, _ = seed_demo(db, reset_cycles=True)
     principal.session.acting_user_id = None
     csrf = csrf_for_session_token(request.cookies[COOKIE])
@@ -619,10 +625,11 @@ async def upload_material(
     cycle = _teacher_cycle(db, principal, cycle_id)
     if cycle.state not in {"draft", "failed"}:
         raise HTTPException(409, "Materials cannot be changed after preparation starts")
+    reserve_daily(db, f"materials:{cycle.organization_id}", get_settings().materials_per_day)
     raw = await file.read(10 * 1024 * 1024 + 1)
     material = store_material(db, cycle, file.filename or "material", file.content_type or "application/octet-stream", raw)
     db.flush()
-    candidates = concept_candidates(material.extracted_text + " " + cycle.objective, material.id)
+    candidates = concept_candidates(cycle.objective)
     db.commit()
     return {
         "id": material.id,
@@ -699,22 +706,27 @@ def queue_prepare(
     if not cycle.concept_confirmed:
         raise HTTPException(409, "Confirm the concept match before preparing practice")
     if cycle.state == "preparing":
-        existing = next(
-            (
-                job
-                for job in db.scalars(
-                    select(Job).where(Job.organization_id == cycle.organization_id, Job.kind == "prepare_cycle")
-                )
-                if job.payload.get("cycle_id") == cycle.id
-            ),
-            None,
-        )
+        existing = db.scalar(select(Job).where(
+            Job.organization_id == cycle.organization_id, Job.kind == "prepare_cycle",
+            Job.payload["cycle_id"].as_string() == cycle.id,
+            Job.payload["cycle_version"].as_integer() == cycle.version,
+        ).order_by(Job.created_at.desc()).limit(1))
         if not existing:
             raise HTTPException(409, "Preparation is already in progress")
         return {"job_id": existing.id, "state": existing.state, "cycle_state": cycle.state}
     if cycle.state not in {"draft", "failed"}:
         raise HTTPException(409, "This cycle has already been prepared")
-    cycle.state = "preparing"
+    claimed = db.execute(update(LearningCycle).where(
+        LearningCycle.id == cycle.id, LearningCycle.version == cycle.version,
+        LearningCycle.state.in_(["draft", "failed"]),
+    ).values(state="preparing"))
+    if not claimed.rowcount:
+        raise HTTPException(409, "Preparation is already in progress")
+    settings = get_settings()
+    reserve_daily(db, f"preparations:{cycle.organization_id}", settings.preparations_per_day)
+    if settings.agent_mode == "bedrock":
+        # Reserve a whole job, including its bounded three attempts of <=12 model calls.
+        reserve_daily(db, "bedrock-preparations:global", settings.bedrock_preparations_per_day)
     job = Job(
         organization_id=cycle.organization_id,
         kind="prepare_cycle",
@@ -794,10 +806,11 @@ def update_draft(
         )
         db.add(replacement)
         db.flush()
-        same_sequence = exercise_ids == [item.exercise_id for item in old.items]
+        # Replacing an exercise at a position must retain its approved branch rule.
+        same_positions = len(exercise_ids) == len(old.items)
         item_map = {}
         for position, exercise_id in enumerate(exercise_ids, 1):
-            old_item = old.items[position - 1] if same_sequence else None
+            old_item = old.items[position - 1] if same_positions else None
             item = AssignmentItem(
                 assignment_id=replacement.id,
                 exercise_id=exercise_id,
@@ -1363,6 +1376,13 @@ def cycle_agent_run(
         "model_invoked": agent.get("model_invoked", False),
         "model": agent.get("model"), "model_calls": agent.get("model_calls", 0),
         "tools": agent.get("tools", []), "operations": agent.get("operations", []),
+        "tool_events": [{key: event[key] for key in (
+            "name", "status", "error", "started_at", "completed_at", "assignment_id",
+            "candidate_counts", "selected_exercise_ids",
+        ) if key in event} for event in agent.get("tool_events", [])],
+        "usage": {key: agent.get("usage", {})[key] for key in ("inputTokens", "outputTokens", "totalTokens")
+                  if key in agent.get("usage", {})},
+        "completed_at": agent.get("completed_at"),
         "draft_count": agent.get("draft_count", 0),
         "awaiting_approval": cycle.state in {"review_ready", "approved"},
     }

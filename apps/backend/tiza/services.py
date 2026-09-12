@@ -5,6 +5,7 @@ from hashlib import sha256
 from io import BytesIO
 import json
 from pathlib import Path
+import re
 
 import httpx
 from fastapi import HTTPException
@@ -19,7 +20,7 @@ from .learning.state import derive_state
 from .integrations.nema.models import NemaGrant, NemaReadinessRequest
 
 from .config import get_settings
-from .exercises.catalog import all_exercises, load_catalog
+from .exercises.catalog import RETIRED_EXERCISE_IDS, all_exercises, load_catalog
 from .models import (
     Approval,
     Assignment,
@@ -108,16 +109,14 @@ def exercise_json(exercise: ExerciseVersion, *, revealed: bool = False) -> dict:
 
 def _add_bank(db: Session) -> None:
     catalog = all_exercises()
-    expected_ids = {item["id"] for item in catalog}
     existing_ids = set(db.scalars(select(ExerciseVersion.id)))
-    if existing_ids == expected_ids:
-        return
-    if existing_ids:
-        if db.scalar(select(func.count()).select_from(AssignmentItem)):
-            return
-        db.execute(delete(ExerciseVersion))
+    for exercise in db.scalars(select(ExerciseVersion).where(ExerciseVersion.id.in_(RETIRED_EXERCISE_IDS))):
+        exercise.approved = False
     for item in catalog:
-        db.add(ExerciseVersion(**item, source="Tiza reviewed fractions bank", approved=True))
+        if item["id"] not in existing_ids:
+            data = {key: value for key, value in item.items() if key != "approved"}
+            db.add(ExerciseVersion(**data, source="Tiza reviewed fractions bank",
+                                   approved=item["id"] not in RETIRED_EXERCISE_IDS))
     db.flush()
 
 
@@ -194,7 +193,6 @@ def seed_demo(db: Session, *, reset_cycles: bool = False) -> tuple[Organization,
         ]:
             if cycle_ids:
                 db.execute(delete(model).where(condition))
-        db.execute(delete(ExerciseVersion))
         db.execute(delete(Job).where(Job.organization_id == organization.id))
         db.execute(delete(OutboxEvent).where(OutboxEvent.organization_id == organization.id))
         db.execute(delete(IdempotencyRecord).where(IdempotencyRecord.organization_id == organization.id))
@@ -224,7 +222,9 @@ def _seed_evidence(
     outcomes = ["correct", "incorrect", "incorrect", "correct", None, "incorrect", "correct", "review_needed"]
     concepts = ["equivalence", "common-denominator", "common-denominator", "add-different-denominator",
                 "equivalence", "add-same-denominator", "simplification", "context"]
-    exercises = {e.concept_id: e for e in db.scalars(select(ExerciseVersion).where(ExerciseVersion.kind == "numeric"))}
+    exercises = {e.concept_id: e for e in db.scalars(select(ExerciseVersion).where(
+        ExerciseVersion.kind == "numeric", ExerciseVersion.approved.is_(True),
+    ).order_by(ExerciseVersion.id))}
     for learner, outcome, concept_id in zip(learners, outcomes, concepts, strict=True):
         assignment = Assignment(
             cycle_id=cycle.id,
@@ -330,26 +330,49 @@ def store_material(db: Session, cycle: LearningCycle, filename: str, content_typ
     return material
 
 
-def concept_candidates(text: str, material_id: str | None = None) -> list[dict]:
-    lowered = text.lower()
-    matches = []
-    for concept_id, title, *_ in CONCEPTS:
-        words = title.lower().replace("fractions", "fraction").split()
-        if any(word in lowered for word in words if len(word) > 3):
-            matches.append(
-                {
-                    "id": concept_id,
-                    "title": title,
-                    "reference": f"material:{material_id}" if material_id else "teacher-objective",
-                    "quote": text[:160].strip(),
-                }
-            )
-    if not matches:
-        matches = [
-            {"id": "equivalence", "title": "Equivalent fractions", "reference": "teacher-objective", "quote": text[:160].strip()},
-            {"id": "add-different-denominator", "title": "Adding unlike fractions", "reference": "teacher-objective", "quote": text[:160].strip()},
-        ]
-    return matches[:6]
+GOAL_PATTERNS = {
+    "numerator-denominator": r"\b(numerator|denominator|numerador|denominador)\b",
+    "fraction-quantity": r"\b(?:fraction(?:s)?|fracci(?:ó|o)n(?:es)?)\s+(?:as|como)\s+(?:a\s+)?(?:quantity|cantidad)\b",
+    "representation": r"\b(represent|draw|show|representar|dibujar|mostrar)\w*\b.{0,40}\b(fraction|fractions|fracción|fracciones)\b",
+    "equivalence": r"\b(?:(?:equivalent|equivalence|equivalente|equivalencia)\w*\b.{0,40}\b(?:fraction|fractions|fracción|fracciones)\b|(?:fraction|fractions|fracción|fracciones)\b.{0,40}\b(?:equivalent|equivalence|equivalente|equivalencia)\w*)\b",
+    "simplification": r"\b(?:(?:simplify|simplifying|simplification|simplificar|simplificación)\w*\b.{0,40}\b(?:fraction|fractions|fracción|fracciones)\b|(?:fraction|fractions|fracción|fracciones)\b.{0,40}\b(?:simplify|simplifying|simplification|simplificar|simplificación)\w*)\b",
+    "multiples": r"\b(multiple|multiples|múltiplo|múltiplos)\b",
+    "common-denominator": r"\b(common\s+denominator|common\s+denominators|denominador(?:es)?\s+com(?:ú|u)n(?:es)?)\b",
+    "comparison": r"\b(compare|comparing|comparison|comparar|comparación)\w*\b.{0,40}\b(fraction|fractions|fracción|fracciones)\b",
+    "add-same-denominator": r"\b(add|adding|sum|sumar|suma)\w*\b.{0,50}\b(?:(?:same|like|mismo|igual)\w*\s+(?:denominator|denominador)\w*|denominador\w*\s+(?:mismo|igual)\w*)\b",
+    "add-different-denominator": r"\b(add|adding|sum|sumar|suma)\w*\b.{0,50}\b(?:(?:unlike|different|distinct|distinto|diferente|no\s+común)\w*\s+(?:denominator|denominador)\w*|denominador\w*\s+(?:distinto|diferente|no\s+común)\w*)\b",
+    "subtraction": r"\b(subtract|subtracting|subtraction|restar|resta)\w*\b.{0,40}\b(fraction|fractions|fracción|fracciones)\b",
+    "context": r"\b(word\s+problem|application|context|problema(?:s)?|aplicaci(?:ó|o)n|contexto)\b.{0,40}\b(fraction|fractions|fracción|fracciones)\b",
+}
+
+
+def concept_candidates(text: str) -> list[dict]:
+    """Return explicit objective matches, their prerequisites, then every other choice."""
+    definitions = {item["id"]: item for item in load_catalog()["concepts"]}
+    targets = [concept_id for concept_id in definitions if re.search(GOAL_PATTERNS[concept_id], text, re.I)]
+    prerequisites: list[str] = []
+
+    def add_prerequisites(concept_id: str) -> None:
+        for prerequisite in definitions[concept_id]["prerequisites"]:
+            add_prerequisites(prerequisite)
+            if prerequisite not in targets and prerequisite not in prerequisites:
+                prerequisites.append(prerequisite)
+
+    for target in targets:
+        add_prerequisites(target)
+    roles = {concept_id: "objective" for concept_id in targets}
+    roles.update({concept_id: "prerequisite" for concept_id in prerequisites})
+    order = targets + prerequisites + [concept_id for concept_id in definitions if concept_id not in roles]
+    return [
+        {
+            "id": concept_id,
+            "title": definitions[concept_id]["title"],
+            "reference": "teacher-objective" if roles.get(concept_id) == "objective" else "catalog",
+            "quote": text[:160].strip() if roles.get(concept_id) == "objective" else "",
+            "role": roles.get(concept_id, "available"),
+        }
+        for concept_id in order
+    ]
 
 
 def allowed_concepts(targets: list[str]) -> set[str]:

@@ -221,6 +221,12 @@ class Delivery(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
 
 
+class UsageBucket(Base):
+    __tablename__ = "usage_buckets"
+    key: Mapped[str] = mapped_column(String, primary_key=True)
+    used: Mapped[int] = mapped_column(Integer, default=0)
+
+
 class Job(Base):
     __tablename__ = "jobs"
     id: Mapped[str] = mapped_column(String, primary_key=True, default=uid)

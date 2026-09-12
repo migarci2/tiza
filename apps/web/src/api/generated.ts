@@ -533,8 +533,8 @@ export interface paths {
         delete?: never;
         options?: never;
         head?: never;
-        /** Update Cycle Deadline */
-        patch: operations["update_cycle_deadline_api_cycles__cycle_id__patch"];
+        /** Update Cycle */
+        patch: operations["update_cycle_api_cycles__cycle_id__patch"];
         trace?: never;
     };
     "/api/cycles/{cycle_id}/approve": {
@@ -829,11 +829,10 @@ export interface components {
         CycleUpdate: {
             /** Version */
             version: number;
-            /**
-             * Closes At
-             * Format: date-time
-             */
-            closes_at: string;
+            /** Closes At */
+            closes_at?: string | null;
+            /** Budget Minutes */
+            budget_minutes?: number | null;
         };
         /** DemoAccess */
         DemoAccess: {
@@ -1941,7 +1940,7 @@ export interface operations {
             };
         };
     };
-    update_cycle_deadline_api_cycles__cycle_id__patch: {
+    update_cycle_api_cycles__cycle_id__patch: {
         parameters: {
             query?: never;
             header?: never;

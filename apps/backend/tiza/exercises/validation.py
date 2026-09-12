@@ -25,20 +25,35 @@ def validate_catalog(catalog: dict) -> None:
     ids: set[str] = set()
     counts = {concept_id: 0 for concept_id in concept_ids}
     for exercise in exercises:
-        missing = REQUIRED - exercise.keys()
-        if missing:
-            raise ValueError(f"exercise missing fields: {sorted(missing)}")
-        if exercise["id"] in ids:
-            raise ValueError(f"duplicate exercise id: {exercise['id']}")
-        ids.add(exercise["id"])
-        if exercise["concept_id"] not in concept_ids:
-            raise ValueError(f"unknown concept: {exercise['concept_id']}")
-        counts[exercise["concept_id"]] += 1
-        if exercise["kind"] not in KINDS or not isinstance(exercise["estimated_minutes"], int) or exercise["estimated_minutes"] <= 0:
-            raise ValueError(f"invalid exercise: {exercise['id']}")
-        _validate_answer(exercise)
+        _validate_exercise(exercise, concept_ids, ids, counts)
+
     if set(counts.values()) != {3}:
         raise ValueError("each concept must have exactly three reviewed exercises")
+
+
+def validate_exercise(exercise: dict, concept_ids: set[str]) -> None:
+    """Validate one generated exercise against the reviewed concept set."""
+    _validate_exercise(exercise, concept_ids, set(), None)
+
+
+def _validate_exercise(
+    exercise: dict, concept_ids: set[str], ids: set[str], counts: dict[str, int] | None
+) -> None:
+    if not isinstance(exercise, dict):
+        raise ValueError("exercise must be an object")
+    missing = REQUIRED - exercise.keys()
+    if missing:
+        raise ValueError(f"exercise missing fields: {sorted(missing)}")
+    if exercise["id"] in ids:
+        raise ValueError(f"duplicate exercise id: {exercise['id']}")
+    ids.add(exercise["id"])
+    if exercise["concept_id"] not in concept_ids:
+        raise ValueError(f"unknown concept: {exercise['concept_id']}")
+    if counts is not None:
+        counts[exercise["concept_id"]] += 1
+    if exercise["kind"] not in KINDS or not isinstance(exercise["estimated_minutes"], int) or exercise["estimated_minutes"] <= 0:
+        raise ValueError(f"invalid exercise: {exercise['id']}")
+    _validate_answer(exercise)
 
 
 def _validate_answer(exercise: dict) -> None:
