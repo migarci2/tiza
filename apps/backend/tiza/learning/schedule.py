@@ -1,4 +1,4 @@
-"""Spaced-review arithmetic ported from nema's pinned inference engine."""
+"""Spaced-review arithmetic."""
 
 from __future__ import annotations
 

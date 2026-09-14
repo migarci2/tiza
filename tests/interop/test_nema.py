@@ -18,7 +18,7 @@ def node(script, payload):
     return json.loads(result.stdout)
 
 
-def test_original_js_and_python_verify_each_others_tokens():
+def test_js_and_python_verify_each_others_tokens():
     key = ec.generate_private_key(ec.SECP256R1())
     public = public_jwk(key)
     private = {**public, "d": encode(key.private_numbers().private_value.to_bytes(32, "big"))}

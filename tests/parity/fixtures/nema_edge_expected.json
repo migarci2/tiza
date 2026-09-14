@@ -1,6 +1,4 @@
 {
-  "source_commit": "6f630aff03f20e74b55406bc13b2b36433dc491b",
-  "generator": "vendor/nema/shared/inference.js deriveState + summarize",
   "state": {
     "edge:failure": {
       "recognize": {

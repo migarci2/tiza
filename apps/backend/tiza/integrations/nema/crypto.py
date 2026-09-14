@@ -1,4 +1,4 @@
-"""Python port of nema's P-256/SHA-256 wire contract. See THIRD_PARTY_NOTICES.md."""
+"""P-256/SHA-256 support for the nema wire contract."""
 import base64
 import json
 import re

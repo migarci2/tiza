@@ -1,7 +1,5 @@
 # Third-party notices
 
-Portions of Tiza learning and interoperability code derive from nema by Miguel Garcia, pinned to commit `6f630aff03f20e74b55406bc13b2b36433dc491b`. The original JavaScript and this notice are retained. Python ports are adaptations, not upstream nema modules.
-
 MIT License
 
 Copyright (c) 2026 Miguel Garcia

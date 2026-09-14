@@ -1,8 +1,4 @@
-"""Needs and implicit-repetition port from nema inference.js at 6f630aff03f2.
-
-Tiza's assignment policy remains separate. These functions preserve nema's
-interchange semantics and are checked against fixtures emitted by the pinned JS.
-"""
+"""Needs and implicit-repetition logic for nema interchange semantics."""
 from __future__ import annotations
 
 from datetime import datetime

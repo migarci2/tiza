@@ -1,9 +1,4 @@
-"""Pure learner-state inference.
-
-This is a Python port of nema ``shared/inference.js`` at
-``6f630aff03f20e74b55406bc13b2b36433dc491b``. Tiza keeps its policy on top of
-this module so language migration does not silently change the formulas.
-"""
+"""Pure learner-state inference."""
 
 from __future__ import annotations
 

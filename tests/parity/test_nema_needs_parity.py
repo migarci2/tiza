@@ -7,7 +7,7 @@ from tiza.learning.nema_needs import apply_implicit_repetition, compute_needs, e
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
-def test_pinned_nema_needs_and_implicit_repetition_parity():
+def test_nema_needs_and_implicit_repetition_parity():
     source = json.loads((FIXTURES / "nema_needs_input.json").read_text())
     expected = json.loads((FIXTURES / "nema_needs_expected.json").read_text())
     registry = {item["id"]: item for item in source["concepts"]}
