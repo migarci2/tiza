@@ -32,7 +32,6 @@ Verified revised export: 60.000 seconds, 1920×1080, 30 fps, 1,800 frames, AAC s
 
 - [Raylight opening project](https://www.raylight.app/editor/25cc7949-3102-46d8-979c-5e324a4a97ba): 11.4 seconds, created from the “Text with Apple inspiration” template. Edited through Raylight MCP; a separate project preserves the existing “Take this apart” project.
 - [Storyboard](storyboard-v1.png): GPT Image visual direction using the existing Tiza teacher illustration as reference. This contact sheet is a concept, not a product screenshot.
-- [Treatment and narration source](../hackathon/pitch.md).
 - [Music and sound licenses](audio/MANIFEST.md).
 - Full editable assembly: `video/tiza-working-cut/index.html`, HyperFrames.
 - Review video: `video/tiza-working-cut/tiza-film.mp4` (with final audio fade).

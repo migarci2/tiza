@@ -9,7 +9,7 @@
 - Frontend: Vitest passed (one locale consistency test); TypeScript/Vite and Docker builds passed. Caddy validated the request body limit configuration.
 - New regressions cover explicit English/Spanish objectives, honest source references, manual concept selection, retired exercise version preservation, corrected fraction questions, atomic daily admission and quotas surviving reset.
 
-Live Bedrock, Supabase, Resend, public deployment and final Devpost submission remain unverified. The repository remains private by the owner's instruction. The updated submission draft is in `docs/hackathon/submission.md`. No educational efficacy or time savings have been measured.
+Live Bedrock, Supabase, Resend, public deployment and final Devpost submission remain unverified. The repository remains private by the owner's instruction. No educational efficacy or time savings have been measured.
 
 The refreshed landing recording completes a learner path before returning to the teacher brief. Exported MP4: 45.60 seconds, 994,818 bytes; GIF: 4,197,060 bytes. Its agent sequence remains capture-only illustration and its manifest remains `model_invoked=false`.
 

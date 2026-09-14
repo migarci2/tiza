@@ -1,11 +1,11 @@
 <div align="center">
-  <h1>tiza — Practice between classes</h1>
+  <h1>tiza: Practice between classes</h1>
   <p>Turn one lesson into individual practice, teacher-reviewed feedback and a clearer starting point for the next class.</p>
-  <p><a href="#run-locally">Run it locally</a> · <a href="docs/judge-guide.md">Follow the demo</a></p>
+  <p><a href="https://tiza.migarci2.dev/">Try it online</a> · <a href="#run-locally">Run it locally</a> · <a href="docs/judge-guide.md">Follow the demo</a></p>
 </div>
 
 <div align="center">
-  <img src="./apps/web/public/media/tiza-demo.gif" alt="Tiza product walkthrough" width="100%">
+  <img src="./docs/assets/tiza-walkthrough.gif" alt="Tiza product walkthrough" width="100%">
 </div>
 
 ## Make the time between lessons count
@@ -17,12 +17,6 @@ A class ends, but the teacher's work does not. They still need to choose useful 
 As learners practise, Tiza records their answers, hints and pending reviews. The next-lesson brief shows the teacher what happened and links every observation to the work behind it.
 
 ## One lesson, three clear steps
-
-<div align="center">
-  <img src="./apps/web/public/workspace-preview.png" alt="Tiza teacher workspace with the current practice cycle and next-lesson brief" width="100%">
-</div>
-
-<br>
 
 1. **Choose the goal.** Add the lesson material, select the concepts and set how long practice should take.
 2. **Review the practice.** Compare each learner's plan, change exercises or recipients, then approve the exact version.
@@ -101,7 +95,6 @@ See the [validation record](docs/validation.md) for the verified scope and the l
 - [Demo walkthrough](docs/judge-guide.md)
 - [Validation record](docs/validation.md)
 - [Privacy and operations](docs/privacy.md)
-- [Hackathon alignment](docs/hackathon/alignment.md)
 
 ## Safety boundary
 
