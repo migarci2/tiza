@@ -76,6 +76,26 @@
   font-size: 12px;
   gap: 14px;
 }
+.tiza-landing .story-hero-actions .story-button {
+  transition:
+    background-color 150ms ease-out,
+    transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 250ms ease-out,
+    filter 250ms ease-out;
+}
+.tiza-landing .story-hero-actions .story-button:hover,
+.tiza-landing .story-hero-actions .story-button:focus-visible {
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--yellow) 55%, transparent),
+    0 20px 40px color-mix(in srgb, var(--yellow) 38%, transparent);
+  filter: brightness(1.08) saturate(1.15);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tiza-landing .story-hero-actions .story-button:hover,
+  .tiza-landing .story-hero-actions .story-button:focus-visible {
+    transform: scale(1.04) translateY(-7px);
+  }
+}
 .story-hero {
   max-width: 1344px;
   margin: auto;

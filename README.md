@@ -1,32 +1,65 @@
-# tiza
+<div align="center">
+  <h1>tiza — Practice between classes</h1>
+  <p>Turn one lesson into individual practice, teacher-reviewed feedback and a clearer starting point for the next class.</p>
+  <p><a href="#run-locally">Run it locally</a> · <a href="docs/judge-guide.md">Follow the demo</a></p>
+</div>
 
-**You teach the class. Tiza takes care of practice between classes.**
+<div align="center">
+  <img src="./apps/web/public/media/tiza-demo.gif" alt="Tiza product walkthrough" width="100%">
+</div>
 
-Teacher workspace, reviewed fraction exercises, version-bound human approval, mobile practice, deterministic grading, append-only evidence and a next-lesson brief. The isolated demo contains eight synthetic learners. It never claims educational efficacy or official grades.
+## Make the time between lessons count
+
+A class ends, but the teacher's work does not. They still need to choose useful exercises, adjust them for different learners, check the answers and decide what to revisit next time.
+
+**Tiza brings that work into one simple cycle.** The teacher sets the goal and time limit. Tiza prepares an individual practice plan for each learner from reviewed exercises. The teacher checks the plans and approves the exact version before anything is published.
+
+As learners practise, Tiza records their answers, hints and pending reviews. The next-lesson brief shows the teacher what happened and links every observation to the work behind it.
+
+## One lesson, three clear steps
+
+<div align="center">
+  <img src="./apps/web/public/workspace-preview.png" alt="Tiza teacher workspace with the current practice cycle and next-lesson brief" width="100%">
+</div>
+
+<br>
+
+1. **Choose the goal.** Add the lesson material, select the concepts and set how long practice should take.
+2. **Review the practice.** Compare each learner's plan, change exercises or recipients, then approve the exact version.
+3. **Start the next class prepared.** See who responded, what needs review and the attempts behind each observation.
+
+The learner gets a focused mobile practice flow. The teacher keeps control of what is sent and how the results are used.
+
+## Simple for the teacher. Careful behind the scenes.
+
+| What Tiza handles | Why it matters |
+| --- | --- |
+| Individual plans from reviewed exercises | Each learner gets a useful path without giving the agent an open-ended content generator. |
+| Approval tied to one exact version | A change to the plan requires a new teacher decision. |
+| Server-checked objective answers | Results do not depend on a model deciding whether an answer is correct. |
+| Hints and explanations kept with each attempt | The teacher can see the context behind an answer. |
+| A brief linked to the original work | Every next-lesson observation can be checked. |
+| Durable jobs and delivery records | Preparation and sending can recover without losing their history. |
+
+The demo uses eight fictional learners and a reviewed fractions exercise bank. It does not claim official grades or measured learning results.
+
+## Human approval is part of the product
+
+Tiza uses a bounded Strands agent to prepare practice plans. It can read the current class goal, choose from available exercises, save drafts and request review. It cannot approve a plan, publish it, submit learner answers or write directly to learning records.
+
+Editing a plan creates a new version and clears the previous approval. Completed attempts stay attached to the version the learner actually received.
 
 ## Run locally
 
-Requires Python 3.12+, Node 22+, uv and pnpm. From this directory:
+Requirements: Python 3.12+, Node.js 22+, [uv](https://docs.astral.sh/uv/) and [pnpm](https://pnpm.io/).
 
 ```sh
 ./scripts/dev.sh
 ```
 
-Open **http://localhost:5173**. The local worker polls the same durable job/outbox records as Celery. No provider credentials are needed for `deterministic_demo`: the interface identifies that no model was invoked. Email is separate; Mailpit is optional and an unavailable provider is never reported as successful delivery.
+Open [http://localhost:5173](http://localhost:5173) and enter demo code `246810`. No account or provider credentials are needed for the default walkthrough. The interface clearly marks local preparation when no AI model was called.
 
-The demo opens with a single **Demo code** field. Enter `246810`; no email,
-code request or account creation is required. Set `TIZA_DEMO_ACCESS_CODE` to change
-the code. The server validates it before creating a cookie/CSRF session for the
-synthetic teacher. This access is disabled when `TIZA_DEMO_MODE=false`.
-
-The teacher confirms explicit objective matches separately from suggested prerequisites,
-and can choose any of the twelve fraction concepts. The original 36-exercise bank is
-preserved for history; controlled variants provide 60 active exercise versions. Two
-ambiguous fraction-format questions are retired from new plans and replaced by
-missing-numerator questions with computed answers.
-
-
-The API documentation is at http://localhost:8000/docs. Python and JavaScript dependency resolutions are in `uv.lock` and `apps/web/pnpm-lock.yaml`.
+API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
 ## Container demo
 
@@ -35,31 +68,17 @@ cp .env.example .env
 docker compose --profile demo up --build
 ```
 
-Open http://localhost:8080; Mailpit is at http://localhost:8025. A single beat process publishes durable jobs to Redis; one worker executes them. The default database is SQLite for a self-contained demo. Set `TIZA_DATABASE_URL` to PostgreSQL for deployment. Container versions are fixed rather than `latest`.
+Open [http://localhost:8080](http://localhost:8080). Mailpit is available at [http://localhost:8025](http://localhost:8025) for local email testing.
 
-## Connected deployment
+The demo uses SQLite so it can run on its own. A connected deployment uses PostgreSQL, Supabase Auth and Storage, Bedrock through Strands, and optional Resend delivery. See [.env.example](.env.example) for the full configuration.
 
-Set `TIZA_DEMO_MODE=false`, `TIZA_SESSION_SECURE=true`, `TIZA_AGENT_MODE=bedrock`, a PostgreSQL URL, Supabase Auth/Storage credentials, HTTPS hostname and public URL. Set `TIZA_BEDROCK_MODEL_ID` to a compatible model or inference profile actually enabled in your AWS account; use an EC2 instance role. Configure Resend only when ready to send real messages. `.env.example` lists configuration; keep credentials outside Git.
-
-Run database migrations before starting the API:
+Run migrations before starting a connected deployment:
 
 ```sh
 uv run alembic upgrade head
 ```
 
-Bedrock, Supabase and Resend live connectivity require your accounts and are not validated by the offline test suite. See [architecture](docs/architecture.md), [privacy and operations](docs/privacy.md), [reuse](docs/reuse.md), and the [demo guide](docs/judge-guide.md).
-
-Before opening a shared judging instance, set `TIZA_DEMO_RESET_ENABLED=false`, use
-HTTPS with secure cookies, and keep synthetic data in its own database. Default
-daily admission limits are 40 preparations and 30 materials per organization, plus
-10 Bedrock preparations across the instance. Each admitted Bedrock job reserves up
-to three attempts of twelve model calls; this is an admission bound, not a dollar
-spending guarantee. Configure AWS account budgets separately. Reservations use real
-UTC dates, survive demo resets and are stored in PostgreSQL/SQLite rather than Redis.
-The API still rejects files over 10 MiB; Caddy caps total request bodies at 11 MiB
-to allow multipart overhead.
-
-## Checks
+## Reliability checks
 
 ```sh
 uv run pytest -q
@@ -68,18 +87,24 @@ pnpm --dir apps/web test
 pnpm --dir apps/web test:e2e
 ```
 
-Tests exercise real API requests, assignment ownership, stale approvals, hint provenance, duplicate attempts, budget constraints, worker replay, uncertain sends, nema consent and Python↔JavaScript signed-token verification. The nema inference fixtures are generated by the pinned original JavaScript, with explicit evaluation times. Playwright requires the local API, worker and Vite server.
+The smallest container smoke check is:
 
-The container smoke check is `uv run python scripts/smoke.py --url http://localhost:8080`. It uses synthetic data and Mailpit. See the [validation record](docs/validation.md) for actual checks and external-service limits.
+```sh
+uv run python scripts/smoke.py --url http://localhost:8080
+```
 
-## Design process
+See the [validation record](docs/validation.md) for the verified scope and the limits of offline testing.
 
-The frontend follows **genimage → image to code → browser review**. The generated reference, exact prompt and implementation screenshots live under [docs/design](docs/design). Counts and operational states are computed from persisted records, never taken from the reference image.
+## Project guide
 
-## Attribution
+- [Architecture](docs/architecture.md)
+- [Demo walkthrough](docs/judge-guide.md)
+- [Validation record](docs/validation.md)
+- [Privacy and operations](docs/privacy.md)
+- [Hackathon alignment](docs/hackathon/alignment.md)
 
-Tiza's educational engine and interoperability modules contain Python ports derived from [nema](https://github.com/migarci2/nema), pinned to `6f630aff03f20e74b55406bc13b2b36433dc491b`. The original MIT notice is preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The fraction curriculum and teacher workflow are Tiza additions. Compatibility does not imply that a new curriculum is automatically recognized by a student's vault.
+## Safety boundary
 
-## Agents for Humans
+Tiza keeps planning separate from approval, publication and grading. Production use requires HTTPS, secure cookies, private storage, a managed PostgreSQL backup policy and provider credentials kept outside Git.
 
-Target track: Professional Agents. See [alignment and remaining requirements](docs/hackathon/alignment.md), [architecture diagram](docs/hackathon/architecture.md) and [draft pitch](docs/hackathon/pitch.md). Tiza is MIT licensed; see [LICENSE](LICENSE). A local recording is not evidence of a live Strands model run.
+Built for the **Professional Agents** track of Agents for Humans. MIT licensed; see [LICENSE](LICENSE).
