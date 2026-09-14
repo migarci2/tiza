@@ -6,7 +6,13 @@ The new opening uses Pavel Danilyuk's Pexels footage. Krea Seedance 2.5 supplies
 
 Source decisions and prompts: `video/tiza-fast-cut/PROVENANCE.json`, `STORYBOARD.md`, `DESIGN.md`, and `CREDITS.md`. HyperFrames upgraded 0.8.35 → 0.8.38; current composition check passes without warnings. Desktop/mobile branding checked locally and in production; live SVG bytes match the source, and the API health check returns `ok`.
 
-Production is now running with `TIZA_AGENT_MODE=bedrock`, `TIZA_DEMO_MODE=true`, and `eu.amazon.nova-2-lite-v1:0`. That configuration does not prove a model invocation. The film keeps captured synthetic-demo interactions and makes no live-execution or measured-impact claim. The historical account blocker below describes the earlier recording session, not current AWS account status.
+Production is now running with `TIZA_AGENT_MODE=bedrock`, `TIZA_DEMO_MODE=true`, and `eu.amazon.nova-2-lite-v1:0`. A read-only check also found a completed preparation from 13 September with `model_invoked=true` and 11 model calls; the limited evidence is saved in [production-agent-check.json](production-agent-check.json). The film keeps captured synthetic-demo interactions and makes no live-execution or measured-impact claim. The historical account blocker below describes the earlier recording session, not current AWS account status.
+
+## Revised export verification
+
+Full FFmpeg decode passed. H.264, 1920×1080, 30 fps, 1,800 frames, AAC audio, exactly 60.000 seconds, 31,091,411 bytes. No black interval ≥0.3 seconds. Audio mean −20.5 dBFS, peak −1.5 dBFS. Reviewed the final exported contact sheet, including product frames and opening/closing states. HyperFrames check: zero errors/warnings, 23/23 contrast checks pass. The animation map contains 23 seek-safe tweens; holds preserve footage playback or reading time.
+
+SHA-256: `d80f8413a5b9f946d9179f6ef035a80ca570a90e5b9e1d25070ac9af6377f211`.
 
 ---
 
