@@ -518,10 +518,9 @@
   .story-brand {
     font-size: 23px;
   }
-  .story-brand-mark {
-    width: 30px;
-    height: 32px;
-    font-size: 28px;
+  .tiza-logo {
+    width: 105px;
+    height: 37px;
   }
   .tiza-landing .story-button.small {
     min-height: 42px;

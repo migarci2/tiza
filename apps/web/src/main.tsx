@@ -253,10 +253,7 @@ function Loading() {
   return (
     <main className="boot">
       <span className="wordmark">
-        <span className="story-brand-mark" aria-hidden="true">
-          t
-        </span>
-        tiza
+        <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
       </span>
       <p>Opening your class workspace…</p>
     </main>
@@ -272,10 +269,7 @@ function LearnerStart({
   return (
     <main className="welcome">
       <span className="wordmark">
-        <span className="story-brand-mark" aria-hidden="true">
-          t
-        </span>
-        tiza
+        <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
       </span>
       <h1>Hello, {learner}.</h1>
       <p>Your teacher has not opened a practice link in this browser yet.</p>
@@ -312,10 +306,7 @@ function Sidebar({
     <aside className="sidebar">
       <div>
         <span className="wordmark">
-          <span className="story-brand-mark" aria-hidden="true">
-            t
-          </span>
-          tiza
+          <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
         </span>
         <nav>
           {nav.map(([key, Icon, label]) => (
@@ -1555,10 +1546,7 @@ function PracticePage({
     <main className="practice-screen">
       <header className="practice-header">
         <span className="wordmark">
-          <span className="story-brand-mark" aria-hidden="true">
-            t
-          </span>
-          tiza
+          <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
         </span>
         <span>
           {data.progress.answered + 1} of {data.progress.total}

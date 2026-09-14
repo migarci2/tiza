@@ -188,10 +188,7 @@ export function Welcome(props: {
       </a>
       <header className="story-header">
         <a className="story-brand" href="/" aria-label="Tiza home">
-          <span className="story-brand-mark" aria-hidden="true">
-            t
-          </span>
-          tiza
+          <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
         </a>
         <nav aria-label="Main navigation">
           <a className="story-nav-how" href="#how-it-works">
@@ -240,10 +237,7 @@ export function Welcome(props: {
       </main>
       <footer className="story-footer">
         <a href="/" className="story-brand" aria-label="Tiza home">
-          <span className="story-brand-mark" aria-hidden="true">
-            t
-          </span>
-          tiza
+          <img className="tiza-logo" src="/brand/tiza-logo.svg" alt="tiza" width="114" height="40" />
         </a>
         <p>{t("landing.footer")}</p>
         <a href="#access">{t("story.signin")} ↗</a>
