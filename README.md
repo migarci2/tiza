@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  <img src="./data/landing.gif" alt="Tiza product walkthrough" width="100%">
+  <img src="./docs/assets/tiza-walkthrough.gif" alt="Tiza product walkthrough" width="100%">
 </div>
 
 ## Make the time between lessons count
