@@ -1,34 +1,23 @@
-# Continue editing the Tiza video
+# Edit the Tiza film
 
-The current cut is **[tiza-fast-cut/tiza-60s.mp4](tiza-fast-cut/tiza-60s.mp4)**: 60 seconds, 1920×1080, 30 fps, entirely authored in HyperFrames with no Raylight footage or watermark.
+Current composition: [tiza-fast-cut/index.html](tiza-fast-cut/index.html). Revised export: [tiza-fast-cut/tiza-60s-v2.mp4](tiza-fast-cut/tiza-60s-v2.mp4), 60 seconds, 1080p, 30 fps.
 
-Edit **[tiza-fast-cut/index.html](tiza-fast-cut/index.html)**. Its timing, text, motion and audio tracks are in this file. Every referenced media file and font is included under `assets/`; no running Tiza backend or AWS account is needed to edit or render this captured demo.
+The film combines a Pexels editorial opening, Krea Seedance 2.5 chalk footage, captured Tiza interactions, and an ElevenLabs v3 teacher/assistant conversation with acting tags. The new GPT Image logo is traced to SVG and shared with the deployed website.
 
-## On another computer
+## Preview and render
 
-Install Node.js (tested with 24.12) and FFmpeg, then:
+Requires Node 22+ and FFmpeg. From `video/tiza-fast-cut`:
 
 ```sh
-git clone git@github.com:migarci2/tiza.git
-cd tiza/video/tiza-fast-cut
 npm run dev
-```
-
-Open the Studio URL printed by the command. After editing:
-
-```sh
 npm run check
-npm run render -- --workers 1 --output tiza-60s.mp4
+npm run render -- --workers 1 --quality delivery --output tiza-60s-v2.mp4
 ```
 
-The scripts pin HyperFrames 0.8.35. The first invocation downloads the CLI and its browser; it requires Internet access. On Linux, if the optional ONNX CUDA installation fails, prefix the command with `ONNXRUNTIME_NODE_INSTALL_CUDA=skip`.
+HyperFrames was upgraded from 0.8.35 to 0.8.38 and checked. Assets, fonts, GSAP and selected audio stems are local; no provider key or running backend is needed to render. The first CLI invocation needs network access to install its pinned runtime.
 
-## Sources
+- [Storyboard](tiza-fast-cut/STORYBOARD.md), [brand direction](tiza-fast-cut/DESIGN.md), [exact prompts and selected generations](tiza-fast-cut/PROVENANCE.json).
+- [Credits](tiza-fast-cut/CREDITS.md), [production notes](../docs/video/README.md).
+- `tiza-fast-cut/tiza-60s.mp4` preserves the previous 60-second version. `tiza-working-cut/` preserves the older 135-second composition.
 
-- [Current narration, timings and individual stems](../docs/video/audio/voice/60s/).
-- [Audio provenance and licenses](../docs/video/audio/MANIFEST.md) and [cut credits](tiza-fast-cut/CREDITS.md).
-- The music fade is baked into `assets/music-60s.wav`; narration is a separate `assets/voiceover.wav` track.
-- [Production notes and verification](../docs/video/README.md).
-- `tiza-working-cut/` preserves the older 135-second composition, its source assets and `tiza-film.mp4`. Its opening uses the earlier Raylight export with its badge; it is not the current cut.
-
-The current cut uses synthetic learners and captured demo interactions. The connected-agent recording is still pending and is identified in the video. Replace that segment with an actual connected run before presenting it as proof of live Bedrock execution.
+The product footage contains synthetic learners. Production is deployed and configured for Bedrock; these captured interactions do not demonstrate a live model invocation.

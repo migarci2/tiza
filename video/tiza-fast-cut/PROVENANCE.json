@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-14",
+  "logo": {
+    "tool": "GPT Image built-in",
+    "prompt": "Use case: logo-brand. Generate one minimal horizontal logo for the teacher workspace \"tiza\". Compact abstract lowercase t symbol formed from two bold rounded chalk strokes beside the exact lowercase word \"tiza\" in friendly confident geometric sans lettering. Solid cobalt blue #0866e6 on pure white. Crisp smooth flat vector-like shapes, generous margin. No gradients, texture, shadows, mockups, slogans, sparkles or extra symbols. One logo only; intended for conversion to SVG paths.",
+    "source": "docs/design/brand/tiza-gpt-image.png",
+    "conversion": "alpha threshold 160, VTracer 0.6.12 binary spline paths",
+    "svg": "apps/web/public/brand/tiza-logo.svg"
+  },
+  "video": {
+    "provider": "Krea",
+    "model": "bytedance/seedance-2-5",
+    "prompt": "A cobalt-blue chalk stroke bursts into eight distinct flowing chalk paths across warm ivory paper. Premium tactile macro film for an education brand, 16:9. One continuous camera pull-back, crisp raking studio light revealing real chalk grain. 0–3 seconds: extreme close view of blue chalk drawing a decisive stroke, tiny powder particles kicked up by the contact. 3–7 seconds: the camera pulls back as the stroke branches into eight orderly curved paths, accented by small golden-yellow and coral chalk fragments. 7–10 seconds: the eight paths settle into a balanced open composition, plenty of clean ivory negative space at center for a logo added in post. Physical dry chalk and paper, deliberate real-time motion, beautiful editorial product photography, no neon, no liquid morphing, no faces, no readable text, no letters, no logo, no captions. Silent picture; dialogue and sound effects will be added separately.",
+    "job": "4788f631-248b-4ae4-bf2d-26d5916f0497",
+    "duration": 10,
+    "resolution": "1080p"
+  },
+  "voices": {
+    "model": "eleven_v3",
+    "flow": "https://elevenlabs.io/app/flows/Xs849TnHffvRFgMEbVzp",
+    "script": [
+      {
+        "key": "01-teacher",
+        "voice": "EXAVITQu4vr4xnSDxMaL",
+        "text": "[sighs] Class is over. My work isn't. Eight learners... eight different starting points."
+      },
+      {
+        "key": "02-tiza",
+        "voice": "CwhRBWXzGAHq8TQ4Fs17",
+        "text": "[reassuring] Let's take it one step at a time. Choose the goal. I'll prepare practice for each learner."
+      },
+      {
+        "key": "03-teacher",
+        "voice": "EXAVITQu4vr4xnSDxMaL",
+        "text": "[curious] And I get to check it first?"
+      },
+      {
+        "key": "04-tiza",
+        "voice": "CwhRBWXzGAHq8TQ4Fs17",
+        "text": "[warmly] Of course. Review the activities, approve this version, then publish. Your class. Your call."
+      },
+      {
+        "key": "05-teacher",
+        "voice": "EXAVITQu4vr4xnSDxMaL",
+        "text": "[thoughtful] They practise... but how do I know what to teach next?"
+      },
+      {
+        "key": "06-tiza",
+        "voice": "CwhRBWXzGAHq8TQ4Fs17",
+        "text": "[confident] Every answer leaves evidence. See who needs help, and bring that into your next lesson. [warmly] You teach. Tiza takes care of practice between classes."
+      }
+    ]
+  },
+  "audio": [
+    {
+      "key": "01-teacher",
+      "id": "0Uhptuo6yXHLtBUipsoM",
+      "duration": 7.28
+    },
+    {
+      "key": "04-tiza",
+      "id": "Mu9tshV35hjkim8fO5vk",
+      "duration": 8.16
+    },
+    {
+      "key": "05-teacher",
+      "id": "LpX2rXZAd8X8v70ZHFw8",
+      "duration": 4
+    },
+    {
+      "key": "02-tiza",
+      "id": "CMaWvVyJ0niT95KPkN4s",
+      "duration": 6.16
+    },
+    {
+      "key": "sfx-chalk",
+      "id": "EyoDPRszVJD32cc9fe05",
+      "duration": 2
+    },
+    {
+      "key": "03-teacher",
+      "id": "cpqYeoaWGjOvWCRyKV4D",
+      "duration": 1.6
+    },
+    {
+      "key": "06-tiza",
+      "id": "o8dlA04zblIQva9UTPrY",
+      "duration": 11.04
+    },
+    {
+      "key": "sfx-paper",
+      "id": "FsSOvfN5fETASmjvTjXl",
+      "duration": 1
+    }
+  ],
+  "pexels": {
+    "author": "Pavel Danilyuk",
+    "source": "https://www.pexels.com/video/female-teacher-writing-on-a-notebook-8342355/",
+    "license": "https://www.pexels.com/license/",
+    "usage": "Illustrative context; not a customer endorsement"
+  }
+}

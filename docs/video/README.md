@@ -1,4 +1,16 @@
-# Tiza video — working cut
+# Revised brand film — 14 September 2026
+
+The current editable source is `video/tiza-fast-cut/index.html`; the revised export is `video/tiza-fast-cut/tiza-60s-v2.mp4` (60 seconds, 1080p, 30 fps). The earlier MP4s remain available.
+
+The new opening uses Pavel Danilyuk's Pexels footage. Krea Seedance 2.5 supplies the tactile chalk sequence. Six selected ElevenLabs v3 stems make a teacher/assistant dialogue, with inline delivery tags. Generated chalk/chime and paper sounds join the existing music, spectrally carved around every voice. GPT Image supplied the logo; it was traced into actual SVG paths and deployed on the website.
+
+Source decisions and prompts: `video/tiza-fast-cut/PROVENANCE.json`, `STORYBOARD.md`, `DESIGN.md`, and `CREDITS.md`. HyperFrames upgraded 0.8.35 → 0.8.38; current composition check passes without warnings. Desktop/mobile branding checked locally and in production; live SVG bytes match the source, and the API health check returns `ok`.
+
+Production is now running with `TIZA_AGENT_MODE=bedrock`, `TIZA_DEMO_MODE=true`, and `eu.amazon.nova-2-lite-v1:0`. That configuration does not prove a model invocation. The film keeps captured synthetic-demo interactions and makes no live-execution or measured-impact claim. The historical account blocker below describes the earlier recording session, not current AWS account status.
+
+---
+
+# Historical working cuts
 
 Production started 12 September 2026. English, 16:9, 1080p, 30 fps. The full working cut is 2:15.
 
